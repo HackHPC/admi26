@@ -1,4 +1,4 @@
-#HackHPC@ADMI26 Hackathon 
+# HackHPC@ADMI26 Hackathon 
 
 - Date: June 22-26, 2026
 - Location: Virtual
