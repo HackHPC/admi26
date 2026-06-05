@@ -1,3 +1,5 @@
+<img src="Header-hero-with-text.png" width=80%>
+
 # HackHPC@ADMI26 Hackathon 
 
 ## Description
