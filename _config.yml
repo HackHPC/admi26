@@ -26,8 +26,8 @@ image_assets:
   teams_base_path: "/teams"  # Individual team directories under /teams/{team-name}/
   
 # URL Configuration
-url: ""
-baseurl: ""
+url: "https://hackhpc.github.io"
+baseurl: "/admi26"
 
 # Registration
 registration_url: "https://forms.gle/MdeeTz91kZvGyJFR8"
