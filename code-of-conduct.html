@@ -1,0 +1,91 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code of Conduct | {{ site.title }}</title>
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/styles.css">
+    <link rel="icon" type="image/x-icon" href="{{ site.baseurl }}/assets/images/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="logo">
+            <a href="{{ site.baseurl }}/"><img src="{{ site.baseurl }}/assets/images/logo-only-sq.svg" alt="HackHPC Logo" class="nav-logo"></a>
+            <span class="site-title">{{ site.title }}</span>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="{{ site.baseurl }}/#about">About</a></li>
+                <li><a href="{{ site.baseurl }}/schedule.html">Schedule</a></li>
+                <li><a href="{{ site.baseurl }}/staff.html">Staff</a></li>
+                {% if site.show_teams %}
+                <li><a href="{{ site.baseurl }}/#teams">Teams</a></li>
+                {% endif %}
+                {% if site.show_deliverables %}
+                <li><a href="{{ site.baseurl }}/#deliverables">Deliverables</a></li>
+                {% endif %}
+                <li><a href="{{ site.baseurl }}/resources.html">Resources</a></li>
+                <li><a href="{{ site.baseurl }}/code-of-conduct.html" class="active">Code of Conduct</a></li>
+            </ul>
+        </nav>
+        <a href="{{ site.registration_url }}" target="_blank" class="btn-primary">Register Now</a>
+    </header>
+
+    <!-- Code of Conduct Content -->
+    <section class="container">
+        <h1 class="section-title">Code of Conduct</h1>
+        <p class="section-subtitle">Fostering a welcoming and collaborative community.</p>
+
+        <h2>Our Commitment</h2>
+        <p>The organizers of HackHPC@ADMI26 are dedicated to providing a safe, inclusive, and harassment-free experience for everyone, regardless of gender, gender identity and expression, age, sexual orientation, disability, physical appearance, body size, race, ethnicity, religion (or lack thereof), or technology choices. We do not tolerate harassment of event participants in any form. </p>
+        <p>Aligned with the principles of the Science Gateways community, we believe that diverse teams building High-Performance Computing solutions require an environment grounded in mutual respect and consideration.</p>
+    </section>
+
+    <section class="container bg-light">
+        <h2>Participant Code of Conduct</h2>
+        <p>All attendees, sponsors, mentors, volunteers, and staff participating in the virtual event (June 22 - 26, 2026) are required to agree with the following Code of Conduct. Organizers will enforce this code throughout the event to ensure a safe environment for everybody.</p>
+
+        <h3 style="margin-top: 1.5rem;">Expected Behavior</h3>
+        <ul>
+            <li><strong>Be Respectful and Considerate:</strong> Value the diverse backgrounds, perspectives, and skill levels of your peers. High-Performance Computing and AI are complex fields; patience and constructive feedback are essential.</li>
+            <li><strong>Communicate Professionally:</strong> Use welcoming and inclusive language. Whether in Zoom chats, Discord channels, or GitHub pull requests, ensure your communication is appropriate for a professional audience.</li>
+            <li><strong>Collaborate Authentically:</strong> Share knowledge openly. The primary goal of this event is workforce development and learning. Support your teammates and respect the time of the mentors.</li>
+        </ul>
+
+        <h3 style="margin-top: 1.5rem;">Unacceptable Behavior</h3>
+        <p>Unacceptable behaviors include, but are not limited to:</p>
+        <ul>
+            <li>Harassment, bullying, intimidation, or discrimination in any form.</li>
+            <li>Offensive, derogatory, or exclusionary comments related to personal characteristics or technology choices.</li>
+            <li>Unwelcome sexual attention or advances.</li>
+            <li>Disrupting virtual presentations, workshops, or team meetings (e.g., "Zoommodbombing" or spamming chat channels).</li>
+            <li>Publishing others' private information, such as physical or electronic addresses, without explicit permission.</li>
+        </ul>
+    </section>
+
+    <section class="container">
+        <h2>Enforcement and Consequences</h2>
+        <p>Participants asked to stop any harassing or unacceptable behavior are expected to comply immediately. If a participant engages in unacceptable behavior, the event organizers retain the right to take any action they deem appropriate. This includes issuing formal warnings, removing the individual from the hackathon's Discord servers and GitHub organizations, or banning them from future events without a refund of any associated fees or prizes.</p>
+
+        <h2 style="margin-top: 2rem;">Reporting an Incident</h2>
+        <p>If you are subject to or witness unacceptable behavior, or have any other concerns, please notify the organizing team immediately. You can report incidents in the following ways:</p>
+        
+        <ul style="list-style: none; padding-left: 0; margin-top: 1rem;">
+            <li style="margin-bottom: 0.5rem;">
+                <strong>Direct Message on Discord:</strong> Reach out directly to the Lead Organizer or any staff member identified by the "Admin" or "Staff" role.
+            </li>
+            <li style="margin-bottom: 0.5rem;">
+                <strong>Email:</strong> Send a confidential email to the event coordination team.
+            </li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 HackHPC@ADMI26. All rights reserved.</p>
+    </footer>
+</body>
+</html>

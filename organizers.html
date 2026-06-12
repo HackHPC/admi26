@@ -1,0 +1,240 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organizers | {{ site.title }}</title>
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/styles.css">
+    <link rel="icon" type="image/x-icon" href="{{ site.baseurl }}/assets/images/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .organizers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .organizer-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .organizer-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .organizer-header {
+            background: linear-gradient(135deg, var(--primary-color), #2980b9);
+            padding: 1.5rem;
+            text-align: center;
+            color: white;
+        }
+
+        .organizer-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            margin-bottom: 1rem;
+        }
+
+        .organizer-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 0.5rem 0;
+        }
+
+        .organizer-affiliation {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            margin-bottom: 0;
+        }
+
+        .organizer-body {
+            padding: 1.5rem;
+        }
+
+        .organizer-bio {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .organizer-contact {
+            margin-bottom: 1rem;
+        }
+
+        .organizer-contact-item {
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .organizer-contact-item strong {
+            display: inline-block;
+            min-width: 70px;
+        }
+
+        .organizer-contact-item a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .organizer-contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        .organizer-social {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            border-top: 1px solid #eee;
+            padding-top: 1rem;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: #f0f0f0;
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .social-link:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="logo">
+            <a href="{{ site.baseurl }}/"><img src="{{ site.baseurl }}/assets/images/logo-only-sq.svg" alt="HackHPC Logo" class="nav-logo"></a>
+            <span class="site-title">{{ site.title }}</span>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="{{ site.baseurl }}/#about">About</a></li>
+                <li><a href="{{ site.baseurl }}/schedule.html">Schedule</a></li>
+                <li><a href="{{ site.baseurl }}/staff.html">Staff</a></li>
+                {% if site.show_teams %}
+                <li><a href="{{ site.baseurl }}/#teams">Teams</a></li>
+                {% endif %}
+                {% if site.show_deliverables %}
+                <li><a href="{{ site.baseurl }}/#deliverables">Deliverables</a></li>
+                {% endif %}
+                <li><a href="{{ site.baseurl }}/resources.html">Resources</a></li>
+                <li><a href="{{ site.baseurl }}/organizers.html" class="active">Organizers</a></li>
+                <li><a href="{{ site.baseurl }}/code-of-conduct.html">Code of Conduct</a></li>
+            </ul>
+        </nav>
+        <a href="{{ site.registration_url }}" target="_blank" class="btn-primary">Register Now</a>
+    </header>
+
+    <!-- Organizers Section -->
+    <section class="container">
+        <h1 class="section-title">Organizers</h1>
+        <p class="section-subtitle">Meet the team behind HackHPC@ADMI26</p>
+    </section>
+
+    <section class="container">
+        <div class="organizers-grid">
+            {% for person in site.data.organizers.organizers %}
+            <div class="organizer-card">
+                <div class="organizer-header">
+                    {% if person.avatar %}
+                    <img src="{{ site.baseurl }}/{{ person.avatar }}" alt="{{ person.name }}" class="organizer-avatar">
+                    {% endif %}
+                    <h3 class="organizer-name">{{ person.name }}</h3>
+                    <p class="organizer-affiliation">
+                        {% if person.site %}
+                        <a href="{{ person.site }}" target="_blank" style="color: white; text-decoration: none;">{{ person.affiliation }}</a>
+                        {% else %}
+                        {{ person.affiliation }}
+                        {% endif %}
+                    </p>
+                </div>
+
+                <div class="organizer-body">
+                    {% if person.bio %}
+                    <p class="organizer-bio">{{ person.bio }}</p>
+                    {% endif %}
+
+                    <div class="organizer-contact">
+                        {% if person.email %}
+                        <div class="organizer-contact-item">
+                            <strong>Email:</strong>
+                            <a href="mailto:{{ person.email }}">{{ person.email }}</a>
+                        </div>
+                        {% endif %}
+                    </div>
+
+                    <div class="organizer-social">
+                        {% if person.linkedin %}
+                        <a href="{{ person.linkedin }}" target="_blank" class="social-link" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        {% endif %}
+                        
+                        {% if person.twitter %}
+                        <a href="{{ person.twitter }}" target="_blank" class="social-link" title="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        {% endif %}
+                        
+                        {% if person.github %}
+                        <a href="{{ person.github }}" target="_blank" class="social-link" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        {% endif %}
+                        
+                        {% if person.personal_site %}
+                        <a href="{{ person.personal_site }}" target="_blank" class="social-link" title="Personal Website">
+                            <i class="fas fa-globe"></i>
+                        </a>
+                        {% endif %}
+                        
+                        {% if person.orcid %}
+                        <a href="https://orcid.org/{{ person.orcid }}" target="_blank" class="social-link" title="ORCID">
+                            <i class="fab fa-orcid"></i>
+                        </a>
+                        {% endif %}
+                        
+                        {% if person.research_gate %}
+                        <a href="https://www.researchgate.net/profile/{{ person.research_gate }}" target="_blank" class="social-link" title="ResearchGate">
+                            <i class="fab fa-researchgate"></i>
+                        </a>
+                        {% endif %}
+                        
+                        {% if person.scholar %}
+                        <a href="https://scholar.google.com/citations?user={{ person.scholar }}" target="_blank" class="social-link" title="Google Scholar">
+                            <i class="fas fa-graduation-cap"></i>
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 HackHPC@ADMI26. All rights reserved.</p>
+    </footer>
+</body>
+</html>

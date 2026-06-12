@@ -1,0 +1,115 @@
+general_schedule:
+  - date: "2026-06-22T10:00:00-04:00"
+    session: Morning
+    zoomlink: "https://zoom.us/j/placeholder"
+    theme: "Day 1: Kick-Off"
+    events: 
+      - name: Hackathon Overview
+        type: Presentations
+        links:
+          - title: Supercomputing Reproducibility Initiative
+            url: "#"
+            icon: fa-solid fa-link
+            iconcolor: blue
+          - title: Session Slide Deck
+            icon: fa-regular fa-file-pdf
+            url: "assets/slides/event/KickOff-HackHPCatADMI26.pdf"
+            iconcolor: red
+      - name: Team Formation
+        type: Project Work
+
+  - date: "2026-06-22T16:00:00-04:00"
+    session: Afternoon
+    zoomlink: "https://zoom.us/j/placeholder"
+    theme: "Afternoon Check-in"
+    events: 
+      - name: Team Introductions
+        type: Presentations 
+        description: >
+          1-Slide/1-Minute with: <br>
+          &nbsp;&nbsp; - Team Name <br>
+          &nbsp;&nbsp; - Team Members <br>
+          &nbsp;&nbsp; - Team Zoom Virtual Background <br>
+          &nbsp;&nbsp; - Team Theme Song <br>
+
+  - date: "2026-06-23T10:00:00-04:00"
+    session: Morning
+    zoomlink: "https://zoom.us/j/placeholder"
+    theme: "Day 2: Project Plan"
+    events: 
+      - name: Project Plan
+        type: Presentations 
+        description: >
+          5-Slides/5-Minutes with: <br>
+          &nbsp;&nbsp; - Team Name <br>
+          &nbsp;&nbsp; - Project Plan with team members linked to roles and at least five (5) tasks needed to accomplish those goals
+
+  - date: "2026-06-23T16:00:00-04:00"
+    session: Afternoon
+    zoomlink: "https://zoom.us/j/placeholder"
+    theme: "Afternoon Check-in"
+    events: 
+      - name: Team Progress 
+        type: Presentations 
+        description: >
+          2-Slides/2-Minutes with: <br>
+          &nbsp;&nbsp; - Progress Priorities <br>
+          &nbsp;&nbsp; - Updated Project Plan <br>
+          &nbsp;&nbsp; - Technology/Resources in Use <br>
+          &nbsp;&nbsp; - Bottlenecks / Issues / Concerns
+
+  - date: "2026-06-24T10:00:00-04:00"
+    session: Morning
+    zoomlink: "https://zoom.us/j/placeholder"
+    theme: "Day 3: Check-in"
+    events: 
+      - name: Sponsor Highlights & Mentorship
+        type: Sponsor Presentations
+      - name: Team Progress 
+        type: Presentations 
+        description: "Standard 2-Slide/2-Minute update format."
+
+  - date: "2026-06-24T16:00:00-04:00"
+    session: Afternoon
+    zoomlink: "https://zoom.us/j/placeholder"
+    theme: "Afternoon Check-in"
+    events: 
+      - name: Team Progress 
+        type: Presentations 
+
+  - date: "2026-06-25T10:00:00-04:00"
+    session: Morning
+    zoomlink: "https://zoom.us/j/placeholder"
+    theme: "Day 4: Check-in"
+    events: 
+      - name: Advanced Workshops
+        type: Presentations
+      - name: Team Progress 
+        type: Presentations 
+
+  - date: "2026-06-25T16:00:00-04:00"
+    session: Afternoon
+    zoomlink: "https://zoom.us/j/placeholder"
+    theme: "Afternoon Check-in"
+    events: 
+      - name: Dry-Run Presentations 
+        type: Presentations 
+
+  - date: "2026-06-26T10:00:00-04:00"
+    session: Morning
+    zoomlink: "https://zoom.us/j/placeholder"
+    theme: "Day 5: Final Check-in"
+    events: 
+      - name: Final Adjustments & Deliverables Upload
+        type: Project Work 
+        description: "All files must be pushed to your team directories before the 2:00 PM session."
+  
+  - date: "2026-06-26T14:00:00-04:00"
+    session: Afternoon
+    zoomlink: "https://zoom.us/j/placeholder"
+    theme: "Final Presentations & Awards"
+    events: 
+      - name: Final Presentations
+        type: Presentations 
+      - name: Closing Remarks & Awards
+        type: Ceremony

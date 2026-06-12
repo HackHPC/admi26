@@ -1,0 +1,27 @@
+# _data/sponsors.yml
+- tier: Platinum
+  sponsors:
+    - name: Association of Computer Science Departments at Minority Institutions (ADMI)
+      logo: assets/images/admi-logo.png
+      url: https://admiusa.org/
+    - name: Science Gateways (SGX3)
+      logo: assets/images/sgx3-logo.png
+      url: https://sciencegateways.org/
+    - name: National Science Foundation (NSF)
+      logo: assets/images/nsf-logo.png
+      url: https://www.nsf.gov/
+
+- tier: Gold
+  sponsors:
+    - name: Texas Advanced Computing Center (TACC)
+      logo: assets/images/tacc-logo.png
+      url: https://www.tacc.utexas.edu/
+    - name: projectEUREKA!
+      logo: assets/images/eureka-logo.png
+      url: https://projecteureka.org/
+
+- tier: Silver
+  sponsors:
+    - name: HackHPC
+      logo: assets/images/hackhpc-logo.png
+      url: https://hackhpc.org/

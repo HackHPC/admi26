@@ -1,0 +1,134 @@
+staff:
+- name: Nole Stites
+  avatar: assets/images/nole.png
+  affiliation: Southern Oregon University
+  site: https://sou.edu
+  role: Student Staff/Mentor
+  linkedin: https://www.linkedin.com/in/nole-stites
+  github: NoleStites
+  personal_site: https://nolestites.com
+  email: nole.stites@gmail.com
+
+teams:
+- teamname: CodeRunners
+  awards: 
+  - Data Portal Award
+  - Project Plan
+  members:
+    names:
+    - Iyana Jones
+    - Arghavan Noori
+    - Aaliyah Lockett
+    - Copernic Mensah
+    - Holy Agyei
+    affiliation:
+    - Elizabeth City State University
+    - 'Mississippi Valley State University '
+    - Albany State University
+    - Hampton University
+    - Grambling State University
+    affiliationurl:
+    - Elizabeth City State University
+    - 'Mississippi Valley State University '
+    - Albany State University
+    - Hampton University
+    - Grambling State University
+    major:
+    - 'Computer Science '
+    - 'Computer Science '
+    - Computer Science
+    - Computer Science
+    - Computer Science
+    role:
+    - Student Participant
+    - Student Participant
+    - Student Participant
+    - Student Participant
+    - Student Participant
+  files: "teams/CodeRunners"
+  links:
+  - name: GitHub Repo
+    url: https://github.com/SGX3CodeRunners/RealWorldBugs
+    icon: "fa-brands fa-github"
+    iconcolor: black
+
+- teamname: HackStreet Boys
+  awards: 
+  - Scorecard Analytics Award	
+  - Team Introduction
+  files: "teams/HackStreetBoys"
+  members:
+    names:
+    - Yari Pettis
+    - Zion Pease
+    - Dave Brown
+    - Ejay Aguirre
+    - Julian Tolbert
+    affiliation:
+    - North Carolina A&T State University
+    - Albany State University
+    - Elizabeth City State University
+    - University of Utah
+    - North Carolina A&T State University
+    major:
+    - Computer Science
+    - Computer Science
+    - Computer Science and Mathematics
+    - Data Science
+    - Computer science
+  links:
+  - name: GitHub Repo
+    url: https://github.com/JulianCT05/SGX3-Hackathon
+    icon: "fa-brands fa-github"
+    iconcolor: black
+
+- teamname: Hard to Cache
+  files: "teams/HardtoCache"
+  awards: 
+  - Gateways Impact Award	
+  - 1-Day Progress
+  members:
+    names:
+    - Charli Brooks
+    - Silas Erving
+    - Chante Ray
+    - Seth Mack
+    affiliation:
+    - Elizabeth City State University
+    - Morehouse College
+    - Mississippi Valley State University
+    - Morehouse College
+    major:
+    - Aviation Science
+    - Software Engineering
+    - Computer Science
+    - Software Engineering
+  links:
+    - name: GitHub Repo
+      url: https://github.com/Hard-to-Cache/Hard-2-Cache
+      icon: "fa-brands fa-github"
+      iconcolor: black
+
+- teamname: Wiresharks
+  files: "teams/Wiresharks"
+  members:
+    names:
+    - Auiana D'Avilar 
+    - Ayinde Hooks
+    - Shiloh Ames
+    - Ryan Grimes
+    affiliation:
+    - Hampton University 
+    - Hampton University
+    - Hampton University
+    - Hampton University
+    major:
+    - Cybersecurity 
+    - Cybersecurity
+    - Computer Science
+    - Cybersecurity
+  links:
+    - name: GitHub Repo
+      url: https://github.com/rygrimes1/Wiresharks
+      icon: "fa-brands fa-github"
+      iconcolor: black

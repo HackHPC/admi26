@@ -1,0 +1,61 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources | {{ site.title }}</title>
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/styles.css">
+    <link rel="icon" type="image/x-icon" href="{{ site.baseurl }}/assets/images/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <a href="{{ site.baseurl }}/"><img src="{{ site.baseurl }}/assets/images/logo-only-sq.svg" alt="HackHPC Logo" class="nav-logo"></a>
+            <span class="site-title">{{ site.title }}</span>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="{{ site.baseurl }}/#about">About</a></li>
+                <li><a href="{{ site.baseurl }}/schedule.html">Schedule</a></li>
+                <li><a href="{{ site.baseurl }}/staff.html">Staff</a></li>
+                {% if site.show_teams %}
+                <li><a href="{{ site.baseurl }}/#teams">Teams</a></li>
+                {% endif %}
+                <li><a href="{{ site.baseurl }}/resources.html" class="active">Resources</a></li>
+                <li><a href="{{ site.baseurl }}/organizers.html">Organizers</a></li>
+                <li><a href="{{ site.baseurl }}/code-of-conduct.html">Code of Conduct</a></li>
+            </ul>
+        </nav>
+        <a href="{{ site.registration_url }}" target="_blank" class="btn-primary">Register Now</a>
+    </header>
+
+    <section class="container">
+        <h1>Event Resources</h1>
+        <p>APIs, documentation, and compute cluster access guides will be posted here.</p>
+    </section>
+
+    {% if site.show_deliverables %}
+    <section id="submission" class="container bg-light" style="border-top: 4px solid var(--primary-color);">
+        <h2>Deliverable Submission Guidelines</h2>
+        <p>Ready to submit your final project? Ensure all files meet the naming conventions and are uploaded to your designated team folder.</p>
+        
+        <ul style="line-height: 2; margin-top: 1rem; margin-left: 1.5rem;">
+            <li><strong>Templates:</strong> <a href="#" download>Download the official slide deck template</a>.</li>
+            <li><strong>Naming Convention:</strong> Please name all files starting with your team name (e.g., <code>TeamXavier_Presentation.pdf</code>).</li>
+            <li><strong>Deadline:</strong> All materials must be pushed to your directory by Friday, June 26 at 12:00 PM EST.</li>
+        </ul>
+
+        <div style="margin-top: 2rem; text-align: center;">
+            <a href="#" target="_blank" class="btn-primary">Submit Final Project</a>
+        </div>
+    </section>
+    {% endif %}
+
+    <footer>
+        <p>&copy; 2026 HackHPC@ADMI26. All rights reserved.</p>
+    </footer>
+</body>
+</html>

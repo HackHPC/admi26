@@ -1,0 +1,188 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ site.title }} | June 22 - 26, 2026</title>
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/styles.css">
+    <link rel="icon" type="image/x-icon" href="{{ site.baseurl }}/assets/images/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="description" content="{{ site.description }}">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="logo">
+            <a href="{{ site.baseurl }}/"><img src="{{ site.baseurl }}/assets/images/logo-only-sq.svg" alt="HackHPC Logo" class="nav-logo"></a>
+            <span class="site-title">{{ site.title }}</span>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="{{ site.baseurl }}/#about" class="active">About</a></li>
+                <li><a href="{{ site.baseurl }}/schedule.html">Schedule</a></li>
+                <li><a href="{{ site.baseurl }}/staff.html">Staff</a></li>
+                {% if site.show_teams %}
+                <li><a href="{{ site.baseurl }}/#teams">Teams</a></li>
+                {% endif %}
+                {% if site.show_deliverables %}
+                <li><a href="{{ site.baseurl }}/#deliverables">Deliverables</a></li>
+                {% endif %}
+                <li><a href="{{ site.baseurl }}/resources.html">Resources</a></li>
+                <li><a href="{{ site.baseurl }}/organizers.html">Organizers</a></li>
+                <li><a href="{{ site.baseurl }}/code-of-conduct.html">Code of Conduct</a></li>
+            </ul>
+        </nav>
+        <a href="{{ site.registration_url }}" target="_blank" class="btn-primary">Register Now</a>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <!-- The transparent text and logo image -->
+            <img src="{{ site.baseurl }}/assets/images/header-hero-text-only.svg" alt="HackHPC@ADMI26 - June 22-26, 2026" class="hero-brand-img">
+            
+            <p class="hero-tagline">{{ site.description }}</p>
+            
+            <div class="hero-actions">
+                <a href="{{ site.registration_url }}" target="_blank" class="btn-primary">Join the Hackathon</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="container">
+        <h2>About the Event</h2>
+        <p>HackHPC@ADMI26 is a five-day virtual hackathon built around structured collaboration, mentoring, and advanced computing problem-solving. Each morning session launches a focused theme — from kickoff and team formation to project plan reviews, mentorship demos, advanced workshops, and final preparation — while afternoon check-ins keep teams on track with progress updates and troubleshooting support.</p>
+        <p>Throughout the week, teams will develop project plans, present regular progress updates, refine technology choices, and practice their pitches before delivering final presentations and celebrating achievements at the closing awards session. Expect a mix of hands-on project work, iterative feedback, sponsor engagement, and a strong emphasis on teamwork and real-world HPC application.</p>
+        <ul class="about-list">
+            <li><strong>Who:</strong> Students, researchers, and early career technologists forming teams to build HPC and AI-enabled science gateway solutions.</li>
+            <li><strong>What:</strong> A structured, virtual hackathon with kickoff sessions, project planning, mentor check-ins, technical workshops, dry-run presentations, and a final awards showcase.</li>
+            <li><strong>When:</strong> June 22–26, 2026, with morning and afternoon sessions each day to keep momentum and provide support.</li>
+            <li><strong>Where:</strong> Fully virtual — join via Zoom and collaborate online using your team workspace and shared tools.</li>
+        </ul>
+    </section>
+
+    <!-- Participating Teams Section (Conditional) -->
+    {% if site.show_teams %}
+    <section id="teams" class="container bg-light">
+        <h2 class="section-title">Participating Teams</h2>
+        <div class="grid">
+            
+            {% for team in site.data.hackathon.teams %}
+            <div class="team-card">
+                <!-- Team Header & Awards -->
+                <h3>{{ team.teamname }}</h3>
+                
+                {% if team.awards %}
+                <div class="awards-container">
+                    {% for award in team.awards %}
+                        <span class="badge award-badge">🏆 {{ award }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                <hr style="margin: 1rem 0; border-top: 1px solid #eee;">
+
+                <!-- Team Members -->
+                <h4>Team Members:</h4>
+                <ul class="member-list">
+                    {% for name in team.members.names %}
+                    {% assign i = forloop.index0 %}
+                    <li>
+                        <strong>{{ name }}</strong><br>
+                        <span class="member-details">
+                            {{ team.members.major[i] }} | {{ team.members.affiliation[i] }}
+                        </span>
+                    </li>
+                    {% endfor %}
+                </ul>
+
+                <!-- Important Links & Automated Directory Files -->
+                <div class="team-resources" style="margin-top: 1.5rem;">
+                    
+                    {% if team.links %}
+                        <div class="external-links">
+                            {% for link in team.links %}
+                                <a href="{{ link.url }}" target="_blank" class="btn-secondary resource-link">
+                                    <i class="{{ link.icon }}" style="color: {{ link.iconcolor }};"></i> {{ link.name }}
+                                </a>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+
+                    {% if team.files %}
+                        <h4 style="margin-top: 1rem; font-size: 0.9rem; color: #555;">Team Files:</h4>
+                        <div class="auto-files">
+                            {% for file in site.static_files %}
+                                {% if file.path contains team.files %}
+                                    
+                                    {% if file.extname == '.pdf' %}
+                                        <a href="{{ site.baseurl }}{{ file.path }}" target="_blank" class="btn-secondary resource-link">
+                                            <i class="fa-regular fa-file-pdf" style="color: red;"></i> {{ file.name }}
+                                        </a>
+                                    {% elsif file.extname == '.png' or file.extname == '.jpg' or file.extname == '.jpeg' or file.extname == '.gif' %}
+                                        <a href="{{ site.baseurl }}{{ file.path }}" target="_blank" class="btn-secondary resource-link">
+                                            <i class="fa-regular fa-image" style="color: #0056b3;"></i> View {{ file.name }}
+                                        </a>
+                                    {% elsif file.extname == '.mp3' %}
+                                        <div class="audio-player" style="margin-top: 0.5rem; margin-bottom: 0.5rem;">
+                                            <span style="font-size: 0.8rem; display: block; margin-bottom: 0.2rem;">🎵 Theme Song</span>
+                                            <audio controls style="width: 100%; max-height: 40px;">
+                                                <source src="{{ site.baseurl }}{{ file.path }}" type="audio/mpeg">
+                                            </audio>
+                                        </div>
+                                    {% elsif file.extname == '.mp4' %}
+                                        <div class="video-player" style="margin-top: 0.5rem; margin-bottom: 0.5rem;">
+                                            <span style="font-size: 0.8rem; display: block; margin-bottom: 0.2rem;">🎥 Video Pitch</span>
+                                            <video controls style="width: 100%; border-radius: 4px;">
+                                                <source src="{{ site.baseurl }}{{ file.path }}" type="video/mp4">
+                                            </video>
+                                        </div>
+                                    {% endif %}
+                                    
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+
+                </div>
+
+            </div>
+            {% endfor %}
+
+        </div>
+    </section>
+    {% endif %}
+
+    <!-- Required Deliverables Section (Conditional) -->
+    {% if site.show_deliverables %}
+    <section id="deliverables" class="container bg-light">
+        <h2 class="section-title">Hackathon Deliverables</h2>
+        <p class="section-subtitle">What you need to submit by the final day.</p>
+        <div class="grid">
+            <div class="card">
+                <h3><i class="fa-brands fa-github" style="color: black;"></i> Code Repository</h3>
+                <p>A well-documented GitHub repository containing all source code, automation scripts, and an informative README.</p>
+            </div>
+            <div class="card">
+                <h3><i class="fa-regular fa-file-pdf" style="color: red;"></i> Project Presentation</h3>
+                <p>A slide deck (submitted as a PDF) detailing your team's problem statement, methodology, and technical architecture.</p>
+            </div>
+            <div class="card">
+                <h3><i class="fa-solid fa-video" style="color: #0056b3;"></i> Video Pitch</h3>
+                <p>A 3 to 5-minute recorded video demonstrating your final solution and highlighting core features.</p>
+            </div>
+        </div>
+    </section>
+    {% endif %}
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 HackHPC@ADMI26. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

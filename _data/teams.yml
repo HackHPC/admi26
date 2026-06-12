@@ -1,0 +1,58 @@
+# _data/teams.yml
+- teamname: Team Xavier
+  awards: 
+    - Best Hardware Integration
+  files: "teams/TeamXavier"
+  members:
+    names:
+      - Alice Hacker
+      - Bob Builder
+    affiliation:
+      - University of Central Florida
+      - Texas A&M San Antonio
+    major:
+      - Computer Engineering
+      - Computer Science
+    role:
+      - Hardware Specialist
+      - Student Participant
+    socials:
+      - https://linkedin.com/in/alicehacker
+      - https://linkedin.com/in/bobbuilder
+    email:
+      - alice.hacker@ucf.edu
+      - bbuilder@tamusa.edu
+  links:
+    - name: GitHub Repo
+      url: https://github.com/TeamXavier/AGX-Cluster
+      icon: "fa-brands fa-github"
+      iconcolor: black
+
+- teamname: Team Stark
+  awards: 
+    - Data Visualization Award
+  files: "teams/TeamStark"
+  members:
+    names:
+      - Charlie Data
+      - Diana Compute
+    affiliation:
+      - University of Florida
+      - Valencia College
+    major:
+      - Data Science
+      - Information Technology
+    role:
+      - Student Participant
+      - Student Participant
+    socials:
+      - https://linkedin.com/in/charliedata
+      - https://linkedin.com/in/dianacompute
+    email:
+      - charlie.d@ufl.edu
+      - dcompute@valenciacollege.edu
+  links:
+    - name: GitHub Repo
+      url: https://github.com/TeamStark/Euclidean-Mapping
+      icon: "fa-brands fa-github"
+      iconcolor: black

@@ -1,0 +1,101 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule | {{ site.title }}</title>
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/styles.css">
+    <link rel="icon" type="image/x-icon" href="{{ site.baseurl }}/assets/images/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="logo">
+            <a href="{{ site.baseurl }}/"><img src="{{ site.baseurl }}/assets/images/logo-only-sq.svg" alt="HackHPC Logo" class="nav-logo"></a>
+            <span class="site-title">{{ site.title }}</span>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="{{ site.baseurl }}/#about">About</a></li>
+                <li><a href="{{ site.baseurl }}/schedule.html" class="active">Schedule</a></li>
+                <li><a href="{{ site.baseurl }}/staff.html">Staff</a></li>
+                {% if site.show_teams %}
+                <li><a href="{{ site.baseurl }}/#teams">Teams</a></li>
+                {% endif %}
+                {% if site.show_deliverables %}
+                <li><a href="{{ site.baseurl }}/#deliverables">Deliverables</a></li>
+                {% endif %}
+                <li><a href="{{ site.baseurl }}/resources.html">Resources</a></li>
+                <li><a href="{{ site.baseurl }}/organizers.html">Organizers</a></li>
+                <li><a href="{{ site.baseurl }}/code-of-conduct.html">Code of Conduct</a></li>
+            </ul>
+        </nav>
+        <a href="{{ site.registration_url }}" target="_blank" class="btn-primary">Register Now</a>
+    </header>
+
+    <!-- Event Schedule Section -->
+    <section class="container">
+        <h1 class="section-title">Event Schedule</h1>
+        <p class="section-subtitle">All times listed in Eastern Time (ET).</p>
+
+        <div class="schedule-timeline">
+            
+            {% for block in site.data.schedule.general_schedule %}
+            <div class="schedule-block">
+                
+                <!-- Time, Theme, and Zoom Header -->
+                <div class="schedule-header">
+                    <div class="schedule-datetime">
+                        <span class="date">{{ block.date | date: "%A, %b %-d" }}</span>
+                        <span class="time">{{ block.date | date: "%-I:%M %p" }} ET</span>
+                    </div>
+                    
+                    <div class="schedule-theme">
+                        <h3>{{ block.theme }}</h3>
+                        {% if block.zoomlink %}
+                        <a href="{{ block.zoomlink }}" target="_blank" class="btn-zoom">
+                            <i class="fa-solid fa-video"></i> Join Zoom
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <!-- Sub-Events Loop -->
+                <div class="schedule-events">
+                    {% for event in block.events %}
+                    <div class="event-item">
+                        <h4 class="event-name">{{ event.name }} <span class="event-type">({{ event.type }})</span></h4>
+                        
+                        {% if event.description %}
+                        <div class="event-desc">
+                            {{ event.description }}
+                        </div>
+                        {% endif %}
+
+                        {% if event.links %}
+                        <div class="event-links">
+                            {% for link in event.links %}
+                            <a href="{{ link.url }}" target="_blank" class="link-item">
+                                <i class="{{ link.icon }}" style="color: {{ link.iconcolor }};"></i> {{ link.title }}
+                            </a>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 HackHPC@ADMI26. All rights reserved.</p>
+    </footer>
+</body>
+</html>
