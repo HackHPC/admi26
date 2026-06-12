@@ -1,4 +1,4 @@
-<img src="Header-hero-with-text.png" width=80%>
+<img src="Header-hero-with-text.png" style = "width: 80%">
 
 # HackHPC@ADMI26 Hackathon 
 
