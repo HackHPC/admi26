@@ -43,12 +43,15 @@
         
         <div class="grid profile-grid">
             
-            {% for person in site.data.hackathon.staff %}
+            {% for person in site.data.staff.staff %}
             <div class="profile-card">
                 <div class="avatar" style="background-image: url('{{ site.baseurl }}/{{ person.avatar }}'); background-size: cover; background-position: center;"></div>
                 <h3>{{ person.name }}</h3>
                 <p class="role">{{ person.role }}</p>
                 <p class="affiliation"><a href="{{ person.site }}" target="_blank">{{ person.affiliation }}</a></p>
+                {% if person.bio %}
+                <p class="bio">{{ person.bio }}</p>
+                {% endif %}
                 
                 <div class="social-links">
                     {% if person.linkedin %}<a href="{{ person.linkedin }}" target="_blank">LinkedIn</a> | {% endif %}

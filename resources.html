@@ -34,7 +34,104 @@
 
     <section class="container">
         <h1>Event Resources</h1>
-        <p>APIs, documentation, and compute cluster access guides will be posted here.</p>
+        <p>Access APIs, documentation, tutorials, and compute cluster guides for the hackathon.</p>
+        
+        <div class="resources-by-category">
+            {% assign sorted_resources = site.data.resources.resources | sort: "category" %}
+            {% assign current_category = "" %}
+            {% assign category_count = 0 %}
+            
+            {% for resource in sorted_resources %}
+                {% if resource.category != current_category %}
+                    {% if current_category != "" %}
+                    </div>
+                    </div>
+                    </div>
+                    {% endif %}
+                    
+                    {% assign category_count = category_count | plus: 1 %}
+                    <div class="category-section">
+                        <button class="category-toggle" data-category="category-{{ category_count }}">
+                            <div class="category-header">
+                                <h2>{{ resource.category }}</h2>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </button>
+                        <div class="category-content" id="category-{{ category_count }}">
+                        <div class="category-resources-list">
+                    
+                    {% assign current_category = resource.category %}
+                {% endif %}
+                
+                <div class="resource-list-item">
+                    <div class="resource-list-content">
+                        <div class="resource-list-header">
+                            <i class="{{ resource.icon }}"></i>
+                            <a href="{{ resource.url }}" target="_blank" class="resource-title-link">
+                                <h3>{{ resource.title }}</h3>
+                            </a>
+                        </div>
+                        <p class="resource-list-description">{{ resource.description }}</p>
+                    </div>
+                    <a href="{{ resource.url }}" class="resource-list-link" target="_blank">
+                        <span>Learn More</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            {% endfor %}
+            
+            {% if current_category != "" %}
+                        </div>
+                        </div>
+                    </div>
+            {% endif %}
+        </div>
+    </section>
+
+    <!-- Session Resources Section -->
+    <section class="container" style="margin-top: 3rem; border-top: 2px solid var(--primary-color); padding-top: 2rem;">
+        <h2>Session Resources by Date</h2>
+        <p>Resources, links, and materials specific to each hackathon session.</p>
+        
+        <div class="session-resources">
+            {% for block in site.data.schedule.general_schedule %}
+                {% assign has_links = false %}
+                {% for event in block.events %}
+                    {% if event.links %}
+                        {% assign has_links = true %}
+                    {% endif %}
+                {% endfor %}
+                
+                {% if has_links %}
+                <div class="session-block">
+                    <div class="session-header">
+                        <h3>{{ block.theme }}</h3>
+                        <p class="session-date">{{ block.date | date: "%A, %B %d at %I:%M %p" }}</p>
+                        {% if block.session %}
+                        <span class="session-label">{{ block.session }}</span>
+                        {% endif %}
+                    </div>
+                    
+                    {% for event in block.events %}
+                        {% if event.links %}
+                        <div class="event-resources">
+                            <h4>{{ event.name }}</h4>
+                            <div class="resource-links-list">
+                                {% for link in event.links %}
+                                <a href="{{ link.url }}" target="_blank" class="resource-link-item">
+                                    <i class="{{ link.icon }}" style="color: {{ link.iconcolor | default: 'var(--primary-color)' }};"></i>
+                                    <span>{{ link.title }}</span>
+                                    <i class="fas fa-external-link-alt" style="font-size: 0.75rem; margin-left: auto;"></i>
+                                </a>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
     </section>
 
     {% if site.show_deliverables %}
@@ -57,5 +154,33 @@
     <footer>
         <p>&copy; 2026 HackHPC@ADMI26. All rights reserved.</p>
     </footer>
+
+    <script>
+        document.querySelectorAll('.category-toggle').forEach(button => {
+            button.addEventListener('click', function() {
+                const categoryId = this.getAttribute('data-category');
+                const content = document.getElementById(categoryId);
+                const isOpen = content.classList.contains('open');
+                
+                document.querySelectorAll('.category-content').forEach(el => {
+                    el.classList.remove('open');
+                });
+                document.querySelectorAll('.category-toggle').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                
+                if (!isOpen) {
+                    content.classList.add('open');
+                    this.classList.add('active');
+                }
+            });
+        });
+
+        // Open first category by default
+        const firstToggle = document.querySelector('.category-toggle');
+        if (firstToggle) {
+            firstToggle.click();
+        }
+    </script>
 </body>
 </html>
