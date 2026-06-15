@@ -1,26 +1,26 @@
 general_schedule:
   - date: "2026-06-22T10:00:00-04:00"
     session: Morning
-    zoomlink: "https://zoom.us/j/placeholder"
+    zoomlink: "https://us06web.zoom.us/j/83678288741?pwd=9jf7gzHu4UUU4qxuUtf6ieZorzQlfT.1"
     theme: "Day 1: Kick-Off"
     events: 
       - name: Hackathon Overview
         type: Presentations
         links:
-          - title: Supercomputing Reproducibility Initiative
-            url: "#"
-            icon: fa-solid fa-link
-            iconcolor: blue
-          - title: Session Slide Deck
-            icon: fa-regular fa-file-pdf
-            url: "assets/slides/event/KickOff-HackHPCatADMI26.pdf"
-            iconcolor: red
+          #- title: Supercomputing Reproducibility Initiative
+          #  url: "#"
+          #  icon: fa-solid fa-link
+          #  iconcolor: blue
+          #- title: Session Slide Deck
+          #  icon: fa-regular fa-file-pdf
+          #  url: "assets/slides/event/KickOff-HackHPCatADMI26.pdf"
+          #  iconcolor: red
       - name: Team Formation
         type: Project Work
 
   - date: "2026-06-22T16:00:00-04:00"
     session: Afternoon
-    zoomlink: "https://zoom.us/j/placeholder"
+    zoomlink: "https://us06web.zoom.us/j/83678288741?pwd=9jf7gzHu4UUU4qxuUtf6ieZorzQlfT.1"
     theme: "Afternoon Check-in"
     events: 
       - name: Team Introductions
@@ -34,7 +34,7 @@ general_schedule:
 
   - date: "2026-06-23T10:00:00-04:00"
     session: Morning
-    zoomlink: "https://zoom.us/j/placeholder"
+    zoomlink: "https://us06web.zoom.us/j/83678288741?pwd=9jf7gzHu4UUU4qxuUtf6ieZorzQlfT.1"
     theme: "Day 2: Project Plan"
     events: 
       - name: Project Plan
@@ -46,7 +46,7 @@ general_schedule:
 
   - date: "2026-06-23T16:00:00-04:00"
     session: Afternoon
-    zoomlink: "https://zoom.us/j/placeholder"
+    zoomlink: "https://us06web.zoom.us/j/83678288741?pwd=9jf7gzHu4UUU4qxuUtf6ieZorzQlfT.1"
     theme: "Afternoon Check-in"
     events: 
       - name: Team Progress 
@@ -60,7 +60,7 @@ general_schedule:
 
   - date: "2026-06-24T10:00:00-04:00"
     session: Morning
-    zoomlink: "https://zoom.us/j/placeholder"
+    zoomlink: "https://us06web.zoom.us/j/83678288741?pwd=9jf7gzHu4UUU4qxuUtf6ieZorzQlfT.1"
     theme: "Day 3: Check-in"
     events: 
       - name: Sponsor Highlights & Mentorship
@@ -71,7 +71,7 @@ general_schedule:
 
   - date: "2026-06-24T16:00:00-04:00"
     session: Afternoon
-    zoomlink: "https://zoom.us/j/placeholder"
+    zoomlink: "https://us06web.zoom.us/j/83678288741?pwd=9jf7gzHu4UUU4qxuUtf6ieZorzQlfT.1"
     theme: "Afternoon Check-in"
     events: 
       - name: Team Progress 
@@ -79,7 +79,7 @@ general_schedule:
 
   - date: "2026-06-25T10:00:00-04:00"
     session: Morning
-    zoomlink: "https://zoom.us/j/placeholder"
+    zoomlink: "https://us06web.zoom.us/j/83678288741?pwd=9jf7gzHu4UUU4qxuUtf6ieZorzQlfT.1"
     theme: "Day 4: Check-in"
     events: 
       - name: Advanced Workshops
@@ -89,7 +89,7 @@ general_schedule:
 
   - date: "2026-06-25T16:00:00-04:00"
     session: Afternoon
-    zoomlink: "https://zoom.us/j/placeholder"
+    zoomlink: "https://us06web.zoom.us/j/83678288741?pwd=9jf7gzHu4UUU4qxuUtf6ieZorzQlfT.1"
     theme: "Afternoon Check-in"
     events: 
       - name: Dry-Run Presentations 
@@ -97,7 +97,7 @@ general_schedule:
 
   - date: "2026-06-26T10:00:00-04:00"
     session: Morning
-    zoomlink: "https://zoom.us/j/placeholder"
+    zoomlink: "https://us06web.zoom.us/j/83678288741?pwd=9jf7gzHu4UUU4qxuUtf6ieZorzQlfT.1"
     theme: "Day 5: Final Check-in"
     events: 
       - name: Final Adjustments & Deliverables Upload
@@ -106,7 +106,7 @@ general_schedule:
   
   - date: "2026-06-26T14:00:00-04:00"
     session: Afternoon
-    zoomlink: "https://zoom.us/j/placeholder"
+    zoomlink: "https://us06web.zoom.us/j/83678288741?pwd=9jf7gzHu4UUU4qxuUtf6ieZorzQlfT.1"
     theme: "Final Presentations & Awards"
     events: 
       - name: Final Presentations
