@@ -102,6 +102,21 @@ body {
     color: var(--primary-color);
 }
 
+/* Default list styles */
+.container > ul:not(.about-list) {
+    margin: 1rem 0 2rem 1.5rem;
+}
+.container > ul:not(.about-list) li {
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--muted-text);
+}
+.container > ul:not(.about-list) strong {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
 /* Buttons */
 .btn-primary, .btn-secondary {
     padding: 0.75rem 1.5rem;
@@ -170,7 +185,32 @@ body {
 }
 
 /* Layout Utilities */
-.container { padding: 4rem 5%; }
+.container {
+    padding: 4rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--structural-black);
+    border-bottom: 3px solid var(--primary-color);
+    padding-bottom: 1rem;
+    text-align: center;
+}
+.container h3 {
+    font-size: 1.5rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+.container > p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    color: var(--muted-text);
+}
 .bg-light { background-color: var(--light-green); }
 .grid {
     display: grid;

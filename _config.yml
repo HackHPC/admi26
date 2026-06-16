@@ -1,12 +1,6 @@
 title: HackHPC@ADMI26
 description: >
-  SGX3's Association of Computer Science Departments at Minority
-  Institutions (ADMI) Hackathon will take place virtually from
-  June 22–26, 2026. Teams will focus on applying Science Gateway
-  development skills as an extension of the ADMI 2026 Symposium on
-  Computing at Minority Institutions theme, "Fine-Tuning AI Models."
-  Pre-training activities have been provided in coordination with the
-  SGX3 2026 Virtual Coding Institute.
+  The Association of Computer Science Departments at Minority Institutions (ADMI) Hackathon will take place virtually from June 22–26, 2026. Teams will focus on applying advanced computational analysis skills to deconstruct the architecture of human knowledge, as an extension of the ADMI 2026 Symposium on Computing at Minority Institutions theme, "Fine-Tuning AI Models." Pre-training activities covering graph theory, natural language processing, and causal inference have been provided in coordination with the 2026 Virtual Coding Institute.
 
 # Feature Flags
 show_teams: false
