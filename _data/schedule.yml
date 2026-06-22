@@ -20,13 +20,18 @@ general_schedule:
     theme: "Afternoon Check-in"
     events: 
       - name: Team Introductions
-        type: Presentations 
+        type: Presentations
         description: >
-          1-Slide/1-Minute with: <br>
+          2-Slide/1-Minute with: <br>
           &nbsp;&nbsp; - Team Name <br>
           &nbsp;&nbsp; - Team Members <br>
           &nbsp;&nbsp; - Team Zoom Virtual Background <br>
           &nbsp;&nbsp; - Team Theme Song <br>
+        links:
+          - title: Shared Slide Deck
+            icon: fa-brands fa-google-drive
+            url: "https://docs.google.com/presentation/d/1jvgESpRoHcBgYx9DUNXDyGcJF41Fwxl4wOZO9gc0shM/edit?usp=sharing"
+            iconcolor: "#F4C414"
 
   - date: "2026-06-23T10:00:00-04:00"
     session: Morning
