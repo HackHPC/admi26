@@ -14,29 +14,7 @@
 <body>
 
     <!-- Navigation -->
-    <header class="navbar">
-        <div class="logo">
-            <a href="{{ site.baseurl }}/"><img src="{{ site.baseurl }}/assets/images/logo-only-sq.svg" alt="HackHPC Logo" class="nav-logo"></a>
-            <span class="site-title">{{ site.title }}</span>
-        </div>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="{{ site.baseurl }}/#about" class="active">About</a></li>
-                <li><a href="{{ site.baseurl }}/schedule.html">Schedule</a></li>
-                <li><a href="{{ site.baseurl }}/staff.html">Staff</a></li>
-                {% if site.show_teams %}
-                <li><a href="{{ site.baseurl }}/#teams">Teams</a></li>
-                {% endif %}
-                {% if site.show_deliverables %}
-                <li><a href="{{ site.baseurl }}/#deliverables">Deliverables</a></li>
-                {% endif %}
-                <li><a href="{{ site.baseurl }}/resources.html">Resources</a></li>
-                <li><a href="{{ site.baseurl }}/organizers.html">Organizers</a></li>
-                <li><a href="{{ site.baseurl }}/code-of-conduct.html">Code of Conduct</a></li>
-            </ul>
-        </nav>
-        <a href="{{ site.registration_url }}" target="_blank" class="btn-primary">Register Now</a>
-    </header>
+    {% include navbar.html %}
 
     <!-- Hero Section -->
     <section class="hero">

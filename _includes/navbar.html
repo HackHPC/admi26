@@ -1,0 +1,46 @@
+<header class="navbar">
+    <div class="logo">
+        <a href="{{ site.baseurl }}/"><img src="{{ site.baseurl }}/assets/images/logo-only-sq.svg" alt="HackHPC Logo" class="nav-logo"></a>
+        <span class="site-title">{{ site.title }}</span>
+    </div>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <nav class="nav-menu">
+        <ul class="nav-links">
+            {% assign cur = page.url %}
+            <li><a href="{{ site.baseurl }}/#about" {% if cur == "/" or cur == "/index.html" %}class="active"{% endif %}>About</a></li>
+            <li><a href="{{ site.baseurl }}/schedule.html" {% if cur contains "schedule" %}class="active"{% endif %}>Schedule</a></li>
+            <li><a href="{{ site.baseurl }}/staff.html" {% if cur contains "staff" %}class="active"{% endif %}>Staff</a></li>
+            {% if site.show_teams %}
+            <li><a href="{{ site.baseurl }}/#teams">Teams</a></li>
+            {% endif %}
+            {% if site.show_deliverables %}
+            <li><a href="{{ site.baseurl }}/#deliverables">Deliverables</a></li>
+            {% endif %}
+            <li><a href="{{ site.baseurl }}/resources.html" {% if cur contains "resources" %}class="active"{% endif %}>Resources</a></li>
+            <li><a href="{{ site.baseurl }}/organizers.html" {% if cur contains "organizers" %}class="active"{% endif %}>Organizers</a></li>
+            <li><a href="{{ site.baseurl }}/code-of-conduct.html" {% if cur contains "code-of-conduct" %}class="active"{% endif %}>Code of Conduct</a></li>
+        </ul>
+        <a href="{{ site.registration_url }}" target="_blank" class="btn-primary nav-register">Register Now</a>
+    </nav>
+</header>
+<script>
+(function() {
+    var toggle = document.querySelector('.nav-toggle');
+    var menu = document.querySelector('.nav-menu');
+    toggle.addEventListener('click', function() {
+        var expanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', String(!expanded));
+        menu.classList.toggle('open');
+    });
+    menu.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function() {
+            toggle.setAttribute('aria-expanded', 'false');
+            menu.classList.remove('open');
+        });
+    });
+})();
+</script>
