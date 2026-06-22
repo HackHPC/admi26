@@ -1,21 +1,21 @@
 <div class="sponsors-bar">
-  <p class="sponsors-label">Sponsors &amp; Partners</p>
-  <div class="sponsors-list">
+  <p class="sponsors-bar-heading">Sponsors &amp; Partners</p>
+  <div class="sponsors-logos">
     {% for sponsor in site.data.sponsors %}
-    <div class="sponsor-item">
-      <a href="{{ sponsor.url }}" target="_blank" rel="noopener" class="sponsor-link">
-        <img src="{{ site.baseurl }}{{ sponsor.logo }}" alt="{{ sponsor.name }}" class="sponsor-logo" onerror="this.style.display='none'">
-        <span class="sponsor-name">{{ sponsor.name }}</span>
+    <div class="sponsor-card">
+      <a href="{{ sponsor.url }}" target="_blank" rel="noopener" class="sponsor-card-link" title="{{ sponsor.name }}">
+        <div class="sponsor-logo-wrap">
+          <img src="{{ site.baseurl }}{{ sponsor.logo }}" alt="{{ sponsor.name }}" class="sponsor-logo" onerror="this.style.display='none'">
+          <span class="sponsor-name-fallback">{{ sponsor.name }}</span>
+        </div>
       </a>
       {% if sponsor.funding_agencies %}
-      <div class="funding-agencies">
+      <div class="sponsor-grants">
         {% for agency in sponsor.funding_agencies %}
-        <div class="funding-agency">
-          <img src="{{ site.baseurl }}{{ agency.logo }}" alt="{{ agency.name }}" class="agency-logo" onerror="this.style.display='none'">
-          <span class="agency-name">{{ agency.name }}</span>
-          <span class="agency-label">{{ agency.label }}</span>
-          <span class="agency-grant">{{ agency.grant_number }}</span>
-        </div>
+        <span class="sponsor-grant-badge" title="{{ agency.name }} &mdash; {{ agency.grant_number }}">
+          <img src="{{ site.baseurl }}{{ agency.logo }}" alt="{{ agency.name }}" class="grant-logo" onerror="this.style.display='none'">
+          {{ agency.label }}
+        </span>
         {% endfor %}
       </div>
       {% endif %}
