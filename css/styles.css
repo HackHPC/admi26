@@ -1053,6 +1053,7 @@ body {
     transform: scale(1.05);
 }
 .sponsor-name-fallback {
+    display: none;
     font-size: 0.82rem;
     font-weight: 700;
     color: var(--structural-black);
