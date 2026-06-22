@@ -124,6 +124,9 @@
     <!-- Navigation -->
     {% include navbar.html %}
 
+    <div class="page-layout">
+        <main class="page-main">
+
     <!-- Organizers Section -->
     <section class="container">
         <h1 class="section-title">Organizers</h1>
@@ -210,6 +213,12 @@
             {% endfor %}
         </div>
     </section>
+
+        </main>
+        <aside class="page-sidebar-col">
+            {% include sponsors-sidebar.html %}
+        </aside>
+    </div>
 
     <footer>
         <p>&copy; 2026 HackHPC@ADMI26. All rights reserved.</p>

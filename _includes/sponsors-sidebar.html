@@ -1,0 +1,27 @@
+<div class="sponsors-sidebar">
+  <p class="sponsors-sidebar-label">Sponsors &amp; Partners</p>
+  {% for sponsor in site.data.sponsors %}
+  <div class="sponsors-sidebar-item">
+    <a href="{{ sponsor.url }}" target="_blank" rel="noopener" class="sponsors-sidebar-link">
+      <img src="{{ site.baseurl }}{{ sponsor.logo }}" alt="{{ sponsor.name }}" class="sponsors-sidebar-logo" onerror="this.style.display='none'">
+      <span class="sponsors-sidebar-name">{{ sponsor.name }}</span>
+    </a>
+    {% if sponsor.funding_agencies %}
+    <div class="sponsors-sidebar-agencies">
+      {% for agency in sponsor.funding_agencies %}
+      <div class="sponsors-sidebar-agency">
+        <img src="{{ site.baseurl }}{{ agency.logo }}" alt="{{ agency.name }}" class="sponsors-sidebar-agency-logo" onerror="this.style.display='none'">
+        <div class="sponsors-sidebar-agency-info">
+          <span class="sponsors-sidebar-agency-name">{{ agency.name }}</span>
+          <span class="sponsors-sidebar-agency-meta">{{ agency.label }} &middot; {{ agency.grant_number }}</span>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+  {% unless forloop.last %}
+  <hr class="sponsors-sidebar-divider">
+  {% endunless %}
+  {% endfor %}
+</div>

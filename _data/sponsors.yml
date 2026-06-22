@@ -1,27 +1,40 @@
-# _data/sponsors.yml
-- tier: Platinum
-  sponsors:
-    - name: Association of Computer Science Departments at Minority Institutions (ADMI)
-      logo: assets/images/admi-logo.png
-      url: https://admiusa.org/
-    - name: Science Gateways (SGX3)
-      logo: assets/images/sgx3-logo.png
-      url: https://sciencegateways.org/
-    - name: National Science Foundation (NSF)
-      logo: assets/images/nsf-logo.png
-      url: https://www.nsf.gov/
+# Sponsors are displayed in the sidebar on every page.
+# funding_agencies is optional. When present, each entry is visually nested below the sponsor.
+# Use label to distinguish multiple awards from the same agency (e.g. "SGCI" vs "SGX3").
 
-- tier: Gold
-  sponsors:
-    - name: Texas Advanced Computing Center (TACC)
-      logo: assets/images/tacc-logo.png
-      url: https://www.tacc.utexas.edu/
-    - name: projectEUREKA!
-      logo: assets/images/eureka-logo.png
-      url: https://projecteureka.org/
+- name: The Association of Computer Science Departments at Minority Institutions
+  url: https://admiusa.org
+  logo: /assets/images/sponsors/ADMI-text.svg
 
-- tier: Silver
-  sponsors:
-    - name: HackHPC
-      logo: assets/images/hackhpc-logo.png
-      url: https://hackhpc.org/
+- name: SGX3 | Science Gateways Community Institute
+  url: https://sciencegateways.org
+  logo: /assets/images/sponsors/SGX3-logo.png
+  funding_agencies:
+    - name: National Science Foundation
+      logo: /assets/images/sponsors/nsf.svg
+      grant_number: "ACI-1547611"
+      label: SGCI
+    - name: National Science Foundation
+      logo: /assets/images/sponsors/nsf.svg
+      grant_number: "2231406"
+      label: SGX3
+
+- name: Norfolk State University
+  url: https://nsu.edu
+  logo: /assets/images/sponsors/NSU_logo_vert_4c.jpg
+
+- name: Winston-Salem State University
+  url: https://www.wssu.edu/
+  logo: /assets/images/sponsors/Winston-Salem_State_University_2005_logo.svg
+
+- name: Texas Advanced Computing Center
+  url: https://tacc.utexas.edu
+  logo: /assets/images/sponsors/TACC.svg
+
+- name: Omnibond
+  url: https://omnibond.com
+  logo: /assets/images/sponsors/projectEUREKA-frame.svg
+
+- name: HackHPC
+  url: https://hackhpc.github.io
+  logo: /assets/images/sponsors/hackhpclogo.svg

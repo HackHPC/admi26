@@ -13,13 +13,37 @@
 <body>
     {% include navbar.html %}
 
+    <div class="page-layout">
+        <main class="page-main">
+
     <section class="container">
         <h1>Event Resources</h1>
         <p>Access APIs, documentation, tutorials, and compute cluster guides for the hackathon.</p>
 
         {% include deliverables.html %}
-        
-        <div class="resources-by-category">
+
+        <!-- Search & Jump Nav Toolbar -->
+        <div class="resources-toolbar">
+            <div class="resources-search-wrap">
+                <i class="fas fa-search resources-search-icon"></i>
+                <input type="text" id="resources-search" class="resources-search-input" placeholder="Search resources by name or description…" autocomplete="off">
+                <button id="resources-search-clear" class="resources-search-clear" aria-label="Clear search">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <nav class="resources-jump-nav">
+                <span class="resources-jump-label">Jump to:</span>
+                <div class="resources-jump-links" id="resources-jump-links">
+                    <a href="#resources-categories" class="resources-jump-link">Resource Categories</a>
+                    <a href="#session-resources" class="resources-jump-link">Session Materials</a>
+                    {% if site.show_deliverables %}
+                    <a href="#submission" class="resources-jump-link">Submission Guidelines</a>
+                    {% endif %}
+                </div>
+            </nav>
+        </div>
+
+        <div id="resources-categories" class="resources-by-category">
             {% assign sorted_resources = site.data.resources.resources | sort: "category" %}
             {% assign current_category = "" %}
             {% assign category_count = 0 %}
@@ -33,7 +57,7 @@
                     {% endif %}
                     
                     {% assign category_count = category_count | plus: 1 %}
-                    <div class="category-section">
+                    <div class="category-section" id="{{ resource.category | slugify }}" data-category-name="{{ resource.category }}">
                         <button class="category-toggle" data-category="category-{{ category_count }}">
                             <div class="category-header">
                                 <h2>{{ resource.category }}</h2>
@@ -72,7 +96,7 @@
     </section>
 
     <!-- Session Resources Section -->
-    <section class="container" style="margin-top: 3rem; border-top: 2px solid var(--primary-color); padding-top: 2rem;">
+    <section id="session-resources" class="container" style="margin-top: 3rem; border-top: 2px solid var(--primary-color); padding-top: 2rem;">
         <h2>Session Resources by Date</h2>
         <p>Resources, links, and materials specific to each hackathon session.</p>
         
@@ -134,6 +158,12 @@
     </section>
     {% endif %}
 
+        </main>
+        <aside class="page-sidebar-col">
+            {% include sponsors-sidebar.html %}
+        </aside>
+    </div>
+
     <footer>
         <p>&copy; 2026 HackHPC@ADMI26. All rights reserved.</p>
     </footer>
@@ -164,6 +194,110 @@
         if (firstToggle) {
             firstToggle.click();
         }
+
+        // Build category jump links dynamically
+        (function() {
+            const jumpLinks = document.getElementById('resources-jump-links');
+            if (!jumpLinks) return;
+            document.querySelectorAll('.category-section[id]').forEach(function(section) {
+                const catName = section.getAttribute('data-category-name');
+                if (!catName) return;
+                const a = document.createElement('a');
+                a.href = '#' + section.id;
+                a.className = 'resources-jump-link resources-jump-category';
+                a.textContent = catName;
+                a.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const toggle = section.querySelector('.category-toggle');
+                    const content = section.querySelector('.category-content');
+                    if (content && !content.classList.contains('open')) {
+                        toggle.click();
+                    }
+                    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                });
+                jumpLinks.appendChild(a);
+            });
+        })();
+
+        // Search
+        (function() {
+            const input = document.getElementById('resources-search');
+            const clearBtn = document.getElementById('resources-search-clear');
+            if (!input) return;
+
+            input.addEventListener('input', function() {
+                const q = this.value.trim().toLowerCase();
+                clearBtn.style.display = q ? 'flex' : 'none';
+                filter(q);
+            });
+
+            clearBtn.addEventListener('click', function() {
+                input.value = '';
+                clearBtn.style.display = 'none';
+                filter('');
+                input.focus();
+            });
+
+            function filter(q) {
+                const sections = document.querySelectorAll('.category-section');
+
+                if (!q) {
+                    sections.forEach(function(sec) {
+                        sec.style.display = '';
+                        sec.querySelectorAll('.resource-list-item').forEach(function(item) {
+                            item.style.display = '';
+                        });
+                        const msg = sec.querySelector('.search-no-results');
+                        if (msg) msg.remove();
+                    });
+                    document.querySelectorAll('.category-content').forEach(function(el) { el.classList.remove('open'); });
+                    document.querySelectorAll('.category-toggle').forEach(function(btn) { btn.classList.remove('active'); });
+                    const first = document.querySelector('.category-toggle');
+                    if (first) first.click();
+                    return;
+                }
+
+                sections.forEach(function(sec) {
+                    const catName = (sec.getAttribute('data-category-name') || '').toLowerCase();
+                    const items = sec.querySelectorAll('.resource-list-item');
+                    let visible = 0;
+
+                    items.forEach(function(item) {
+                        const title = (item.querySelector('h3') || {}).textContent || '';
+                        const desc = (item.querySelector('.resource-list-description') || {}).textContent || '';
+                        const match = title.toLowerCase().includes(q) || desc.toLowerCase().includes(q) || catName.includes(q);
+                        item.style.display = match ? '' : 'none';
+                        if (match) visible++;
+                    });
+
+                    sec.style.display = visible > 0 ? '' : 'none';
+
+                    const content = sec.querySelector('.category-content');
+                    const toggle = sec.querySelector('.category-toggle');
+                    if (content && toggle) {
+                        if (visible > 0) {
+                            content.classList.add('open');
+                            toggle.classList.add('active');
+                        } else {
+                            content.classList.remove('open');
+                            toggle.classList.remove('active');
+                        }
+                    }
+
+                    let msg = sec.querySelector('.search-no-results');
+                    if (visible === 0 && sec.style.display !== 'none') {
+                        if (!msg) {
+                            msg = document.createElement('p');
+                            msg.className = 'search-no-results';
+                            msg.textContent = 'No results in this category.';
+                            sec.querySelector('.category-resources-list').appendChild(msg);
+                        }
+                    } else if (msg) {
+                        msg.remove();
+                    }
+                });
+            }
+        })();
     </script>
 </body>
 </html>
