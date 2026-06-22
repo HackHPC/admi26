@@ -35,6 +35,8 @@
     <section class="container">
         <h1>Event Resources</h1>
         <p>Access APIs, documentation, tutorials, and compute cluster guides for the hackathon.</p>
+
+        {% include deliverables.html %}
         
         <div class="resources-by-category">
             {% assign sorted_resources = site.data.resources.resources | sort: "category" %}

@@ -7,14 +7,10 @@ general_schedule:
       - name: Hackathon Overview
         type: Presentations
         links:
-          #- title: Supercomputing Reproducibility Initiative
-          #  url: "#"
-          #  icon: fa-solid fa-link
-          #  iconcolor: blue
-          #- title: Session Slide Deck
-          #  icon: fa-regular fa-file-pdf
-          #  url: "assets/slides/event/KickOff-HackHPCatADMI26.pdf"
-          #  iconcolor: red
+          - title: Session Slide Deck
+            icon: fa-regular fa-file-pdf
+            url: "assets/slide-decks/KickOff-HackHPCatADMI26.pdf"
+            iconcolor: red
       - name: Team Formation
         type: Project Work
 

@@ -117,6 +117,37 @@ body {
     font-weight: 600;
 }
 
+/* Deliverables dropdown styling */
+.deliverables-dropdown {
+    margin-top: 1rem;
+}
+.deliverables-dropdown summary {
+    cursor: pointer;
+    padding: 0.6rem 0.8rem;
+    background-color: var(--light-gold);
+    border: 1px solid rgba(17,17,17,0.08);
+    border-radius: 6px;
+    font-weight: 600;
+    color: var(--structural-black);
+}
+.deliverables-dropdown .deliverables-content {
+    padding: 1rem 1.25rem;
+    background: var(--card-bg);
+    border: 1px solid rgba(17,17,17,0.06);
+    border-radius: 6px;
+    margin-top: 0.75rem;
+}
+.deliverables-dropdown .deliverables-content ul {
+    margin: 0.5rem 0 1rem 1.5rem;
+    padding-left: 0.5rem;
+    list-style: disc;
+    color: var(--muted-text);
+}
+.deliverables-dropdown .deliverables-content ul li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
 /* Buttons */
 .btn-primary, .btn-secondary {
     padding: 0.75rem 1.5rem;
