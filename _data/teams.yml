@@ -1,58 +1,145 @@
 # _data/teams.yml
-- teamname: Team Xavier
-  awards: 
-    - Best Hardware Integration
-  files: "teams/TeamXavier"
+- teamname: The Hacking Tribunal
+  awards:
+    - "🏆 Team Introductions Award"
+  files: "teams/TheHackingTribunal"
   members:
     names:
-      - Alice Hacker
-      - Bob Builder
+      - Usir Jackson
+      - Josiah Johnson
+      - Nadia Rapheal
+      - Madison Conley
     affiliation:
-      - University of Central Florida
-      - Texas A&M San Antonio
+      - Claflin University
+      - Winston-Salem State University
+      - Winston-Salem State University
+      - Mississippi Valley State University
     major:
-      - Computer Engineering
+      - Computer Science
+      - Computer Science
+      - Computer Science
       - Computer Science
     role:
-      - Hardware Specialist
+      - Student Participant
+      - Student Participant
+      - Student Participant
       - Student Participant
     socials:
-      - https://linkedin.com/in/alicehacker
-      - https://linkedin.com/in/bobbuilder
+      -
+      - https://www.linkedin.com/in/josiah-johnson-a38474338/
+      - https://www.linkedin.com/in/nadiarapheal/
+      - https://www.linkedin.com/in/madison-conley-a137293aa
     email:
-      - alice.hacker@ucf.edu
-      - bbuilder@tamusa.edu
-  links:
-    - name: GitHub Repo
-      url: https://github.com/TeamXavier/AGX-Cluster
-      icon: "fa-brands fa-github"
-      iconcolor: black
+      - usirjack@gmail.com
+      - josiahj5484@gmail.com
+      - nrapheal04@gmail.com
+      - madisonconley15@gmail.com
+  links: []
 
-- teamname: Team Stark
-  awards: 
-    - Data Visualization Award
-  files: "teams/TeamStark"
+- teamname: Origin Zero
+  awards: []
+  files: "teams/OriginZero"
   members:
     names:
-      - Charlie Data
-      - Diana Compute
+      - Anthony Nwafor
+      - Emmanuel Akwasi Opoku
+      - Prince Osei Bonsu
+      - Amelia Hunter
     affiliation:
-      - University of Florida
-      - Valencia College
+      - Mississippi Valley State University
+      - Grambling State University
+      - Voorhees University
+      - Voorhees University
     major:
-      - Data Science
-      - Information Technology
+      - Computer Science and Mathematics
+      - Cybersecurity
+      - Computer Science
+      - Computer Science
     role:
       - Student Participant
       - Student Participant
+      - Student Participant
+      - Student Participant
     socials:
-      - https://linkedin.com/in/charliedata
-      - https://linkedin.com/in/dianacompute
+      - https://www.linkedin.com/in/anthony-nwafor-9b8055236
+      -
+      - https://www.linkedin.com/in/prince-osei-bonsu-b913b7356/
+      - https://www.linkedin.com/in/amelia-hunter-3b9373383
     email:
-      - charlie.d@ufl.edu
-      - dcompute@valenciacollege.edu
-  links:
-    - name: GitHub Repo
-      url: https://github.com/TeamStark/Euclidean-Mapping
-      icon: "fa-brands fa-github"
-      iconcolor: black
+      - anthony.nwafor@mvsu.edu
+      - opokuakwasi239@gmail.com
+      - posei231846@voorhees.edu
+      - ameliaskhunter@gmail.com
+  links: []
+
+- teamname: The WinMaxers
+  awards: []
+  files: "teams/TheWinMaxers"
+  members:
+    names:
+      - Quintin Ampofo
+      - Cole Scott
+      - Damone Washington
+      - Darell Barnes
+    affiliation:
+      - SGX3 Coding Institute
+      - Hampton University
+      - Winston-Salem State University
+      - Voorhees University
+    major:
+      - Computer Science
+      - Computer Science
+      - Computer Science
+      - Computer Science
+    role:
+      - Student Participant
+      - Student Participant
+      - Student Participant
+      - Student Participant
+    socials:
+      - https://www.linkedin.com/in/quintin-ampofo-4660782b4
+      - https://www.linkedin.com/in/cole-scott-640633304
+      - https://www.linkedin.com/in/damone-washington-548765325/
+      - https://www.linkedin.com/in/darell-barnes-996109350/
+    email:
+      - quintinjames06@gmail.com
+      - Coles2025@gmail.com
+      - jadynwash@gmail.com
+      - darellbarnes450@gmail.com
+  links: []
+
+- teamname: Capsule Corp CoderZ
+  awards: []
+  files: "teams/CapsuleCorpCoderZ"
+  members:
+    names:
+      - Sydney Riddick
+      - Javonte Carter
+      - Joshua Chaney
+      - Chance Walker
+    affiliation:
+      - Elizabeth City State University
+      - Florida A&M University
+      - Mississippi Valley State University
+      - Winston-Salem State University
+    major:
+      -
+      - Computer Science
+      - Computer Science
+      - Computer Science
+    role:
+      - Student Participant
+      - Student Participant
+      - Student Participant
+      - Student Participant
+    socials:
+      -
+      - https://www.linkedin.com/in/javonte-carter/
+      - https://www.linkedin.com/in/joshua-chaney-7b624531a/
+      - https://www.linkedin.com/in/chance-walker-735b0735b
+    email:
+      - Seriddick291@students.ecsu.edu
+      - javonte1.carter@famu.edu
+      - joshj.chaney12@gmail.com
+      - cwalker124@rams.wssu.edu
+  links: []

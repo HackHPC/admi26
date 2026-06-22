@@ -56,6 +56,10 @@
                         </div>
                         {% endif %}
 
+                        {% if event.award %}
+                        <div class="award-badge">{{ event.award }}</div>
+                        {% endif %}
+
                         {% if event.links %}
                         <div class="event-links">
                             {% for link in event.links %}

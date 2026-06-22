@@ -21,6 +21,7 @@ general_schedule:
     events: 
       - name: Team Introductions
         type: Presentations
+        award: "🏆 Team Introductions Award — The Hacking Tribunal"
         description: >
           2-Slide/1-Minute with: <br>
           &nbsp;&nbsp; - Team Name <br>
@@ -28,6 +29,10 @@ general_schedule:
           &nbsp;&nbsp; - Team Zoom Virtual Background <br>
           &nbsp;&nbsp; - Team Theme Song <br>
         links:
+          - title: Session Slide Deck
+            icon: fa-regular fa-file-pdf
+            url: "assets/slide-decks/Team_Introductions-HackHPCatADMI26.pdf"
+            iconcolor: red
           - title: Shared Slide Deck
             icon: fa-brands fa-google-drive
             url: "https://docs.google.com/presentation/d/1jvgESpRoHcBgYx9DUNXDyGcJF41Fwxl4wOZO9gc0shM/edit?usp=sharing"

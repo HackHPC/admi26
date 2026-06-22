@@ -14,9 +14,7 @@
             <li><a href="{{ site.baseurl }}/#about" {% if cur == "/" or cur == "/index.html" %}class="active"{% endif %}>About</a></li>
             <li><a href="{{ site.baseurl }}/schedule.html" {% if cur contains "schedule" %}class="active"{% endif %}>Schedule</a></li>
             <li><a href="{{ site.baseurl }}/staff.html" {% if cur contains "staff" %}class="active"{% endif %}>Staff</a></li>
-            {% if site.show_teams %}
-            <li><a href="{{ site.baseurl }}/#teams">Teams</a></li>
-            {% endif %}
+            <li><a href="{{ site.baseurl }}/teams.html" {% if cur contains "teams" %}class="active"{% endif %}>Teams</a></li>
             {% if site.show_deliverables %}
             <li><a href="{{ site.baseurl }}/#deliverables">Deliverables</a></li>
             {% endif %}
