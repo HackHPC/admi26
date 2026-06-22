@@ -1040,10 +1040,9 @@ body {
     height: 60px;
 }
 .sponsor-logo {
-    max-height: 60px;
-    max-width: 160px;
+    height: 60px;
     width: auto;
-    height: auto;
+    max-width: 160px;
     object-fit: contain;
     filter: grayscale(20%);
     transition: filter 0.25s ease, transform 0.25s ease;
@@ -1090,7 +1089,7 @@ body {
     .sponsors-logos { gap: 0.4rem 1rem; }
     .sponsor-card-link { min-width: 90px; min-height: 70px; padding: 0.6rem 0.85rem; }
     .sponsor-logo-wrap { height: 46px; }
-    .sponsor-logo { max-height: 46px; max-width: 120px; }
+    .sponsor-logo { height: 46px; max-width: 120px; }
 }
 
 /* Sponsors Sidebar */
