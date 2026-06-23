@@ -44,11 +44,23 @@ general_schedule:
     theme: "Day 2: Project Plan"
     events: 
       - name: Project Plan
-        type: Presentations 
+        type: Presentations
         description: >
-          5-Slides/5-Minutes with: <br>
-          &nbsp;&nbsp; - Team Name <br>
-          &nbsp;&nbsp; - Project Plan with team members linked to roles and at least five (5) tasks needed to accomplish those goals
+          At least 2-Slides/5-Minutes: <br>
+          &nbsp;&nbsp; <strong>Slide 1 — Project Theme &amp; Goals</strong> <br>
+          &nbsp;&nbsp; <strong>Slide 2 — Project Plan</strong> <br>
+          &nbsp;&nbsp;&nbsp;&nbsp; - Roles for Team Members based on project Deliverables <br>
+          &nbsp;&nbsp;&nbsp;&nbsp; - Minimum of seven (7) project milestones <br>
+          &nbsp;&nbsp;&nbsp;&nbsp; - Minimum of three (3) tasks per milestone <br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <em>Example: Seed Wikipedia article to begin the knowledge tree</em> <br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <em>Example: How you will get the data (web scrape or API calls)</em> <br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <em>Example: Will you fine-tune a model or use a RAG?</em> <br>
+          &nbsp;&nbsp;&nbsp;&nbsp; - What technologies you are considering using?
+        links:
+          - title: Shared Slide Deck
+            icon: fa-brands fa-google-drive
+            url: "https://docs.google.com/presentation/d/1yxEbhaP_F4iW06G7jJoJS61IqaNu46HuiMvaYDtSKus/edit?usp=sharing"
+            iconcolor: "#F4C414"
 
   - date: "2026-06-23T16:00:00-04:00"
     session: Afternoon
