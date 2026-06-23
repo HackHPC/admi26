@@ -1,0 +1,176 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//HackHPC//ADMI26 2026//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:HackHPC@ADMI26
+X-WR-TIMEZONE:America/New_York
+X-WR-CALDESC:HackHPC@ADMI26 - Virtual Hackathon June 22-26\, 2026. https://
+ hackhpc.github.io/admi26
+BEGIN:VTIMEZONE
+TZID:America/New_York
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0400
+TZNAME:EDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0400
+TZOFFSETTO:-0500
+TZNAME:EST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:hackhpc-admi26-20260622-morning@hackhpc.github.io
+DTSTAMP:20260623T170000Z
+DTSTART;TZID=America/New_York:20260622T100000
+DTEND;TZID=America/New_York:20260622T120000
+SUMMARY:HackHPC@ADMI26 - Day 1: Kick-Off (Morning)
+LOCATION:https://us06web.zoom.us/j/83678288741?pwd=9jf7gzHu4UUU4qxuUtf6ieZo
+ rzQlfT.1
+URL:https://hackhpc.github.io/admi26/schedule
+DESCRIPTION:Hackathon Overview & Team Formation\n\nJoin Zoom: https://us06w
+ eb.zoom.us/j/83678288741?pwd=9jf7gzHu4UUU4qxuUtf6ieZorzQlfT.1\n\nEvent sit
+ e: https://hackhpc.github.io/admi26\nSchedule: https://hackhpc.github.io/a
+ dmi26/schedule
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:hackhpc-admi26-20260622-afternoon@hackhpc.github.io
+DTSTAMP:20260623T170000Z
+DTSTART;TZID=America/New_York:20260622T160000
+DTEND;TZID=America/New_York:20260622T180000
+SUMMARY:HackHPC@ADMI26 - Day 1: Afternoon Check-In
+LOCATION:https://us06web.zoom.us/j/83678288741?pwd=9jf7gzHu4UUU4qxuUtf6ieZo
+ rzQlfT.1
+URL:https://hackhpc.github.io/admi26/schedule
+DESCRIPTION:Team Introductions\n\nJoin Zoom: https://us06web.zoom.us/j/8367
+ 8288741?pwd=9jf7gzHu4UUU4qxuUtf6ieZorzQlfT.1\n\nEvent site: https://hackhp
+ c.github.io/admi26\nSchedule: https://hackhpc.github.io/admi26/schedule
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:hackhpc-admi26-20260623-morning@hackhpc.github.io
+DTSTAMP:20260623T170000Z
+DTSTART;TZID=America/New_York:20260623T100000
+DTEND;TZID=America/New_York:20260623T120000
+SUMMARY:HackHPC@ADMI26 - Day 2: Project Plan (Morning)
+LOCATION:https://us06web.zoom.us/j/83678288741?pwd=9jf7gzHu4UUU4qxuUtf6ieZo
+ rzQlfT.1
+URL:https://hackhpc.github.io/admi26/schedule
+DESCRIPTION:Project Plan Presentations\n\nJoin Zoom: https://us06web.zoom.u
+ s/j/83678288741?pwd=9jf7gzHu4UUU4qxuUtf6ieZorzQlfT.1\n\nEvent site: https:
+ //hackhpc.github.io/admi26\nSchedule: https://hackhpc.github.io/admi26/sch
+ edule
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:hackhpc-admi26-20260623-afternoon@hackhpc.github.io
+DTSTAMP:20260623T170000Z
+DTSTART;TZID=America/New_York:20260623T160000
+DTEND;TZID=America/New_York:20260623T180000
+SUMMARY:HackHPC@ADMI26 - Day 2: Afternoon Check-In
+LOCATION:https://us06web.zoom.us/j/83678288741?pwd=9jf7gzHu4UUU4qxuUtf6ieZo
+ rzQlfT.1
+URL:https://hackhpc.github.io/admi26/schedule
+DESCRIPTION:Team Progress Presentations\n\nJoin Zoom: https://us06web.zoom.
+ us/j/83678288741?pwd=9jf7gzHu4UUU4qxuUtf6ieZorzQlfT.1\n\nEvent site: https
+ ://hackhpc.github.io/admi26\nSchedule: https://hackhpc.github.io/admi26/sc
+ hedule
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:hackhpc-admi26-20260624-morning@hackhpc.github.io
+DTSTAMP:20260623T170000Z
+DTSTART;TZID=America/New_York:20260624T100000
+DTEND;TZID=America/New_York:20260624T120000
+SUMMARY:HackHPC@ADMI26 - Day 3: Morning Check-In
+LOCATION:https://us06web.zoom.us/j/83678288741?pwd=9jf7gzHu4UUU4qxuUtf6ieZo
+ rzQlfT.1
+URL:https://hackhpc.github.io/admi26/schedule
+DESCRIPTION:Team Progress Presentations\n\nJoin Zoom: https://us06web.zoom.
+ us/j/83678288741?pwd=9jf7gzHu4UUU4qxuUtf6ieZorzQlfT.1\n\nEvent site: https
+ ://hackhpc.github.io/admi26\nSchedule: https://hackhpc.github.io/admi26/sc
+ hedule
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:hackhpc-admi26-20260624-afternoon@hackhpc.github.io
+DTSTAMP:20260623T170000Z
+DTSTART;TZID=America/New_York:20260624T160000
+DTEND;TZID=America/New_York:20260624T180000
+SUMMARY:HackHPC@ADMI26 - Day 3: Afternoon Check-In
+LOCATION:https://us06web.zoom.us/j/83678288741?pwd=9jf7gzHu4UUU4qxuUtf6ieZo
+ rzQlfT.1
+URL:https://hackhpc.github.io/admi26/schedule
+DESCRIPTION:Team Progress Presentations\n\nJoin Zoom: https://us06web.zoom.
+ us/j/83678288741?pwd=9jf7gzHu4UUU4qxuUtf6ieZorzQlfT.1\n\nEvent site: https
+ ://hackhpc.github.io/admi26\nSchedule: https://hackhpc.github.io/admi26/sc
+ hedule
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:hackhpc-admi26-20260625-morning@hackhpc.github.io
+DTSTAMP:20260623T170000Z
+DTSTART;TZID=America/New_York:20260625T100000
+DTEND;TZID=America/New_York:20260625T120000
+SUMMARY:HackHPC@ADMI26 - Day 4: Morning Check-In
+LOCATION:https://us06web.zoom.us/j/83678288741?pwd=9jf7gzHu4UUU4qxuUtf6ieZo
+ rzQlfT.1
+URL:https://hackhpc.github.io/admi26/schedule
+DESCRIPTION:Team Progress Presentations\n\nJoin Zoom: https://us06web.zoom.
+ us/j/83678288741?pwd=9jf7gzHu4UUU4qxuUtf6ieZorzQlfT.1\n\nEvent site: https
+ ://hackhpc.github.io/admi26\nSchedule: https://hackhpc.github.io/admi26/sc
+ hedule
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:hackhpc-admi26-20260625-afternoon@hackhpc.github.io
+DTSTAMP:20260623T170000Z
+DTSTART;TZID=America/New_York:20260625T160000
+DTEND;TZID=America/New_York:20260625T180000
+SUMMARY:HackHPC@ADMI26 - Day 4: Dry-Run Presentations
+LOCATION:https://us06web.zoom.us/j/83678288741?pwd=9jf7gzHu4UUU4qxuUtf6ieZo
+ rzQlfT.1
+URL:https://hackhpc.github.io/admi26/schedule
+DESCRIPTION:Dry-Run Presentations\n\nJoin Zoom: https://us06web.zoom.us/j/8
+ 3678288741?pwd=9jf7gzHu4UUU4qxuUtf6ieZorzQlfT.1\n\nEvent site: https://hac
+ khpc.github.io/admi26\nSchedule: https://hackhpc.github.io/admi26/schedule
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:hackhpc-admi26-20260626-morning@hackhpc.github.io
+DTSTAMP:20260623T170000Z
+DTSTART;TZID=America/New_York:20260626T100000
+DTEND;TZID=America/New_York:20260626T120000
+SUMMARY:HackHPC@ADMI26 - Day 5: Final Check-In
+LOCATION:https://us06web.zoom.us/j/83678288741?pwd=9jf7gzHu4UUU4qxuUtf6ieZo
+ rzQlfT.1
+URL:https://hackhpc.github.io/admi26/schedule
+DESCRIPTION:Final Adjustments & Deliverables Upload\nAll files must be push
+ ed to team directories before the 2:00 PM session.\n\nJoin Zoom: https://u
+ s06web.zoom.us/j/83678288741?pwd=9jf7gzHu4UUU4qxuUtf6ieZorzQlfT.1\n\nEvent
+  site: https://hackhpc.github.io/admi26\nSchedule: https://hackhpc.github.
+ io/admi26/schedule
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:hackhpc-admi26-20260626-final@hackhpc.github.io
+DTSTAMP:20260623T170000Z
+DTSTART;TZID=America/New_York:20260626T140000
+DTEND;TZID=America/New_York:20260626T160000
+SUMMARY:HackHPC@ADMI26 - Final Presentations & Awards
+LOCATION:https://us06web.zoom.us/j/83678288741?pwd=9jf7gzHu4UUU4qxuUtf6ieZo
+ rzQlfT.1
+URL:https://hackhpc.github.io/admi26/schedule
+DESCRIPTION:Final Presentations & Closing Remarks/Awards\n\nJoin Zoom: http
+ s://us06web.zoom.us/j/83678288741?pwd=9jf7gzHu4UUU4qxuUtf6ieZorzQlfT.1\n\n
+ Event site: https://hackhpc.github.io/admi26\nSchedule: https://hackhpc.gi
+ thub.io/admi26/schedule
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,41 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//HackHPC//ADMI26 2026//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:HackHPC@ADMI26 - Final Presentations & Awards
+X-WR-TIMEZONE:America/New_York
+BEGIN:VTIMEZONE
+TZID:America/New_York
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0400
+TZNAME:EDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0400
+TZOFFSETTO:-0500
+TZNAME:EST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:hackhpc-admi26-20260626-final@hackhpc.github.io
+DTSTAMP:20260623T170000Z
+DTSTART;TZID=America/New_York:20260626T140000
+DTEND;TZID=America/New_York:20260626T160000
+SUMMARY:HackHPC@ADMI26 - Final Presentations & Awards
+LOCATION:https://us06web.zoom.us/j/83678288741?pwd=9jf7gzHu4UUU4qxuUtf6ieZo
+ rzQlfT.1
+URL:https://hackhpc.github.io/admi26/schedule
+DESCRIPTION:HackHPC@ADMI26 Final Presentations & Awards Ceremony\n\nTeams p
+ resent their completed projects and winners are announced.\n\nJoin Zoom: h
+ ttps://us06web.zoom.us/j/83678288741?pwd=9jf7gzHu4UUU4qxuUtf6ieZorzQlfT.1\
+ n\nEvent site: https://hackhpc.github.io/admi26\nSchedule: https://hackhpc
+ .github.io/admi26/schedule
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

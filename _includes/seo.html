@@ -1,0 +1,25 @@
+{% assign seo_title = page_title | default: site.title %}
+{% assign seo_description = page_description | default: site.description | strip_html | strip_newlines | truncate: 200 %}
+{% assign seo_url = site.url | append: site.baseurl | append: page.url %}
+{% assign seo_image = site.url | append: site.baseurl | append: "/assets/images/HackHPC_at_ADMI26.jpg" %}
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:title" content="{{ seo_title }}">
+<meta property="og:description" content="{{ seo_description }}">
+<meta property="og:url" content="{{ seo_url }}">
+<meta property="og:image" content="{{ seo_image }}">
+<meta property="og:image:alt" content="HackHPC@ADMI26 — June 22-26, 2026">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="400">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ seo_title }}">
+<meta name="twitter:description" content="{{ seo_description }}">
+<meta name="twitter:image" content="{{ seo_image }}">
+<meta name="twitter:image:alt" content="HackHPC@ADMI26 — June 22-26, 2026">
+
+<!-- Canonical -->
+<link rel="canonical" href="{{ seo_url }}">

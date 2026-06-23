@@ -177,6 +177,15 @@ general_schedule:
     theme: "Final Presentations & Awards"
     events: 
       - name: Final Presentations
-        type: Presentations 
+        type: Presentations
+        links:
+          - title: Add to Calendar
+            icon: fa-regular fa-calendar-plus
+            url: "assets/hackhpc-admi26-final-presentations.ics"
+            iconcolor: var(--primary-color)
+          - title: Share Session
+            icon: fa-solid fa-share-nodes
+            url: "https://hackhpc.github.io/admi26/schedule#final-presentations-awards"
+            iconcolor: var(--primary-color)
       - name: Closing Remarks & Awards
         type: Ceremony

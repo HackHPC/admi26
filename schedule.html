@@ -6,6 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Schedule | {{ site.title }}</title>
+    {% assign page_title = "Schedule | " | append: site.title %}
+    {% include seo.html %}
     <link rel="stylesheet" href="{{ site.baseurl }}/css/styles.css">
     <link rel="icon" type="image/x-icon" href="{{ site.baseurl }}/assets/images/favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -20,12 +22,16 @@
     <!-- Event Schedule Section -->
     <section class="container">
         <h1 class="section-title">Event Schedule</h1>
-        <p class="section-subtitle">All times listed in Eastern Time (ET).</p>
+        <p class="section-subtitle">All times listed in Eastern Time (ET).
+            <a href="{{ site.baseurl }}/assets/hackhpc-admi26-schedule.ics" class="btn-secondary" style="margin-left:1rem;font-size:0.8rem;vertical-align:middle;">
+                <i class="fa-regular fa-calendar-plus"></i> Add All Sessions to Calendar
+            </a>
+        </p>
 
         <div class="schedule-timeline">
             
             {% for block in site.data.schedule.general_schedule %}
-            <div class="schedule-block">
+            <div class="schedule-block" id="{{ block.theme | slugify }}">
                 
                 <!-- Time, Theme, and Zoom Header -->
                 <div class="schedule-header">
