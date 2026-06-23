@@ -573,6 +573,41 @@ body {
     margin-top: 0.75rem;
     font-style: italic;
 }
+.team-theme-song {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.82rem;
+    background: var(--light-gold);
+    border-left: 3px solid var(--accent-gold);
+    border-radius: 0 4px 4px 0;
+    padding: 0.4rem 0.6rem;
+}
+.theme-song-label {
+    font-weight: 700;
+    color: var(--muted-text);
+}
+.theme-song-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+.theme-song-link:hover {
+    text-decoration: underline;
+}
+.theme-song-link i {
+    font-size: 0.85rem;
+}
+.theme-song-artist {
+    color: var(--muted-text);
+    font-style: italic;
+}
 .research-question {
     font-size: 0.85rem;
     color: var(--muted-text);
