@@ -83,7 +83,8 @@
   links: []
 
 - teamname: WinMaxxers
-  awards: []
+  awards:
+    - "🏆 Project Plan Award"
   files: "teams/WinMaxxers"
   members:
     names:

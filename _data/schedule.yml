@@ -56,9 +56,15 @@ general_schedule:
     session: Morning
     zoomlink: "https://us06web.zoom.us/j/83678288741?pwd=9jf7gzHu4UUU4qxuUtf6ieZorzQlfT.1"
     theme: "Day 2: Project Plan"
+    summary: |
+      * **Gantt Chart Assignment:** At the start of the session, host Jeaime Powell noticed none of the teams had included a timeline in their plans. He sent the teams into breakout rooms for about 35 minutes to build a Gantt chart outlining task dependencies, due dates, and time estimates.
+      * **Team Presentations & Feedback:** The four teams presented their project plans, detailing their themes, goals, milestones, and newly created timelines. A recurring piece of feedback from the organizers to The Hacking Tribunal, Origin Zero, and The WinMaxers was that their ideas were too broad, and they needed to heavily narrow their project scopes and data "seeds" to be successful within the time limits.
+      * **Project Plan Winners:** Guest judge Dr. Linda Hayden evaluated the presentations and awarded **The WinMaxers** the project plan prize (earning $10 per member) because their milestones included a highly realistic timeline with hourly estimates.
+      * **Afternoon Assignment:** The session concluded with instructions for the afternoon check-in. Teams were tasked with creating a one-slide status update to present in a one-minute window, covering what they have accomplished, what they need to do next, and any major bottlenecks they are facing.
     events: 
       - name: Project Plan
         type: Presentations
+        award: "🏆 Project Plan Award — WinMaxxers"
         description: >
           At least 2-Slides/5-Minutes: <br>
           &nbsp;&nbsp; <strong>Slide 1 — Project Theme &amp; Goals</strong> <br>
@@ -71,6 +77,10 @@ general_schedule:
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <em>Example: Will you fine-tune a model or use a RAG?</em> <br>
           &nbsp;&nbsp;&nbsp;&nbsp; - What technologies you are considering using?
         links:
+          - title: Session Slide Deck
+            icon: fa-regular fa-file-pdf
+            url: "assets/slide-decks/Team_projectplan-HackHPCatADMI26.pdf"
+            iconcolor: red
           - title: Project Plan Guide
             icon: fa-regular fa-file-pdf
             url: "assets/docs/HackHPC_ADMI26_Project_Plan_Guide.pdf"
