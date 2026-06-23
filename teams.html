@@ -52,6 +52,10 @@
                     </div>
                     {% endif %}
 
+                    {% if team.goal %}
+                    <p class="team-goal">{{ team.goal }}</p>
+                    {% endif %}
+
                     {% if team.links and team.links.size > 0 %}
                     <div class="external-links" style="margin-top: 1rem;">
                         {% for link in team.links %}
@@ -73,8 +77,12 @@
                         {% assign affil = team.members.affiliation[i] %}
                         {% assign affil_url = team.members.affiliation_url[i] %}
                         {% assign social = team.members.socials[i] %}
+                        {% assign role = team.members.role[i] %}
                         <li class="member-chip">
                             <strong>{{ name }}</strong>
+                            {% if role %}
+                            <br><span class="member-role">{{ role }}</span>
+                            {% endif %}
                             {% if major or affil %}
                             <br><span class="member-details">
                                 {% if major %}{{ major }}{% endif %}{% if major and affil %} | {% endif %}{% if affil %}{% if affil_url %}<a href="{{ affil_url }}" target="_blank" class="affil-link">{{ affil }}</a>{% else %}{{ affil }}{% endif %}{% endif %}
@@ -162,6 +170,38 @@
                         {% endif %}
                         {% endfor %}
                     </div>
+                </div>
+                {% endif %}
+
+                <!-- Project Plan: milestones + technologies -->
+                {% if team.milestones or team.technologies %}
+                <div class="team-col-plan">
+                    {% if team.milestones %}
+                    <details class="team-plan-dropdown">
+                        <summary><i class="fa-solid fa-list-check"></i> Milestones</summary>
+                        <ol class="team-milestones">
+                            {% for milestone in team.milestones %}
+                            <li>{{ milestone }}</li>
+                            {% endfor %}
+                        </ol>
+                    </details>
+                    {% endif %}
+                    {% if team.technologies %}
+                    <details class="team-plan-dropdown" style="margin-top: 0.5rem;">
+                        <summary><i class="fa-solid fa-microchip"></i> Technologies</summary>
+                        <ul class="team-tech-list">
+                            {% for tech in team.technologies %}
+                            <li>
+                                {% if tech.url %}
+                                <a href="{{ tech.url }}" target="_blank" class="tech-chip" title="{{ tech.description }}">{% if tech.icon %}<i class="{{ tech.icon }}"></i> {% endif %}{{ tech.name }}</a>
+                                {% else %}
+                                <span class="tech-chip" title="{{ tech.description }}">{% if tech.icon %}<i class="{{ tech.icon }}"></i> {% endif %}{{ tech.name }}</span>
+                                {% endif %}
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </details>
+                    {% endif %}
                 </div>
                 {% endif %}
 

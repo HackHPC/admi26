@@ -20,8 +20,6 @@
         <h1>Event Resources</h1>
         <p>Access APIs, documentation, tutorials, and compute cluster guides for the hackathon.</p>
 
-        {% include deliverables.html %}
-
         <!-- Search & Jump Nav Toolbar -->
         <div class="resources-toolbar">
             <div class="resources-search-wrap">
@@ -34,6 +32,8 @@
             <nav class="resources-jump-nav">
                 <span class="resources-jump-label">Jump to:</span>
                 <div class="resources-jump-links" id="resources-jump-links">
+                    <a href="#deliverables" class="resources-jump-link">Deliverables</a>
+                    <a href="#team-technologies" class="resources-jump-link">Team Technologies</a>
                     <a href="#resources-categories" class="resources-jump-link">Resource Categories</a>
                     <a href="#session-resources" class="resources-jump-link">Session Materials</a>
                     {% if site.show_deliverables %}
@@ -42,6 +42,45 @@
                 </div>
             </nav>
         </div>
+
+        <div id="deliverables">
+            {% include deliverables.html %}
+        </div>
+
+        <!-- Team Technology Usage Section -->
+        <section id="team-technologies" style="margin-top: 2rem; padding-top: 2rem; border-top: 2px solid var(--primary-color);">
+            <h2>Team Technology Usage</h2>
+            <p>Technologies each team is using in their project plans — click any technology name to visit its official documentation.</p>
+
+            {% assign sorted_teams = site.data.teams | sort: "teamname" %}
+            {% for team in sorted_teams %}
+            {% if team.technologies and team.technologies.size > 0 %}
+            <div class="team-tech-section">
+                <h3 class="team-tech-section-title">
+                    <a href="{{ site.baseurl }}/teams.html#{{ team.teamname | slugify }}" class="team-tech-team-link">{{ team.teamname }}</a>
+                </h3>
+                <div class="team-tech-grid">
+                    {% for tech in team.technologies %}
+                    <div class="tech-resource-card">
+                        <div class="tech-resource-header">
+                            {% if tech.url %}
+                            <a href="{{ tech.url }}" target="_blank" class="tech-resource-name">
+                                {% if tech.icon %}<i class="{{ tech.icon }}"></i> {% endif %}{{ tech.name }} <i class="fas fa-external-link-alt" style="font-size: 0.65rem; margin-left: 0.25rem; opacity: 0.5;"></i>
+                            </a>
+                            {% else %}
+                            <span class="tech-resource-name">{% if tech.icon %}<i class="{{ tech.icon }}"></i> {% endif %}{{ tech.name }}</span>
+                            {% endif %}
+                        </div>
+                        {% if tech.description %}
+                        <p class="tech-resource-desc">{{ tech.description }}</p>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </section>
 
         <div id="resources-categories" class="resources-by-category">
             {% assign sorted_resources = site.data.resources.resources | sort: "category" %}
