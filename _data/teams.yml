@@ -60,17 +60,21 @@
       - Madison Conley
       - Nadia Rapheal
       - Usir Jackson
+      - Jonathan Wembolua
     affiliation:
       - Winston-Salem State University
       - Mississippi Valley State University
       - Winston-Salem State University
       - Claflin University
+      - Winston-Salem State University
     affiliation_url:
       - https://www.wssu.edu
       - https://www.mvsu.edu
       - https://www.wssu.edu
       - https://www.claflin.edu
+      - https://www.wssu.edu
     major:
+      - Computer Science
       - Computer Science
       - Computer Science
       - Computer Science
@@ -80,16 +84,19 @@
       - AI Research & Insight Lead
       - Graph Analytics & Prediction Lead
       - Data + Knowledge Graph Lead
+      - Student Participant
     socials:
       - https://www.linkedin.com/in/josiah-johnson-a38474338/
       - https://www.linkedin.com/in/madison-conley-a137293aa
       - https://www.linkedin.com/in/nadiarapheal/
+      -
       -
     email:
       - josiahj5484@gmail.com
       - madisonconley15@gmail.com
       - nrapheal04@gmail.com
       - usirjack@gmail.com
+      - Jonathanwembolua13@gmail.com
   links:
     - name: GitHub Repository
       url: https://github.com/JosiahJ25/HPCSGX3HACKINGTRIBUNAL

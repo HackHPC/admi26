@@ -44,6 +44,13 @@
                         <a href="#{{ team.teamname | slugify }}" class="team-permalink" title="Direct link to this team">
                             <i class="fa-solid fa-link"></i>
                         </a>
+                        <button class="team-share-btn"
+                            data-share-url="https://hackhpc.github.io/admi26/teams#{{ team.teamname | slugify }}"
+                            data-share-title="{{ team.teamname }} — HackHPC@ADMI26"
+                            data-share-text="Check out {{ team.teamname }}, a team competing at HackHPC@ADMI26 (June 22–26, 2026)."
+                            title="Share this team">
+                            <i class="fa-solid fa-share-nodes"></i>
+                        </button>
                     </h3>
 
                     {% if team.awards and team.awards.size > 0 %}
@@ -266,5 +273,25 @@
     <footer>
         <p>&copy; 2026 HackHPC@ADMI26. All rights reserved.</p>
     </footer>
+
+    <script>
+    document.querySelectorAll('.team-share-btn').forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            var url   = btn.getAttribute('data-share-url');
+            var title = btn.getAttribute('data-share-title');
+            var text  = btn.getAttribute('data-share-text');
+            if (navigator.share) {
+                navigator.share({ title: title, text: text, url: url }).catch(function() {});
+            } else {
+                navigator.clipboard.writeText(url).then(function() {
+                    var icon = btn.querySelector('i');
+                    icon.className = 'fa-solid fa-check';
+                    setTimeout(function() { icon.className = 'fa-solid fa-share-nodes'; }, 2000);
+                });
+            }
+        });
+    });
+    </script>
 </body>
 </html>
