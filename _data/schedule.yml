@@ -3,6 +3,14 @@ general_schedule:
     session: Morning
     zoomlink: "https://us06web.zoom.us/j/83678288741?pwd=9jf7gzHu4UUU4qxuUtf6ieZorzQlfT.1"
     theme: "Day 1: Kick-Off"
+    summary: |
+      The first session of the HackHPC at ADMI26 hackathon launched the event with a focus on deconstructing human knowledge using Wikipedia as a large-scale data source. Key highlights included:
+
+      * **Introductions:** Staff and students introduced themselves by sharing their academic backgrounds and a personal "spirit creature".
+      * **Innovation Tracks:** Host Jeaime Powell introduced the three core project paths teams must choose from: Origin Tracking, Future Event Prediction, and Alternative Timeline Analysis.
+      * **Deliverables & Guidelines:** Mandatory project deliverables were outlined, which include a GitHub repository, a PDF project poster, a final presentation, and a website visualization. Participants were strongly encouraged to use generative AI tools to assist with their coding and planning.
+      * **Awards:** The host detailed the three main project prizes: the Knowledge Graph Analytics Award, the Portal Award, and the Gateways Impact Award.
+      * **Team Formation:** The session concluded with students voting on their preferred tracks and joining breakout rooms to form teams of up to five people. Their immediate assignment was to establish a team name, design a custom virtual background, and select a royalty-free or AI-generated theme song for the afternoon session.
     events: 
       - name: Hackathon Overview
         type: Presentations
@@ -18,7 +26,13 @@ general_schedule:
     session: Afternoon
     zoomlink: "https://us06web.zoom.us/j/83678288741?pwd=9jf7gzHu4UUU4qxuUtf6ieZorzQlfT.1"
     theme: "Afternoon Check-in"
-    events: 
+    summary: |
+      * **Team Presentations:** The four teams (The Hacking Tribunal, Origin Zero, The WinMaxers, and Capsule Corp Coder Z) presented their slides, introducing their team members, chosen innovation tracks, custom virtual backgrounds, and theme songs.
+      * **Group Photo:** The host, Jeaime Powell, took a group screenshot of all participants showing off their new team virtual backgrounds.
+      * **Introduction Winners:** Capsule Corp Coder Z was chosen as the winner of the team introductions for their cohesive *Dragon Ball Z* theme and custom AI-generated song, earning each team member a $10 prize.
+      * **Project Plan Assignment:** The host outlined the deliverables for the next morning's check-in. Teams are required to update a shared slide deck with their project theme, goals, team roles, and proposed technologies. They must also create a project plan featuring a minimum of seven milestones, with at least three tasks per milestone.
+      * **Independent Work:** The session ended with the host reminding students to set up team Slack channels before sending them into breakout rooms to begin working on their project plans.
+    events:
       - name: Team Introductions
         type: Presentations
         award: "🏆 Team Introductions Award — The Hacking Tribunal"

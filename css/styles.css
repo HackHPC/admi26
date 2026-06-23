@@ -721,6 +721,44 @@ body {
     padding-bottom: 0;
     border-bottom: none;
 }
+.session-summary-dropdown {
+    margin-top: 1rem;
+    border-top: 1px solid #e8e8e8;
+    padding-top: 0.75rem;
+}
+.session-summary-dropdown > summary {
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    user-select: none;
+}
+.session-summary-dropdown > summary::before {
+    content: "▶";
+    font-size: 0.65rem;
+    transition: transform 0.2s ease;
+}
+.session-summary-dropdown[open] > summary::before {
+    transform: rotate(90deg);
+}
+.session-summary-body {
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+    color: var(--muted-text);
+    line-height: 1.6;
+    padding-left: 0.5rem;
+}
+.session-summary-body ul {
+    padding-left: 1.25rem;
+    margin: 0.5rem 0 0 0;
+}
+.session-summary-body li {
+    margin-bottom: 0.4rem;
+}
 .event-name {
     margin-bottom: 0.5rem;
     color: var(--structural-black);

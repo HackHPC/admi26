@@ -73,6 +73,16 @@
                     </div>
                     {% endfor %}
                 </div>
+
+                {% if block.summary %}
+                <details class="session-summary-dropdown">
+                    <summary>Session Summary</summary>
+                    <div class="session-summary-body">
+                        {{ block.summary | markdownify }}
+                    </div>
+                </details>
+                {% endif %}
+
             </div>
             {% endfor %}
 
