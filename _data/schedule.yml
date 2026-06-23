@@ -109,10 +109,25 @@ general_schedule:
           &nbsp;&nbsp; - Any bottlenecks, blockers, issues, or concerns <br>
           You will have 2 mins to present.
         links:
+          - title: Session Slide Deck
+            icon: fa-regular fa-file-pdf
+            url: "assets/slide-decks/Day2-AfternoonCheckin-HackHPCatADMI26.pdf"
+            iconcolor: red
           - title: Shared Slide Deck
             icon: fa-brands fa-google-drive
             url: "https://docs.google.com/presentation/d/1BWLZtmSldV-BX5g5jWfi4shLQkBCjudUqIPh-vuM6sc/edit?usp=sharing"
             iconcolor: "#F4C414"
+    summary: |
+      **AI Coding Demonstration:** Host Jeaime Powell showed off the recently updated Hackathon website, revealing that he built the updates entirely using AI coding agents (like Copilot and Claude) without manually coding anything, encouraging students to leverage AI tools similarly.
+
+      **Team Status Presentations:** Teams gave 2-minute status updates covering their progress, priority tasks, technologies, and bottlenecks:
+
+      - **The Hacking Tribunal:** Narrowed their project scope to the future of robotics. They successfully set up their repository, parsed their first 10 Wikipedia articles, and found that importing LLM models from HuggingFace (like REBEL) directly into their code was highly efficient.
+      - **Origin Zero:** Built a Wikipedia crawler that mapped 60 articles and 474 edges relating to diabetes. They encountered a bottleneck with HuggingFace models not supporting Python 3.14 and pivoted to using the Groq API. Interestingly, their PageRank algorithm ranked "African-American History" as the number one root cause of Type 2 diabetes over diet or genetics.
+      - **The WinMaxers:** Gathered a final dataset of 1,622 pages to predict the next emerging concept in nanotechnology. They improved their data by switching from link-based expansion to subcategory-based expansion to keep the graph domain-consistent. Their main bottleneck is API rate limiting.
+      - **Capsule Corp Coder Z:** Used Google Gemini to generate scenario paths and an HTML mockup for their *Dragon Ball Z* alternate timeline game. Their progress was briefly bottlenecked by Claude going down and a minor HTML naming issue, but their next 24 hours will focus on frontend development like the home page and choice buttons.
+
+      **GitHub Best Practices:** Jeaime concluded the session with a tutorial on GitHub collaboration. He instructed teams to make their repositories public, properly add team members using their GitHub usernames, and use branches and pull requests to safely merge code and avoid conflicts.
 
   - date: "2026-06-24T10:00:00-04:00"
     session: Morning
@@ -121,7 +136,7 @@ general_schedule:
     events: 
       - name: Team Progress 
         type: Presentations 
-        description: "Standard 2-Slide/2-Minute update format."
+        
 
   - date: "2026-06-24T16:00:00-04:00"
     session: Afternoon
@@ -136,8 +151,6 @@ general_schedule:
     zoomlink: "https://us06web.zoom.us/j/83678288741?pwd=9jf7gzHu4UUU4qxuUtf6ieZorzQlfT.1"
     theme: "Day 4: Check-in"
     events: 
-      - name: Advanced Workshops
-        type: Presentations
       - name: Team Progress 
         type: Presentations 
 

@@ -62,15 +62,6 @@
                     </div>
                     {% endif %}
 
-                    {% if team.links and team.links.size > 0 %}
-                    <div class="external-links" style="margin-top: 1rem;">
-                        {% for link in team.links %}
-                        <a href="{{ link.url }}" target="_blank" class="btn-secondary resource-link">
-                            <i class="{{ link.icon }}" style="color: {{ link.iconcolor }};"></i> {{ link.name }}
-                        </a>
-                        {% endfor %}
-                    </div>
-                    {% endif %}
                 </div>
 
                 <!-- Middle: Members -->
@@ -202,16 +193,30 @@
                 {% endif %}
 
                 <!-- Project Plan: milestones + technologies -->
-                {% if team.milestones or team.technologies %}
+                {% if team.links and team.links.size > 0 or team.milestones or team.technologies %}
                 <div class="team-col-plan">
+                    {% if team.links and team.links.size > 0 %}
+                    <div class="external-links" style="margin-bottom: 0.75rem;">
+                        {% for link in team.links %}
+                        <a href="{{ link.url }}" target="_blank" class="btn-secondary resource-link">
+                            <i class="{{ link.icon }}" style="color: {{ link.iconcolor }};"></i> {{ link.name }}
+                        </a>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
                     {% if team.milestones %}
                     <details class="team-plan-dropdown">
                         <summary><i class="fa-solid fa-list-check"></i> Milestones</summary>
-                        <ol class="team-milestones">
+                        <ul class="team-milestones">
                             {% for milestone in team.milestones %}
-                            <li>{{ milestone }}</li>
+                            {% assign label = milestone | split: ": " | first %}
+                            {% assign text = milestone | remove_first: label | remove_first: ": " %}
+                            <li class="milestone-item">
+                                <span class="milestone-label">{{ label }}</span>
+                                <span class="milestone-text">{{ text }}</span>
+                            </li>
                             {% endfor %}
-                        </ol>
+                        </ul>
                     </details>
                     {% endif %}
                     {% if team.technologies %}

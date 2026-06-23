@@ -33,7 +33,7 @@ show_deliverables: false # true → shows Deliverables cards section in index.ht
 
 | File | Purpose |
 |------|---------|
-| `schedule.yml` | Full 5-day schedule (10 sessions). Each block has date, session, theme, Zoom link, and event list. Events support `name`, `type`, `description`, `award`, and `links` fields. |
+| `schedule.yml` | Full 5-day schedule (10 sessions). Each block has date, session, theme, Zoom link, event list, and optional `summary`. Events support `name`, `type`, `description`, `award`, and `links` fields. |
 | `organizers.yml` | 6 organizers with bios, avatars, social links |
 | `staff.yml` | Staff members + past team data (members, awards, GitHub links) |
 | `sponsors.yml` | 3-tier sponsors (Platinum: ADMI, SGX3, NSF; Gold: TACC, projectEUREKA!; Silver: HackHPC) |
@@ -42,6 +42,18 @@ show_deliverables: false # true → shows Deliverables cards section in index.ht
 | `hackathon.yml` | General event metadata |
 
 To add/update schedule events, organizers, staff, resources — **only edit the YAML files**.
+
+### `schedule.yml` session block fields
+
+```yaml
+- date: "2026-06-23T16:00:00-04:00"
+  session: Afternoon
+  zoomlink: "https://..."
+  theme: "Afternoon Check-in"
+  events: [...]
+  summary: |                   # optional — renders as collapsible "Session Summary" dropdown
+    Markdown content here...
+```
 
 ### `schedule.yml` event fields
 
@@ -66,14 +78,29 @@ To add/update schedule events, organizers, staff, resources — **only edit the 
     - "🏆 Award Name"
   background: ""               # optional explicit path to background image; auto-detected from ZoomVirtualBackground.png if blank
   files: "teams/FolderName"    # must match the directory under /teams/
+  goal: "..."                  # short project goal description (italic, muted text)
+  research_question: "..."     # displayed as a green left-bordered block below goal
+  milestones:                  # rendered as custom M# chip + text (not a numbered list)
+    - "M1: Description"
+    - "M2: Description"
+  technologies:
+    - name: Tool Name
+      url: https://...
+      icon: fa-brands fa-python
+      description: One-line description shown on hover
   members:
     names: [...]
     affiliation: [...]
+    affiliation_url: [...]
     major: [...]
     role: [...]
     socials: [...]             # LinkedIn URLs; empty string for members without one
     email: [...]
-  links: []                    # optional external links (GitHub repo, etc.)
+  links:                       # rendered in plan column above milestones dropdown
+    - name: GitHub Repository
+      url: https://github.com/...
+      icon: fa-brands fa-github
+      iconcolor: "#111111"
 ```
 
 ---
@@ -82,9 +109,11 @@ To add/update schedule events, organizers, staff, resources — **only edit the 
 
 Each team has a folder under `/teams/`. Files dropped in are **automatically rendered** on `teams.html`:
 
+Files are rendered in this order: `ZoomVirtualBackground.png` first, then all other images, then audio/video/documents.
+
 | Extension | Rendered As |
 |-----------|------------|
-| `ZoomVirtualBackground.png` | Card header image on index page team preview |
+| `ZoomVirtualBackground.png` | Always rendered first; card header image on index page team preview |
 | `.pdf` | Red PDF icon link |
 | `.doc` / `.docx` | Blue Word icon link |
 | `.ppt` / `.pptx` | Orange PowerPoint icon link |
@@ -128,8 +157,8 @@ Each team has a folder under `/teams/`. Files dropped in are **automatically ren
 | File | URL | Key Sections |
 |------|-----|-------------|
 | `index.html` | `/` | Hero → Sponsors → About (Teams preview, Innovation Tracks, Key Technologies, Logistics, Deliverables) |
-| `schedule.html` | `/schedule` | All sessions from `_data/schedule.yml`; supports `award` field per event |
-| `teams.html` | `/teams` | Full team rows (3-column: identity / members / files); each card has `id` anchor for deep linking |
+| `schedule.html` | `/schedule` | All sessions from `_data/schedule.yml`; supports `award` per event and `summary` per session block (collapsible dropdown) |
+| `teams.html` | `/teams` | Full team rows (4-column: identity / members / files / plan); each card has `id` anchor for deep linking |
 | `staff.html` | `/staff` | Profile cards from `_data/staff.yml` |
 | `organizers.html` | `/organizers` | Profile cards from `_data/organizers.yml` |
 | `resources.html` | `/resources` | Collapsible categories from `_data/resources.yml` + session resources from schedule |
@@ -162,13 +191,17 @@ Each team has a folder under `/teams/`. Files dropped in are **automatically ren
 - `.btn-primary` / `.btn-secondary` / `.btn-zoom` — button variants
 - `.deliverables-dropdown` — collapsible details pattern (gold summary bar)
 - `.schedule-block` / `.schedule-header` / `.event-item` — schedule components
+- `.session-summary-dropdown` / `.session-summary-body` — collapsible session summary on schedule page
 - `.about-list` — green-tinted list items with bold labels
 - `.badge` / `.award-badge` — gold badge chips
 - `.teams-preview-grid` / `.team-preview-card` — index page team preview cards
-- `.teams-list` / `.team-card-row` — full-width 3-column team rows on `teams.html`
-- `.team-col-identity` / `.team-col-members` / `.team-col-files` — columns within a team row
+- `.teams-list` / `.team-card-row` — full-width team rows on `teams.html`
+- `.team-col-identity` / `.team-col-members` / `.team-col-files` / `.team-col-plan` — columns within a team row
 - `.member-list-row` / `.member-chip` — flex-wrap member grid
 - `.team-image` / `.team-image-link` — inline image display in team file listings
+- `.research-question` — green left-bordered block for team research question
+- `.milestone-item` / `.milestone-label` / `.milestone-text` — M# chip + text milestone rows
+- `.team-plan-dropdown` / `.team-milestones` / `.team-tech-list` — plan column components
 
 Mobile breakpoint: `@media (max-width: 768px)`
 
@@ -184,7 +217,7 @@ Teams choose one of three tracks, all centered on Wikipedia as a knowledge graph
 
 ---
 
-## Recent Work (this session — June 22, 2026)
+## Recent Work (June 22, 2026)
 
 - **Schedule**: Added Session Slide Deck link for Team Introductions (6/22 afternoon); added `award` field support to `schedule.html` and awarded "🏆 Team Introductions Award" to The Hacking Tribunal
 - **Teams**: Populated `_data/teams.yml` with all 4 real teams and full member data from registration CSV; renamed WinMaxers → **WinMaxxers**
@@ -192,6 +225,14 @@ Teams choose one of three tracks, all centered on Wikipedia as a knowledge graph
 - **teams-section.html**: New include for `index.html` — 4-up preview cards using `ZoomVirtualBackground.png` as the card header image, linking to `teams.html#slug`
 - **index.html**: Teams preview positioned inside About section, above Innovation Tracks; old inline teams block removed
 - **Navbar**: Teams link is now permanent (removed `show_teams` flag guard); active-state highlighting added
+
+## Recent Work (June 23, 2026)
+
+- **Teams — research questions**: Added `research_question` field to all 4 teams in `_data/teams.yml`; rendered as a green left-bordered block below the goal on `teams.html`
+- **Teams — GitHub links**: Added `links` entry for The Hacking Tribunal pointing to their GitHub repo; team links moved to the plan column (above Milestones dropdown) rather than the identity column
+- **Teams — file ordering**: `teams.html` now renders files in 3 passes — `ZoomVirtualBackground.png` first, then all other images, then audio/video/documents
+- **Teams — milestone chips**: Milestones changed from `<ol>` to a `<ul>` with the `M#` prefix extracted and rendered as a small green chip; new CSS classes `.milestone-item`, `.milestone-label`, `.milestone-text`
+- **Schedule — Day 2 Afternoon**: Added Session Slide Deck PDF link (`Day2-AfternoonCheckin-HackHPCatADMI26.pdf`) and session `summary` (collapsible dropdown) to the June 23 4:00 PM block
 
 ---
 
