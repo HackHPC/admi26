@@ -5,20 +5,20 @@
   files: "teams/TheHackingTribunal"
   members:
     names:
-      - Usir Jackson
       - Josiah Johnson
-      - Nadia Rapheal
       - Madison Conley
+      - Nadia Rapheal
+      - Usir Jackson
     affiliation:
-      - Claflin University
-      - Winston-Salem State University
       - Winston-Salem State University
       - Mississippi Valley State University
+      - Winston-Salem State University
+      - Claflin University
     affiliation_url:
-      - https://www.claflin.edu
-      - https://www.wssu.edu
       - https://www.wssu.edu
       - https://www.mvsu.edu
+      - https://www.wssu.edu
+      - https://www.claflin.edu
     major:
       - Computer Science
       - Computer Science
@@ -30,15 +30,15 @@
       - Student Participant
       - Student Participant
     socials:
-      -
       - https://www.linkedin.com/in/josiah-johnson-a38474338/
-      - https://www.linkedin.com/in/nadiarapheal/
       - https://www.linkedin.com/in/madison-conley-a137293aa
+      - https://www.linkedin.com/in/nadiarapheal/
+      -
     email:
-      - usirjack@gmail.com
       - josiahj5484@gmail.com
-      - nrapheal04@gmail.com
       - madisonconley15@gmail.com
+      - nrapheal04@gmail.com
+      - usirjack@gmail.com
   links: []
 
 - teamname: Origin Zero
@@ -46,24 +46,24 @@
   files: "teams/OriginZero"
   members:
     names:
+      - Amelia Hunter
       - Anthony Nwafor
       - Emmanuel Akwasi Opoku
       - Prince Osei Bonsu
-      - Amelia Hunter
     affiliation:
+      - Voorhees University
       - Mississippi Valley State University
       - Grambling State University
       - Voorhees University
-      - Voorhees University
     affiliation_url:
+      - https://www.voorhees.edu
       - https://www.mvsu.edu
       - https://www.gram.edu
       - https://www.voorhees.edu
-      - https://www.voorhees.edu
     major:
+      - Computer Science
       - Computer Science and Mathematics
       - Cybersecurity
-      - Computer Science
       - Computer Science
     role:
       - Student Participant
@@ -71,15 +71,15 @@
       - Student Participant
       - Student Participant
     socials:
+      - https://www.linkedin.com/in/amelia-hunter-3b9373383
       - https://www.linkedin.com/in/anthony-nwafor-9b8055236
       -
       - https://www.linkedin.com/in/prince-osei-bonsu-b913b7356/
-      - https://www.linkedin.com/in/amelia-hunter-3b9373383
     email:
+      - ameliaskhunter@gmail.com
       - anthony.nwafor@mvsu.edu
       - opokuakwasi239@gmail.com
       - posei231846@voorhees.edu
-      - ameliaskhunter@gmail.com
   links: []
 
 - teamname: WinMaxxers
@@ -87,20 +87,20 @@
   files: "teams/WinMaxxers"
   members:
     names:
-      - Quintin Ampofo
       - Cole Scott
       - Damone Washington
       - Darell Barnes
+      - Quintin Ampofo
     affiliation:
-      - Hampton University
       - Hampton University
       - Winston-Salem State University
       - Voorhees University
+      - Hampton University
     affiliation_url:
-      - https://www.hamptonu.edu
       - https://www.hamptonu.edu
       - https://www.wssu.edu
       - https://www.voorhees.edu
+      - https://www.hamptonu.edu
     major:
       - Computer Science
       - Computer Science
@@ -112,15 +112,15 @@
       - Student Participant
       - Student Participant
     socials:
-      - https://www.linkedin.com/in/quintin-ampofo-4660782b4
       - https://www.linkedin.com/in/cole-scott-640633304
       - https://www.linkedin.com/in/damone-washington-548765325/
       - https://www.linkedin.com/in/darell-barnes-996109350/
+      - https://www.linkedin.com/in/quintin-ampofo-4660782b4
     email:
-      - quintinjames06@gmail.com
       - Coles2025@gmail.com
       - jadynwash@gmail.com
       - darellbarnes450@gmail.com
+      - quintinjames06@gmail.com
   links: []
 
 - teamname: Capsule Corp CoderZ
@@ -128,38 +128,38 @@
   files: "teams/CapsuleCorpCoderZ"
   members:
     names:
-      - Sydney Riddick
+      - Chance Walker
       - Javonte Carter
       - Joshua Chaney
-      - Chance Walker
+      - Sydney Riddick
     affiliation:
-      - Elizabeth City State University
+      - Winston-Salem State University
       - Florida A&M University
       - Mississippi Valley State University
-      - Winston-Salem State University
+      - Elizabeth City State University
     affiliation_url:
-      - https://www.ecsu.edu
+      - https://www.wssu.edu
       - https://www.famu.edu
       - https://www.mvsu.edu
-      - https://www.wssu.edu
+      - https://www.ecsu.edu
     major:
+      - Computer Science
+      - Computer Science
+      - Computer Science
       -
-      - Computer Science
-      - Computer Science
-      - Computer Science
     role:
       - Student Participant
       - Student Participant
       - Student Participant
       - Student Participant
     socials:
-      -
+      - https://www.linkedin.com/in/chance-walker-735b0735b
       - https://www.linkedin.com/in/javonte-carter/
       - https://www.linkedin.com/in/joshua-chaney-7b624531a/
-      - https://www.linkedin.com/in/chance-walker-735b0735b
+      -
     email:
-      - Seriddick291@students.ecsu.edu
+      - cwalker124@rams.wssu.edu
       - javonte1.carter@famu.edu
       - joshj.chaney12@gmail.com
-      - cwalker124@rams.wssu.edu
+      - Seriddick291@students.ecsu.edu
   links: []
