@@ -71,6 +71,10 @@ general_schedule:
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <em>Example: Will you fine-tune a model or use a RAG?</em> <br>
           &nbsp;&nbsp;&nbsp;&nbsp; - What technologies you are considering using?
         links:
+          - title: Project Plan Guide
+            icon: fa-regular fa-file-pdf
+            url: "assets/docs/HackHPC_ADMI26_Project_Plan_Guide.pdf"
+            iconcolor: red
           - title: Shared Slide Deck
             icon: fa-brands fa-google-drive
             url: "https://docs.google.com/presentation/d/1yxEbhaP_F4iW06G7jJoJS61IqaNu46HuiMvaYDtSKus/edit?usp=sharing"
