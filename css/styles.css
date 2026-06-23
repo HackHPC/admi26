@@ -995,6 +995,11 @@ a.tech-resource-name:hover {
 .link-item i {
     margin-right: 4px;
 }
+button.copy-link-btn {
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+}
 
 .alert {
     background-color: var(--danger-color);

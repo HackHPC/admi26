@@ -38,7 +38,7 @@ show_deliverables: false # true → shows Deliverables cards section in index.ht
 | `staff.yml` | Staff members + past team data (members, awards, GitHub links) |
 | `sponsors.yml` | 3-tier sponsors (Platinum: ADMI, SGX3, NSF; Gold: TACC, projectEUREKA!; Silver: HackHPC) |
 | `resources.yml` | 60+ resources in 11 categories (AI Platforms, Computing, Web Dev, etc.) |
-| `teams.yml` | Real team data for all 4 competing teams (names, affiliations, majors, emails, LinkedIn URLs) |
+| `teams.yml` | Real team data for all 4 competing teams (names, affiliations, majors, emails, LinkedIn URLs, theme songs) |
 | `hackathon.yml` | General event metadata |
 
 To add/update schedule events, organizers, staff, resources — **only edit the YAML files**.
@@ -96,7 +96,10 @@ To add/update schedule events, organizers, staff, resources — **only edit the 
     role: [...]
     socials: [...]             # LinkedIn URLs; empty string for members without one
     email: [...]
-  links:                       # rendered in plan column above milestones dropdown
+  theme_song: "Song Title"     # rendered as gold-background block in plan column, below links, above milestones
+  theme_song_url: "https://..." # links the song title
+  theme_song_artist: "handle"  # shown as "by handle" in italic
+  links:                       # rendered in plan column above theme song and milestones dropdown
     - name: GitHub Repository
       url: https://github.com/...
       icon: fa-brands fa-github
@@ -149,6 +152,7 @@ Files are rendered in this order: `ZoomVirtualBackground.png` first, then all ot
 | `navbar.html` | All pages | Site navigation; Teams link is permanent (not behind a feature flag) |
 | `sponsors.html` | `index.html` | Sponsors banner |
 | `sponsors-sidebar.html` | All inner pages | Sidebar sponsors column |
+| `seo.html` | All pages (via `<head>`) | Open Graph + Twitter Card meta tags using `HackHPC_at_ADMI26.jpg` as the share preview image |
 
 ---
 
@@ -156,8 +160,8 @@ Files are rendered in this order: `ZoomVirtualBackground.png` first, then all ot
 
 | File | URL | Key Sections |
 |------|-----|-------------|
-| `index.html` | `/` | Hero → Sponsors → About (Teams preview, Innovation Tracks, Key Technologies, Logistics, Deliverables) |
-| `schedule.html` | `/schedule` | All sessions from `_data/schedule.yml`; supports `award` per event and `summary` per session block (collapsible dropdown) |
+| `index.html` | `/` | Hero → Sponsors → About (Past Events, Teams preview, Innovation Tracks, Key Technologies, Logistics, Deliverables) |
+| `schedule.html` | `/schedule` | All sessions from `_data/schedule.yml`; supports `award` per event and `summary` per session block (collapsible dropdown); each block has an `id` set to the slugified theme name for deep linking (e.g. `#final-presentations-awards`); "Add All Sessions to Calendar" button links to the combined ICS file |
 | `teams.html` | `/teams` | Full team rows (4-column: identity / members / files / plan); each card has `id` anchor for deep linking |
 | `staff.html` | `/staff` | Profile cards from `_data/staff.yml` |
 | `organizers.html` | `/organizers` | Profile cards from `_data/organizers.yml` |
@@ -194,12 +198,14 @@ Files are rendered in this order: `ZoomVirtualBackground.png` first, then all ot
 - `.session-summary-dropdown` / `.session-summary-body` — collapsible session summary on schedule page
 - `.about-list` — green-tinted list items with bold labels
 - `.badge` / `.award-badge` — gold badge chips
+- `.past-event-card` / `.past-event-year` / `.past-event-name` / `.past-event-link` — past events grid on index page
 - `.teams-preview-grid` / `.team-preview-card` — index page team preview cards
 - `.teams-list` / `.team-card-row` — full-width team rows on `teams.html`
 - `.team-col-identity` / `.team-col-members` / `.team-col-files` / `.team-col-plan` — columns within a team row
 - `.member-list-row` / `.member-chip` — flex-wrap member grid
 - `.team-image` / `.team-image-link` — inline image display in team file listings
 - `.research-question` — green left-bordered block for team research question
+- `.team-theme-song` / `.theme-song-label` / `.theme-song-link` / `.theme-song-artist` — gold-background theme song block in plan column
 - `.milestone-item` / `.milestone-label` / `.milestone-text` — M# chip + text milestone rows
 - `.team-plan-dropdown` / `.team-milestones` / `.team-tech-list` — plan column components
 
@@ -232,7 +238,12 @@ Teams choose one of three tracks, all centered on Wikipedia as a knowledge graph
 - **Teams — GitHub links**: Added `links` entry for The Hacking Tribunal pointing to their GitHub repo; team links moved to the plan column (above Milestones dropdown) rather than the identity column
 - **Teams — file ordering**: `teams.html` now renders files in 3 passes — `ZoomVirtualBackground.png` first, then all other images, then audio/video/documents
 - **Teams — milestone chips**: Milestones changed from `<ol>` to a `<ul>` with the `M#` prefix extracted and rendered as a small green chip; new CSS classes `.milestone-item`, `.milestone-label`, `.milestone-text`
+- **Teams — theme songs**: Added `theme_song`, `theme_song_url`, `theme_song_artist` to all 4 teams in `_data/teams.yml`; rendered in plan column (below GitHub link, above Milestones) as a gold-background block with black music note icon and "Team Theme Song:" label
 - **Schedule — Day 2 Afternoon**: Added Session Slide Deck PDF link (`Day2-AfternoonCheckin-HackHPCatADMI26.pdf`) and session `summary` (collapsible dropdown) to the June 23 4:00 PM block
+- **Schedule — deep links**: All session blocks now have `id="{{ block.theme | slugify }}"` anchors; Final Presentations event has "Add to Calendar" and "Share Session" links
+- **Calendar ICS**: Generated `assets/hackhpc-admi26-schedule.ics` (all 10 sessions) and `assets/hackhpc-admi26-final-presentations.ics` (Final Presentations only); "Add All Sessions to Calendar" button on schedule page
+- **SEO**: Created `_includes/seo.html` with Open Graph + Twitter Card meta tags; included in all 7 pages; `HackHPC_at_ADMI26.jpg` is the share preview image
+- **Past Events**: Added Past HackHPC@ADMI Events grid (2022–2025) to `index.html` inside the About section, above the Participating Teams preview
 
 ---
 

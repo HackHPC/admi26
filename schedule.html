@@ -69,9 +69,20 @@
                         {% if event.links %}
                         <div class="event-links">
                             {% for link in event.links %}
+                            {% if link.copy %}
+                            <button class="link-item copy-link-btn"
+                                data-copy-url="{{ link.url }}"
+                                data-share-title="{{ block.theme }} — HackHPC@ADMI26"
+                                data-share-text="Join us for the {{ block.theme }} at HackHPC@ADMI26 on {{ block.date | date: '%A, %B %-d, %Y' }} at {{ block.date | date: '%-I:%M %p' }} ET."
+                                title="Share this session">
+                                <i class="{{ link.icon }}" style="color: {{ link.iconcolor }};"></i>
+                                <span class="copy-link-label">{{ link.title }}</span>
+                            </button>
+                            {% else %}
                             <a href="{{ link.url }}" target="_blank" class="link-item">
                                 <i class="{{ link.icon }}" style="color: {{ link.iconcolor }};"></i> {{ link.title }}
                             </a>
+                            {% endif %}
                             {% endfor %}
                         </div>
                         {% endif %}
@@ -104,5 +115,31 @@
     <footer>
         <p>&copy; 2026 HackHPC@ADMI26. All rights reserved.</p>
     </footer>
+
+    <script>
+    document.querySelectorAll('.copy-link-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            var url   = btn.getAttribute('data-copy-url');
+            var title = btn.getAttribute('data-share-title');
+            var text  = btn.getAttribute('data-share-text');
+            var label = btn.querySelector('.copy-link-label');
+
+            function showFeedback(msg) {
+                var original = label.textContent;
+                label.textContent = msg;
+                setTimeout(function() { label.textContent = original; }, 2500);
+            }
+
+            if (navigator.share) {
+                navigator.share({ title: title, text: text, url: url })
+                    .catch(function() {});
+            } else {
+                navigator.clipboard.writeText(url)
+                    .then(function() { showFeedback('Link copied!'); })
+                    .catch(function() { showFeedback('Copy failed'); });
+            }
+        });
+    });
+    </script>
 </body>
 </html>

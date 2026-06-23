@@ -187,5 +187,6 @@ general_schedule:
             icon: fa-solid fa-share-nodes
             url: "https://hackhpc.github.io/admi26/schedule#final-presentations-awards"
             iconcolor: var(--primary-color)
+            copy: true
       - name: Closing Remarks & Awards
         type: Ceremony
