@@ -119,8 +119,6 @@ general_schedule:
     zoomlink: "https://us06web.zoom.us/j/83678288741?pwd=9jf7gzHu4UUU4qxuUtf6ieZorzQlfT.1"
     theme: "Day 3: Check-in"
     events: 
-      - name: Sponsor Highlights & Mentorship
-        type: Sponsor Presentations
       - name: Team Progress 
         type: Presentations 
         description: "Standard 2-Slide/2-Minute update format."
