@@ -427,6 +427,19 @@ body {
     text-decoration-color: var(--primary-color);
 }
 
+/* Institution Map */
+.institution-map-wrap {
+    margin: 2rem 0;
+    text-align: center;
+}
+.institution-map {
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(17,17,17,0.10);
+}
+
 /* Teams Preview — index page cards */
 .teams-preview-grid {
     display: grid;
