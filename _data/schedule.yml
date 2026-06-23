@@ -95,14 +95,24 @@ general_schedule:
     zoomlink: "https://us06web.zoom.us/j/83678288741?pwd=9jf7gzHu4UUU4qxuUtf6ieZorzQlfT.1"
     theme: "Afternoon Check-in"
     events: 
-      - name: Team Progress 
-        type: Presentations 
+      - name: Team Progress
+        type: Presentations
         description: >
-          2-Slides/2-Minutes with: <br>
-          &nbsp;&nbsp; - Progress Priorities <br>
-          &nbsp;&nbsp; - Updated Project Plan <br>
+          Add at least 2 slides to the shared deck with: <br>
+          &nbsp;&nbsp; - Your current project status <br>
+          &nbsp;&nbsp;&nbsp;&nbsp; &bull; Progress <br>
+          &nbsp;&nbsp;&nbsp;&nbsp; &bull; One (1) interesting thing you found/figured out <br>
+          &nbsp;&nbsp;&nbsp;&nbsp; &bull; Priority tasks for next session <br>
           &nbsp;&nbsp; - Technology/Resources in Use <br>
-          &nbsp;&nbsp; - Bottlenecks / Issues / Concerns
+          &nbsp;&nbsp;&nbsp;&nbsp; &bull; One (1) interesting thing you found/figured out <br>
+          &nbsp;&nbsp;&nbsp;&nbsp; &bull; Tasks/Milestones you want to accomplish by the next afternoon session (24hrs) <br>
+          &nbsp;&nbsp; - Any bottlenecks, blockers, issues, or concerns <br>
+          You will have 2 mins to present.
+        links:
+          - title: Shared Slide Deck
+            icon: fa-brands fa-google-drive
+            url: "https://docs.google.com/presentation/d/1BWLZtmSldV-BX5g5jWfi4shLQkBCjudUqIPh-vuM6sc/edit?usp=sharing"
+            iconcolor: "#F4C414"
 
   - date: "2026-06-24T10:00:00-04:00"
     session: Morning
