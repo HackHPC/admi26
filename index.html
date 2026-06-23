@@ -33,8 +33,10 @@
     <section id="about" class="container">
         <h2>About HackHPC@ADMI26</h2>
         <p><strong>HackHPC@ADMI26</strong> is a five-day virtual hackathon focused on deconstructing the architecture of human knowledge. Using Wikipedia as a massive knowledge graph, teams will leverage advanced computational techniques to analyze the past, predict the future, and simulate alternative realities.</p>
-        
+
         <p>The event follows a collaborative model of project development, iterative feedback, and afternoon troubleshooting support to keep teams on track. Participants will move beyond "black box" solutions, building deep, graph-based applications that uncover the "how" and "why" behind the information we consume.</p>
+
+        {% include teams-section.html %}
 
         {% include innovation-tracks.html %}
 
@@ -57,98 +59,6 @@
 
         {% include deliverables.html %}
     </section>
-
-    <!-- Participating Teams Section (Conditional) -->
-    {% if site.show_teams %}
-    <section id="teams" class="container bg-light">
-        <h2 class="section-title">Participating Teams</h2>
-        <div class="grid">
-            
-            {% for team in site.data.hackathon.teams %}
-            <div class="team-card">
-                <!-- Team Header & Awards -->
-                <h3>{{ team.teamname }}</h3>
-                
-                {% if team.awards %}
-                <div class="awards-container">
-                    {% for award in team.awards %}
-                        <span class="badge award-badge">🏆 {{ award }}</span>
-                    {% endfor %}
-                </div>
-                {% endif %}
-
-                <hr style="margin: 1rem 0; border-top: 1px solid #eee;">
-
-                <!-- Team Members -->
-                <h4>Team Members:</h4>
-                <ul class="member-list">
-                    {% for name in team.members.names %}
-                    {% assign i = forloop.index0 %}
-                    <li>
-                        <strong>{{ name }}</strong><br>
-                        <span class="member-details">
-                            {{ team.members.major[i] }} | {{ team.members.affiliation[i] }}
-                        </span>
-                    </li>
-                    {% endfor %}
-                </ul>
-
-                <!-- Important Links & Automated Directory Files -->
-                <div class="team-resources" style="margin-top: 1.5rem;">
-                    
-                    {% if team.links %}
-                        <div class="external-links">
-                            {% for link in team.links %}
-                                <a href="{{ link.url }}" target="_blank" class="btn-secondary resource-link">
-                                    <i class="{{ link.icon }}" style="color: {{ link.iconcolor }};"></i> {{ link.name }}
-                                </a>
-                            {% endfor %}
-                        </div>
-                    {% endif %}
-
-                    {% if team.files %}
-                        <h4 style="margin-top: 1rem; font-size: 0.9rem; color: #555;">Team Files:</h4>
-                        <div class="auto-files">
-                            {% for file in site.static_files %}
-                                {% if file.path contains team.files %}
-                                    
-                                    {% if file.extname == '.pdf' %}
-                                        <a href="{{ site.baseurl }}{{ file.path }}" target="_blank" class="btn-secondary resource-link">
-                                            <i class="fa-regular fa-file-pdf" style="color: red;"></i> {{ file.name }}
-                                        </a>
-                                    {% elsif file.extname == '.png' or file.extname == '.jpg' or file.extname == '.jpeg' or file.extname == '.gif' %}
-                                        <a href="{{ site.baseurl }}{{ file.path }}" target="_blank" class="btn-secondary resource-link">
-                                            <i class="fa-regular fa-image" style="color: #0056b3;"></i> View {{ file.name }}
-                                        </a>
-                                    {% elsif file.extname == '.mp3' %}
-                                        <div class="audio-player" style="margin-top: 0.5rem; margin-bottom: 0.5rem;">
-                                            <span style="font-size: 0.8rem; display: block; margin-bottom: 0.2rem;">🎵 Theme Song</span>
-                                            <audio controls style="width: 100%; max-height: 40px;">
-                                                <source src="{{ site.baseurl }}{{ file.path }}" type="audio/mpeg">
-                                            </audio>
-                                        </div>
-                                    {% elsif file.extname == '.mp4' %}
-                                        <div class="video-player" style="margin-top: 0.5rem; margin-bottom: 0.5rem;">
-                                            <span style="font-size: 0.8rem; display: block; margin-bottom: 0.2rem;">🎥 Video Pitch</span>
-                                            <video controls style="width: 100%; border-radius: 4px;">
-                                                <source src="{{ site.baseurl }}{{ file.path }}" type="video/mp4">
-                                            </video>
-                                        </div>
-                                    {% endif %}
-                                    
-                                {% endif %}
-                            {% endfor %}
-                        </div>
-                    {% endif %}
-
-                </div>
-
-            </div>
-            {% endfor %}
-
-        </div>
-    </section>
-    {% endif %}
 
     <!-- Required Deliverables Section (Conditional) -->
     {% if site.show_deliverables %}

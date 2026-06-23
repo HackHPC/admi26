@@ -11,65 +11,48 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- Navigation -->
     {% include navbar.html %}
 
     <div class="page-layout">
         <main class="page-main">
 
-    <!-- Teams Section -->
     <section class="container">
         <h1 class="section-title">Participating Teams</h1>
         <p class="section-subtitle">Meet the teams competing at HackHPC@ADMI26</p>
 
-        <div class="grid">
+        <div class="teams-list">
             {% for team in site.data.teams %}
-            <div class="team-card">
 
-                <!-- Team Header & Awards -->
-                <h3>{{ team.teamname }}</h3>
+            {% assign has_files = false %}
+            {% if team.files %}
+                {% for file in site.static_files %}
+                    {% if file.path contains team.files and file.name != '.gitkeep' %}
+                        {% assign has_files = true %}
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
 
-                {% if team.awards and team.awards.size > 0 %}
-                <div class="awards-container">
-                    {% for award in team.awards %}
-                    <span class="award-badge">{{ award }}</span>
-                    {% endfor %}
-                </div>
-                {% endif %}
+            <div class="team-card team-card-row" id="{{ team.teamname | slugify }}">
 
-                <hr style="margin: 1rem 0; border-top: 1px solid #eee;">
-
-                <!-- Team Members -->
-                <h4>Team Members</h4>
-                <ul class="member-list">
-                    {% for name in team.members.names %}
-                    {% assign i = forloop.index0 %}
-                    <li>
-                        <strong>{{ name }}</strong>
-                        {% assign major = team.members.major[i] %}
-                        {% assign affil = team.members.affiliation[i] %}
-                        {% assign social = team.members.socials[i] %}
-                        {% if major or affil %}
-                        <br>
-                        <span class="member-details">
-                            {% if major %}{{ major }}{% endif %}{% if major and affil %} | {% endif %}{% if affil %}{{ affil }}{% endif %}
-                        </span>
-                        {% endif %}
-                        {% if social %}
-                        <br>
-                        <a href="{{ social }}" target="_blank" class="member-details" style="color: var(--primary-color);">
-                            <i class="fa-brands fa-linkedin"></i> LinkedIn
+                <!-- Left: Team Identity -->
+                <div class="team-col-identity">
+                    <h3 class="team-name">
+                        {{ team.teamname }}
+                        <a href="#{{ team.teamname | slugify }}" class="team-permalink" title="Direct link to this team">
+                            <i class="fa-solid fa-link"></i>
                         </a>
-                        {% endif %}
-                    </li>
-                    {% endfor %}
-                </ul>
+                    </h3>
 
-                <!-- Links & Team Files -->
-                <div class="team-resources" style="margin-top: 1.5rem;">
+                    {% if team.awards and team.awards.size > 0 %}
+                    <div class="awards-container" style="margin-top: 0.5rem;">
+                        {% for award in team.awards %}
+                        <span class="award-badge">{{ award }}</span>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
 
                     {% if team.links and team.links.size > 0 %}
-                    <div class="external-links">
+                    <div class="external-links" style="margin-top: 1rem;">
                         {% for link in team.links %}
                         <a href="{{ link.url }}" target="_blank" class="btn-secondary resource-link">
                             <i class="{{ link.icon }}" style="color: {{ link.iconcolor }};"></i> {{ link.name }}
@@ -77,18 +60,39 @@
                         {% endfor %}
                     </div>
                     {% endif %}
+                </div>
 
-                    {% if team.files %}
-                    {% assign has_files = false %}
-                    {% for file in site.static_files %}
-                        {% if file.path contains team.files and file.name != '.gitkeep' %}
-                            {% assign has_files = true %}
-                        {% endif %}
-                    {% endfor %}
+                <!-- Middle: Members -->
+                <div class="team-col-members">
+                    <h4 class="team-col-heading">Team Members</h4>
+                    <ul class="member-list-row">
+                        {% for name in team.members.names %}
+                        {% assign i = forloop.index0 %}
+                        {% assign major = team.members.major[i] %}
+                        {% assign affil = team.members.affiliation[i] %}
+                        {% assign affil_url = team.members.affiliation_url[i] %}
+                        {% assign social = team.members.socials[i] %}
+                        <li class="member-chip">
+                            <strong>{{ name }}</strong>
+                            {% if major or affil %}
+                            <br><span class="member-details">
+                                {% if major %}{{ major }}{% endif %}{% if major and affil %} | {% endif %}{% if affil %}{% if affil_url %}<a href="{{ affil_url }}" target="_blank" class="affil-link">{{ affil }}</a>{% else %}{{ affil }}{% endif %}{% endif %}
+                            </span>
+                            {% endif %}
+                            {% if social %}
+                            <br><a href="{{ social }}" target="_blank" class="member-details" style="color: var(--primary-color);">
+                                <i class="fa-brands fa-linkedin"></i> LinkedIn
+                            </a>
+                            {% endif %}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
 
-                    {% if has_files %}
-                    <hr style="margin: 1rem 0; border-top: 1px solid #eee;">
-                    <h4 style="font-size: 0.9rem; color: #555; margin-bottom: 0.5rem;">Team Files</h4>
+                <!-- Right: Files (only rendered when files exist) -->
+                {% if has_files %}
+                <div class="team-col-files">
+                    <h4 class="team-col-heading">Team Files</h4>
                     <div class="auto-files">
                         {% for file in site.static_files %}
                         {% if file.path contains team.files and file.name != '.gitkeep' %}
@@ -113,6 +117,11 @@
                                 <source src="{{ site.baseurl }}{{ file.path }}">
                             </video>
                         </div>
+
+                        {% elsif ext == '.png' or ext == '.jpg' or ext == '.jpeg' or ext == '.gif' or ext == '.svg' or ext == '.webp' %}
+                        <a href="{{ site.baseurl }}{{ file.path }}" target="_blank" class="team-image-link">
+                            <img src="{{ site.baseurl }}{{ file.path }}" alt="{{ file.name }}" class="team-image">
+                        </a>
 
                         {% else %}
                         <a href="{{ site.baseurl }}{{ file.path }}" target="_blank" class="btn-secondary resource-link">
@@ -142,8 +151,6 @@
                                 <i class="fa-regular fa-file-code" style="color: #3498db;"></i>
                             {% elsif ext == '.zip' or ext == '.tar' or ext == '.gz' %}
                                 <i class="fa-solid fa-file-zipper" style="color: #8e6f3e;"></i>
-                            {% elsif ext == '.png' or ext == '.jpg' or ext == '.jpeg' or ext == '.gif' or ext == '.svg' or ext == '.webp' %}
-                                <i class="fa-regular fa-image" style="color: #0056b3;"></i>
                             {% else %}
                                 <i class="fa-regular fa-file" style="color: #666;"></i>
                             {% endif %}
@@ -154,10 +161,8 @@
                         {% endif %}
                         {% endfor %}
                     </div>
-                    {% endif %}
-                    {% endif %}
-
                 </div>
+                {% endif %}
 
             </div>
             {% endfor %}

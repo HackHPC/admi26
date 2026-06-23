@@ -1,0 +1,54 @@
+<section id="teams" class="container bg-light">
+    <h2 class="section-title">Participating Teams</h2>
+    <p class="section-subtitle">Click a team card to view their full profile</p>
+    <div class="teams-preview-grid">
+        {% for team in site.data.teams %}
+        {% assign team_slug = team.teamname | slugify %}
+
+        {% assign team_bg = nil %}
+        {% if team.background %}
+            {% assign team_bg = team.background %}
+        {% elsif team.files %}
+            {% for file in site.static_files %}
+                {% if file.path contains team.files and file.name == 'ZoomVirtualBackground.png' %}
+                    {% assign team_bg = file.path %}
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+
+        <a href="{{ site.baseurl }}/teams.html#{{ team_slug }}" class="team-preview-card">
+
+            <div class="team-preview-bg">
+                {% if team_bg %}
+                <img src="{{ site.baseurl }}{{ team_bg }}" alt="{{ team.teamname }} Zoom Virtual Background">
+                {% else %}
+                <div class="team-preview-bg-placeholder"></div>
+                {% endif %}
+            </div>
+
+            <div class="team-preview-body">
+                <h3 class="team-preview-name">{{ team.teamname }}</h3>
+
+                {% if team.awards and team.awards.size > 0 %}
+                <div class="team-preview-awards">
+                    {% for award in team.awards %}
+                    <span class="award-badge">{{ award }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                <ul class="team-preview-members">
+                    {% for name in team.members.names %}
+                    <li>{{ name }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="team-preview-cta">
+                View Team Profile <i class="fa-solid fa-arrow-right"></i>
+            </div>
+
+        </a>
+        {% endfor %}
+    </div>
+</section>

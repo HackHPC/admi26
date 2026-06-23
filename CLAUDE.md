@@ -22,7 +22,7 @@ Git remote: `HackHPC/admi26` on GitHub — push to `main` triggers automatic Git
 ## Feature Flags (`_config.yml`)
 
 ```yaml
-show_teams: false        # true → shows Participating Teams section in index.html
+show_teams: true         # true → shows Participating Teams section in index.html
 show_deliverables: false # true → shows Deliverables cards section in index.html
                          #        and Submission Guidelines in resources.html
 ```
@@ -33,15 +33,80 @@ show_deliverables: false # true → shows Deliverables cards section in index.ht
 
 | File | Purpose |
 |------|---------|
-| `schedule.yml` | Full 5-day schedule (10 sessions). Each block has date, session, theme, Zoom link, and event list |
+| `schedule.yml` | Full 5-day schedule (10 sessions). Each block has date, session, theme, Zoom link, and event list. Events support `name`, `type`, `description`, `award`, and `links` fields. |
 | `organizers.yml` | 6 organizers with bios, avatars, social links |
 | `staff.yml` | Staff members + past team data (members, awards, GitHub links) |
 | `sponsors.yml` | 3-tier sponsors (Platinum: ADMI, SGX3, NSF; Gold: TACC, projectEUREKA!; Silver: HackHPC) |
 | `resources.yml` | 60+ resources in 11 categories (AI Platforms, Computing, Web Dev, etc.) |
-| `teams.yml` | Sample team data for feature testing (`show_teams`) |
+| `teams.yml` | Real team data for all 4 competing teams (names, affiliations, majors, emails, LinkedIn URLs) |
 | `hackathon.yml` | General event metadata |
 
 To add/update schedule events, organizers, staff, resources — **only edit the YAML files**.
+
+### `schedule.yml` event fields
+
+```yaml
+- name: Event Name
+  type: Presentations          # displayed in parentheses next to name
+  description: >               # rendered as HTML (supports <br> and &nbsp;)
+    Free text...
+  award: "🏆 Award Name"       # rendered as a gold .award-badge chip below description
+  links:
+    - title: Link Label
+      icon: fa-regular fa-file-pdf
+      url: "assets/slide-decks/file.pdf"
+      iconcolor: red
+```
+
+### `teams.yml` team fields
+
+```yaml
+- teamname: Team Name
+  awards:
+    - "🏆 Award Name"
+  background: ""               # optional explicit path to background image; auto-detected from ZoomVirtualBackground.png if blank
+  files: "teams/FolderName"    # must match the directory under /teams/
+  members:
+    names: [...]
+    affiliation: [...]
+    major: [...]
+    role: [...]
+    socials: [...]             # LinkedIn URLs; empty string for members without one
+    email: [...]
+  links: []                    # optional external links (GitHub repo, etc.)
+```
+
+---
+
+## Team Directories (`/teams/`)
+
+Each team has a folder under `/teams/`. Files dropped in are **automatically rendered** on `teams.html`:
+
+| Extension | Rendered As |
+|-----------|------------|
+| `ZoomVirtualBackground.png` | Card header image on index page team preview |
+| `.pdf` | Red PDF icon link |
+| `.doc` / `.docx` | Blue Word icon link |
+| `.ppt` / `.pptx` | Orange PowerPoint icon link |
+| `.xls` / `.xlsx` | Green Excel icon link |
+| `.csv` | Green table icon link |
+| `.txt` | Gray file-lines icon link |
+| `.md` | Markdown icon link |
+| `.py` | Python icon link |
+| `.ipynb` | Book icon link |
+| `.png` / `.jpg` / `.jpeg` / `.gif` / `.svg` / `.webp` | Displayed as inline image |
+| `.mp3` / `.wav` / `.ogg` | Embedded audio player |
+| `.mp4` / `.mov` / `.webm` | Embedded video player |
+| anything else | Generic file icon link |
+
+`.gitkeep` is silently ignored. Current teams and their folder names:
+
+| Team | Folder |
+|------|--------|
+| The Hacking Tribunal | `teams/TheHackingTribunal/` |
+| Origin Zero | `teams/OriginZero/` |
+| WinMaxxers | `teams/WinMaxxers/` |
+| Capsule Corp CoderZ | `teams/CapsuleCorpCoderZ/` |
 
 ---
 
@@ -49,10 +114,12 @@ To add/update schedule events, organizers, staff, resources — **only edit the 
 
 | File | Used In | What It Does |
 |------|---------|-------------|
-| `innovation-tracks.html` | `index.html` via `{% include innovation-tracks.html %}` | Full descriptions of the 3 hackathon tracks with Marvel examples |
-| `deliverables.html` | `index.html` via `{% include deliverables.html %}` | Collapsible `<details>` listing required team deliverables |
-
-Both follows the same `<details class="*-dropdown">` collapsible pattern.
+| `innovation-tracks.html` | `index.html` | Full descriptions of the 3 hackathon tracks with Marvel examples |
+| `deliverables.html` | `index.html` | Collapsible `<details>` listing required team deliverables |
+| `teams-section.html` | `index.html` | Preview grid of all teams — clickable cards linking to `teams.html#slug` |
+| `navbar.html` | All pages | Site navigation; Teams link is permanent (not behind a feature flag) |
+| `sponsors.html` | `index.html` | Sponsors banner |
+| `sponsors-sidebar.html` | All inner pages | Sidebar sponsors column |
 
 ---
 
@@ -60,8 +127,9 @@ Both follows the same `<details class="*-dropdown">` collapsible pattern.
 
 | File | URL | Key Sections |
 |------|-----|-------------|
-| `index.html` | `/` | Hero, About, Innovation Tracks (include), Key Technologies, Logistics, Deliverables (include), conditional Teams section |
-| `schedule.html` | `/schedule` | All sessions from `_data/schedule.yml` |
+| `index.html` | `/` | Hero → Sponsors → About (Teams preview, Innovation Tracks, Key Technologies, Logistics, Deliverables) |
+| `schedule.html` | `/schedule` | All sessions from `_data/schedule.yml`; supports `award` field per event |
+| `teams.html` | `/teams` | Full team rows (3-column: identity / members / files); each card has `id` anchor for deep linking |
 | `staff.html` | `/staff` | Profile cards from `_data/staff.yml` |
 | `organizers.html` | `/organizers` | Profile cards from `_data/organizers.yml` |
 | `resources.html` | `/resources` | Collapsible categories from `_data/resources.yml` + session resources from schedule |
@@ -90,12 +158,17 @@ Both follows the same `<details class="*-dropdown">` collapsible pattern.
 - `.container` — max-width 1200px, centered, `4rem 5%` padding
 - `.bg-light` — light green section background
 - `.grid` — auto-fit CSS Grid (min 300px columns)
-- `.card` / `.team-card` / `.profile-card` — card variants
+- `.card` / `.profile-card` — card variants
 - `.btn-primary` / `.btn-secondary` / `.btn-zoom` — button variants
 - `.deliverables-dropdown` — collapsible details pattern (gold summary bar)
 - `.schedule-block` / `.schedule-header` / `.event-item` — schedule components
 - `.about-list` — green-tinted list items with bold labels
 - `.badge` / `.award-badge` — gold badge chips
+- `.teams-preview-grid` / `.team-preview-card` — index page team preview cards
+- `.teams-list` / `.team-card-row` — full-width 3-column team rows on `teams.html`
+- `.team-col-identity` / `.team-col-members` / `.team-col-files` — columns within a team row
+- `.member-list-row` / `.member-chip` — flex-wrap member grid
+- `.team-image` / `.team-image-link` — inline image display in team file listings
 
 Mobile breakpoint: `@media (max-width: 768px)`
 
@@ -111,11 +184,14 @@ Teams choose one of three tracks, all centered on Wikipedia as a knowledge graph
 
 ---
 
-## Recent Work (last session)
+## Recent Work (this session — June 22, 2026)
 
-- Added `_includes/innovation-tracks.html` with full track descriptions (Marvel examples, question prompts, quick summary)
-- Replaced inline Innovation Tracks content in `index.html` with `{% include innovation-tracks.html %}` — same pattern as `{% include deliverables.html %}`
-- The include sits inside the About section (`<section id="about" class="container">`) between the intro paragraphs and Key Technologies
+- **Schedule**: Added Session Slide Deck link for Team Introductions (6/22 afternoon); added `award` field support to `schedule.html` and awarded "🏆 Team Introductions Award" to The Hacking Tribunal
+- **Teams**: Populated `_data/teams.yml` with all 4 real teams and full member data from registration CSV; renamed WinMaxers → **WinMaxxers**
+- **teams.html**: New page with 3-column horizontal layout per team, LinkedIn links per member, and comprehensive auto-file rendering with icons; each card has `id="{{ team.teamname | slugify }}"` for deep linking
+- **teams-section.html**: New include for `index.html` — 4-up preview cards using `ZoomVirtualBackground.png` as the card header image, linking to `teams.html#slug`
+- **index.html**: Teams preview positioned inside About section, above Innovation Tracks; old inline teams block removed
+- **Navbar**: Teams link is now permanent (removed `show_teams` flag guard); active-state highlighting added
 
 ---
 
@@ -139,3 +215,5 @@ Push to `main` → GitHub Pages auto-deploys. No manual deploy step needed.
 5. New CSS goes in `css/styles.css` using the existing CSS variables — no inline styles except layout one-offs
 6. Never commit `_site/`, `.env`, or credentials (`.gitignore` covers this)
 7. Test locally with `bundle exec jekyll serve` before pushing
+8. To add a team file: drop it in `teams/<FolderName>/` — it auto-renders on `teams.html` with no YAML changes needed
+9. To set a team's index card background: name the file `ZoomVirtualBackground.png` and drop it in the team folder

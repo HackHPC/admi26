@@ -14,6 +14,11 @@
       - Winston-Salem State University
       - Winston-Salem State University
       - Mississippi Valley State University
+    affiliation_url:
+      - https://www.claflin.edu
+      - https://www.wssu.edu
+      - https://www.wssu.edu
+      - https://www.mvsu.edu
     major:
       - Computer Science
       - Computer Science
@@ -50,6 +55,11 @@
       - Grambling State University
       - Voorhees University
       - Voorhees University
+    affiliation_url:
+      - https://www.mvsu.edu
+      - https://www.gram.edu
+      - https://www.voorhees.edu
+      - https://www.voorhees.edu
     major:
       - Computer Science and Mathematics
       - Cybersecurity
@@ -72,9 +82,9 @@
       - ameliaskhunter@gmail.com
   links: []
 
-- teamname: The WinMaxers
+- teamname: WinMaxxers
   awards: []
-  files: "teams/TheWinMaxers"
+  files: "teams/WinMaxxers"
   members:
     names:
       - Quintin Ampofo
@@ -82,10 +92,15 @@
       - Damone Washington
       - Darell Barnes
     affiliation:
-      - SGX3 Coding Institute
+      - Hampton University
       - Hampton University
       - Winston-Salem State University
       - Voorhees University
+    affiliation_url:
+      - https://www.hamptonu.edu
+      - https://www.hamptonu.edu
+      - https://www.wssu.edu
+      - https://www.voorhees.edu
     major:
       - Computer Science
       - Computer Science
@@ -122,6 +137,11 @@
       - Florida A&M University
       - Mississippi Valley State University
       - Winston-Salem State University
+    affiliation_url:
+      - https://www.ecsu.edu
+      - https://www.famu.edu
+      - https://www.mvsu.edu
+      - https://www.wssu.edu
     major:
       -
       - Computer Science
