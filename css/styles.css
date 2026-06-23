@@ -874,6 +874,38 @@ a.tech-resource-name:hover {
     overflow: hidden;
     border: 1px solid rgba(17,17,17,0.12);
 }
+.schedule-block.session-past {
+    opacity: 0.72;
+    border-color: rgba(17,17,17,0.07);
+}
+.schedule-block.session-past .schedule-header {
+    background-color: #f0f0f0;
+}
+.schedule-theme-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+.session-toggle-btn {
+    background: none;
+    border: 1px solid rgba(17,17,17,0.2);
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted-text);
+    transition: background 0.15s ease, color 0.15s ease;
+    flex-shrink: 0;
+}
+.session-toggle-btn:hover {
+    background: var(--primary-color);
+    color: #fff;
+    border-color: var(--primary-color);
+}
 .schedule-header {
     background-color: var(--light-gold);
     padding: 1.5rem;

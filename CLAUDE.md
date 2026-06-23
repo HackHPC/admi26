@@ -68,6 +68,11 @@ To add/update schedule events, organizers, staff, resources — **only edit the 
       icon: fa-regular fa-file-pdf
       url: "assets/slide-decks/file.pdf"
       iconcolor: red
+    - title: Share Session          # copy: true renders a Web Share API button instead of an <a> tag
+      icon: fa-solid fa-share-nodes
+      url: "https://hackhpc.github.io/admi26/schedule#anchor"
+      iconcolor: var(--primary-color)
+      copy: true
 ```
 
 ### `teams.yml` team fields
@@ -196,6 +201,9 @@ Files are rendered in this order: `ZoomVirtualBackground.png` first, then all ot
 - `.deliverables-dropdown` — collapsible details pattern (gold summary bar)
 - `.schedule-block` / `.schedule-header` / `.event-item` — schedule components
 - `.session-summary-dropdown` / `.session-summary-body` — collapsible session summary on schedule page
+- `.session-past` — applied by JS to schedule blocks whose end time has passed (dimmed, gray header, body hidden)
+- `.schedule-theme-actions` — flex wrapper for Zoom button + toggle chevron in session header
+- `.session-toggle-btn` — expand/collapse chevron button shown on past sessions
 - `.about-list` — green-tinted list items with bold labels
 - `.badge` / `.award-badge` — gold badge chips
 - `.past-event-card` / `.past-event-year` / `.past-event-name` / `.past-event-link` — past events grid on index page
@@ -240,10 +248,18 @@ Teams choose one of three tracks, all centered on Wikipedia as a knowledge graph
 - **Teams — milestone chips**: Milestones changed from `<ol>` to a `<ul>` with the `M#` prefix extracted and rendered as a small green chip; new CSS classes `.milestone-item`, `.milestone-label`, `.milestone-text`
 - **Teams — theme songs**: Added `theme_song`, `theme_song_url`, `theme_song_artist` to all 4 teams in `_data/teams.yml`; rendered in plan column (below GitHub link, above Milestones) as a gold-background block with black music note icon and "Team Theme Song:" label
 - **Schedule — Day 2 Afternoon**: Added Session Slide Deck PDF link (`Day2-AfternoonCheckin-HackHPCatADMI26.pdf`) and session `summary` (collapsible dropdown) to the June 23 4:00 PM block
-- **Schedule — deep links**: All session blocks now have `id="{{ block.theme | slugify }}"` anchors; Final Presentations event has "Add to Calendar" and "Share Session" links
+- **Schedule — deep links**: All session blocks now have `id="{{ block.theme | slugify }}"` anchors; Final Presentations event has "Add to Calendar" and "Share Session" (Web Share API) links
 - **Calendar ICS**: Generated `assets/hackhpc-admi26-schedule.ics` (all 10 sessions) and `assets/hackhpc-admi26-final-presentations.ics` (Final Presentations only); "Add All Sessions to Calendar" button on schedule page
 - **SEO**: Created `_includes/seo.html` with Open Graph + Twitter Card meta tags; included in all 7 pages; `HackHPC_at_ADMI26.jpg` is the share preview image
 - **Past Events**: Added Past HackHPC@ADMI Events grid (2022–2025) to `index.html` inside the About section, above the Participating Teams preview
+
+## Recent Work (June 23, 2026 — continued)
+
+- **Teams — member added**: Jonathan Wembolua added to The Hacking Tribunal (Winston-Salem State University, Computer Science, Student Participant)
+- **Teams — GitHub repos**: Added GitHub repository links for all 4 teams — Origin Zero (`PrinceOseiBonsu/OriginZero`), WinMaxxers (`Damone-Washington19/Winmaxxers`), Capsule Corp CoderZ (`OvCXLLC/CapsuleCorpCoderZ`); The Hacking Tribunal was already linked
+- **Teams — share buttons**: Added per-team share button (share icon) next to the permalink in each team name heading; uses Web Share API (native OS share sheet on mobile) with clipboard-copy fallback; new CSS classes `.team-share-btn`
+- **Schedule — past session collapse**: Sessions whose end time has passed are automatically collapsed to just the header (dimmed, gray header background); a chevron toggle button appears to expand/collapse; implemented via `data-session-date` attribute + JS; new CSS classes `.session-past`, `.schedule-theme-actions`, `.session-toggle-btn`
+- **Schedule — share link fix**: "Share Session" on Final Presentations upgraded from plain link to Web Share API button (`copy: true` field in YAML + `<button class="copy-link-btn">` in template); falls back to clipboard copy with "Link copied!" feedback
 
 ---
 

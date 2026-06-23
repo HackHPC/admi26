@@ -31,74 +31,82 @@
         <div class="schedule-timeline">
             
             {% for block in site.data.schedule.general_schedule %}
-            <div class="schedule-block" id="{{ block.theme | slugify }}">
-                
+            <div class="schedule-block" id="{{ block.theme | slugify }}" data-session-date="{{ block.date }}">
+
                 <!-- Time, Theme, and Zoom Header -->
                 <div class="schedule-header">
                     <div class="schedule-datetime">
                         <span class="date">{{ block.date | date: "%A, %b %-d" }}</span>
                         <span class="time">{{ block.date | date: "%-I:%M %p" }} ET</span>
                     </div>
-                    
+
                     <div class="schedule-theme">
                         <h3>{{ block.theme }}</h3>
-                        {% if block.zoomlink %}
-                        <a href="{{ block.zoomlink }}" target="_blank" class="btn-zoom">
-                            <i class="fa-solid fa-video"></i> Join Zoom
-                        </a>
-                        {% endif %}
-                    </div>
-                </div>
-
-                <!-- Sub-Events Loop -->
-                <div class="schedule-events">
-                    {% for event in block.events %}
-                    <div class="event-item">
-                        <h4 class="event-name">{{ event.name }} <span class="event-type">({{ event.type }})</span></h4>
-                        
-                        {% if event.description %}
-                        <div class="event-desc">
-                            {{ event.description }}
-                        </div>
-                        {% endif %}
-
-                        {% if event.award %}
-                        <div class="award-badge">{{ event.award }}</div>
-                        {% endif %}
-
-                        {% if event.links %}
-                        <div class="event-links">
-                            {% for link in event.links %}
-                            {% if link.copy %}
-                            <button class="link-item copy-link-btn"
-                                data-copy-url="{{ link.url }}"
-                                data-share-title="{{ block.theme }} — HackHPC@ADMI26"
-                                data-share-text="Join us for the {{ block.theme }} at HackHPC@ADMI26 on {{ block.date | date: '%A, %B %-d, %Y' }} at {{ block.date | date: '%-I:%M %p' }} ET."
-                                title="Share this session">
-                                <i class="{{ link.icon }}" style="color: {{ link.iconcolor }};"></i>
-                                <span class="copy-link-label">{{ link.title }}</span>
-                            </button>
-                            {% else %}
-                            <a href="{{ link.url }}" target="_blank" class="link-item">
-                                <i class="{{ link.icon }}" style="color: {{ link.iconcolor }};"></i> {{ link.title }}
+                        <div class="schedule-theme-actions">
+                            {% if block.zoomlink %}
+                            <a href="{{ block.zoomlink }}" target="_blank" class="btn-zoom">
+                                <i class="fa-solid fa-video"></i> Join Zoom
                             </a>
                             {% endif %}
-                            {% endfor %}
+                            <button class="session-toggle-btn" title="Expand session" style="display:none;">
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </button>
                         </div>
-                        {% endif %}
-
                     </div>
-                    {% endfor %}
                 </div>
 
-                {% if block.summary %}
-                <details class="session-summary-dropdown">
-                    <summary>Session Summary</summary>
-                    <div class="session-summary-body">
-                        {{ block.summary | markdownify }}
+                <!-- Collapsible session body -->
+                <div class="session-body">
+                    <!-- Sub-Events Loop -->
+                    <div class="schedule-events">
+                        {% for event in block.events %}
+                        <div class="event-item">
+                            <h4 class="event-name">{{ event.name }} <span class="event-type">({{ event.type }})</span></h4>
+
+                            {% if event.description %}
+                            <div class="event-desc">
+                                {{ event.description }}
+                            </div>
+                            {% endif %}
+
+                            {% if event.award %}
+                            <div class="award-badge">{{ event.award }}</div>
+                            {% endif %}
+
+                            {% if event.links %}
+                            <div class="event-links">
+                                {% for link in event.links %}
+                                {% if link.copy %}
+                                <button class="link-item copy-link-btn"
+                                    data-copy-url="{{ link.url }}"
+                                    data-share-title="{{ block.theme }} — HackHPC@ADMI26"
+                                    data-share-text="Join us for the {{ block.theme }} at HackHPC@ADMI26 on {{ block.date | date: '%A, %B %-d, %Y' }} at {{ block.date | date: '%-I:%M %p' }} ET."
+                                    title="Share this session">
+                                    <i class="{{ link.icon }}" style="color: {{ link.iconcolor }};"></i>
+                                    <span class="copy-link-label">{{ link.title }}</span>
+                                </button>
+                                {% else %}
+                                <a href="{{ link.url }}" target="_blank" class="link-item">
+                                    <i class="{{ link.icon }}" style="color: {{ link.iconcolor }};"></i> {{ link.title }}
+                                </a>
+                                {% endif %}
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+
+                        </div>
+                        {% endfor %}
                     </div>
-                </details>
-                {% endif %}
+
+                    {% if block.summary %}
+                    <details class="session-summary-dropdown">
+                        <summary>Session Summary</summary>
+                        <div class="session-summary-body">
+                            {{ block.summary | markdownify }}
+                        </div>
+                    </details>
+                    {% endif %}
+                </div>
 
             </div>
             {% endfor %}
@@ -117,6 +125,30 @@
     </footer>
 
     <script>
+    // Collapse past sessions
+    var now = new Date();
+    document.querySelectorAll('.schedule-block[data-session-date]').forEach(function(block) {
+        var sessionEnd = new Date(block.getAttribute('data-session-date'));
+        sessionEnd.setHours(sessionEnd.getHours() + 2); // assume 2-hour sessions
+        if (sessionEnd < now) {
+            block.classList.add('session-past');
+            var body = block.querySelector('.session-body');
+            if (body) body.style.display = 'none';
+            var toggleBtn = block.querySelector('.session-toggle-btn');
+            if (toggleBtn) {
+                toggleBtn.style.display = 'inline-flex';
+                toggleBtn.addEventListener('click', function() {
+                    var expanded = body.style.display !== 'none';
+                    body.style.display = expanded ? 'none' : 'block';
+                    toggleBtn.querySelector('i').className = expanded
+                        ? 'fa-solid fa-chevron-down'
+                        : 'fa-solid fa-chevron-up';
+                });
+            }
+        }
+    });
+
+    // Share / copy buttons
     document.querySelectorAll('.copy-link-btn').forEach(function(btn) {
         btn.addEventListener('click', function() {
             var url   = btn.getAttribute('data-copy-url');
