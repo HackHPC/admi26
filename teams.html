@@ -21,7 +21,8 @@
         <p class="section-subtitle">Meet the teams competing at HackHPC@ADMI26</p>
 
         <div class="teams-list">
-            {% for team in site.data.teams %}
+            {% assign sorted_teams = site.data.teams | sort: "teamname" %}
+            {% for team in sorted_teams %}
 
             {% assign has_files = false %}
             {% if team.files %}

@@ -2,7 +2,8 @@
     <h2 class="section-title">Participating Teams</h2>
     <p class="section-subtitle">Click a team card to view their full profile</p>
     <div class="teams-preview-grid">
-        {% for team in site.data.teams %}
+        {% assign sorted_teams = site.data.teams | sort: "teamname" %}
+        {% for team in sorted_teams %}
         {% assign team_slug = team.teamname | slugify %}
 
         {% assign team_bg = nil %}
