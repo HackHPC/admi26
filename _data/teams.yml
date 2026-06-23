@@ -189,7 +189,11 @@
       - anthony.nwafor@mvsu.edu
       - opokuakwasi239@gmail.com
       - posei231846@voorhees.edu
-  links: []
+  links:
+    - name: GitHub Repository
+      url: https://github.com/PrinceOseiBonsu/OriginZero/
+      icon: fa-brands fa-github
+      iconcolor: "#111111"
 
 - teamname: WinMaxxers
   awards:
@@ -273,7 +277,11 @@
       - jadynwash@gmail.com
       - darellbarnes450@gmail.com
       - quintinjames06@gmail.com
-  links: []
+  links:
+    - name: GitHub Repository
+      url: https://github.com/Damone-Washington19/Winmaxxers
+      icon: fa-brands fa-github
+      iconcolor: "#111111"
 
 - teamname: Capsule Corp CoderZ
   awards: []
@@ -361,4 +369,8 @@
       - javonte1.carter@famu.edu
       - joshj.chaney12@gmail.com
       - Seriddick291@students.ecsu.edu
-  links: []
+  links:
+    - name: GitHub Repository
+      url: https://github.com/OvCXLLC/CapsuleCorpCoderZ
+      icon: fa-brands fa-github
+      iconcolor: "#111111"
