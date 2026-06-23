@@ -56,6 +56,12 @@
                     <p class="team-goal">{{ team.goal }}</p>
                     {% endif %}
 
+                    {% if team.research_question %}
+                    <div class="research-question">
+                        <strong>Research Question:</strong> {{ team.research_question }}
+                    </div>
+                    {% endif %}
+
                     {% if team.links and team.links.size > 0 %}
                     <div class="external-links" style="margin-top: 1rem;">
                         {% for link in team.links %}
@@ -103,8 +109,31 @@
                 <div class="team-col-files">
                     <h4 class="team-col-heading">Team Files</h4>
                     <div class="auto-files">
+
+                        <!-- Pass 1: ZoomVirtualBackground.png always first -->
                         {% for file in site.static_files %}
-                        {% if file.path contains team.files and file.name != '.gitkeep' %}
+                        {% if file.path contains team.files and file.name == 'ZoomVirtualBackground.png' %}
+                        <a href="{{ site.baseurl }}{{ file.path }}" target="_blank" class="team-image-link">
+                            <img src="{{ site.baseurl }}{{ file.path }}" alt="{{ file.name }}" class="team-image">
+                        </a>
+                        {% endif %}
+                        {% endfor %}
+
+                        <!-- Pass 2: All other images -->
+                        {% for file in site.static_files %}
+                        {% if file.path contains team.files and file.name != '.gitkeep' and file.name != 'ZoomVirtualBackground.png' %}
+                        {% assign ext = file.extname | downcase %}
+                        {% if ext == '.png' or ext == '.jpg' or ext == '.jpeg' or ext == '.gif' or ext == '.svg' or ext == '.webp' %}
+                        <a href="{{ site.baseurl }}{{ file.path }}" target="_blank" class="team-image-link">
+                            <img src="{{ site.baseurl }}{{ file.path }}" alt="{{ file.name }}" class="team-image">
+                        </a>
+                        {% endif %}
+                        {% endif %}
+                        {% endfor %}
+
+                        <!-- Pass 3: Audio, video, and document files -->
+                        {% for file in site.static_files %}
+                        {% if file.path contains team.files and file.name != '.gitkeep' and file.name != 'ZoomVirtualBackground.png' %}
                         {% assign ext = file.extname | downcase %}
 
                         {% if ext == '.mp3' or ext == '.wav' or ext == '.ogg' %}
@@ -128,9 +157,7 @@
                         </div>
 
                         {% elsif ext == '.png' or ext == '.jpg' or ext == '.jpeg' or ext == '.gif' or ext == '.svg' or ext == '.webp' %}
-                        <a href="{{ site.baseurl }}{{ file.path }}" target="_blank" class="team-image-link">
-                            <img src="{{ site.baseurl }}{{ file.path }}" alt="{{ file.name }}" class="team-image">
-                        </a>
+                        {% comment %}already rendered in pass 2{% endcomment %}
 
                         {% else %}
                         <a href="{{ site.baseurl }}{{ file.path }}" target="_blank" class="btn-secondary resource-link">
@@ -169,6 +196,7 @@
 
                         {% endif %}
                         {% endfor %}
+
                     </div>
                 </div>
                 {% endif %}

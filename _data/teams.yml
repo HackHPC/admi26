@@ -4,6 +4,7 @@
     - "🏆 Team Introductions Award"
   files: "teams/TheHackingTribunal"
   goal: "Develop an AI-assisted forecasting platform using encyclopedic biological knowledge to predict emerging concepts and innovation opportunities — building a biological knowledge graph, identifying historical patterns, detecting cross-discipline convergence, and generating evidence-based forecasts."
+  research_question: "How can historical data and innovation trends in robotics be analyzed to accurately forecast future technological developments in the field?"
   milestones:
     - "M1: Foundation & repo setup (GitHub, Colab, shared config)"
     - "M2: Biological seed dataset creation"
@@ -86,12 +87,17 @@
       - madisonconley15@gmail.com
       - nrapheal04@gmail.com
       - usirjack@gmail.com
-  links: []
+  links:
+    - name: GitHub Repository
+      url: https://github.com/JosiahJ25/HPCSGX3HACKINGTRIBUNAL
+      icon: fa-brands fa-github
+      iconcolor: "#111111"
 
 - teamname: Origin Zero
   awards: []
   files: "teams/OriginZero"
   goal: "Trace root causes of health disparities in underrepresented communities via Wikipedia — mapping disparities to historical origins, building a live Wikipedia crawler, using PageRank to identify true root causes, and creating an interactive origin chain with plain-English narrative."
+  research_question: "What are the historical origins and fundamental root causes of diabetes, specifically regarding health disparities in underrepresented communities?"
   milestones:
     - "M1: Setup & research"
     - "M2: Wikipedia crawler"
@@ -177,6 +183,7 @@
     - "🏆 Project Plan Award"
   files: "teams/WinMaxxers"
   goal: "Use Wikipedia-only forecasting to predict emerging concepts from Wikipedia's structure — modeling pages as graph nodes, designing simple explainable scoring instead of black-box ML, and analyzing historical growth patterns to detect rising concepts."
+  research_question: "Based on historical knowledge growth patterns, what is projected to be the next significant emerging concept or technology within the field of nanotechnology?"
   milestones:
     - "M1: Project definition & repo setup"
     - "M2: Data acquisition (snapshots, API/web-scraping, parsing)"
@@ -256,6 +263,7 @@
   awards: []
   files: "teams/CapsuleCorpCoderZ"
   goal: "Build an alternate Dragon Ball timeline text-simulator where Goku remains 'Kakarot' and Earth is conquered — featuring age-up mechanics, combat systems, Great Ape events, branching 'What If' sagas, King Yemma legacy/rebirth, and balanced progression across multiple origins."
+  research_question: "In an alternative timeline analysis of the Dragon Ball Z universe, how would the narrative trajectory and planetary events have been altered if the protagonist, Goku, had not sustained his childhood head injury?"
   milestones:
     - "M1: Project planning (concept, main paths, roles)"
     - "M2: Story & timeline design (opening story, branches, endings)"
