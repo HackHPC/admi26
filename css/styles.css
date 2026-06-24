@@ -324,6 +324,47 @@ body {
     letter-spacing: 0.03em;
 }
 
+/* Judging Criteria */
+.judging-criteria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+.judging-criteria-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(17,17,17,0.1);
+    border-top: 4px solid var(--primary-color);
+    border-radius: 6px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+.judging-criteria-card--bonus {
+    border-top-color: var(--accent-gold);
+    background: var(--light-gold);
+}
+.judging-criteria-points {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    line-height: 1;
+}
+.judging-criteria-card--bonus .judging-criteria-points {
+    color: var(--accent-gold-dark);
+}
+.judging-criteria-name {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--structural-black);
+}
+.judging-criteria-desc {
+    font-size: 0.8rem;
+    color: var(--muted-text);
+    line-height: 1.5;
+}
+
 /* Poster Guide */
 .poster-guide-section {
     margin-bottom: 1.5rem;
