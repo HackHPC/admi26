@@ -575,16 +575,25 @@ body {
 }
 .team-theme-song {
     display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 0.4rem;
     margin-top: 0.5rem;
     margin-bottom: 0.75rem;
     font-size: 0.82rem;
     background: var(--light-gold);
     border-left: 3px solid var(--accent-gold);
     border-radius: 0 4px 4px 0;
-    padding: 0.4rem 0.6rem;
+    padding: 0.5rem 0.6rem;
+}
+.theme-song-player {
+    width: 100%;
+    height: 36px;
+}
+.theme-song-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
 }
 .theme-song-label {
     font-weight: 700;

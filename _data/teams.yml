@@ -3,7 +3,7 @@
   awards:
     - "🏆 Team Introductions Award"
   theme_song: "Midnight Drive"
-  theme_song_url: "https://drive.google.com/file/d/1Y1t-uyAqX-ZDBKTEuCGCvqY1tHRmkFMt/view?resourcekey"
+  theme_song_url: "teams/TheHackingTribunal/Midnight Drive.mp3"
   theme_song_artist: "nrapheal04"
   files: "teams/TheHackingTribunal"
   goal: "Develop an AI-assisted forecasting platform using encyclopedic biological knowledge to predict emerging concepts and innovation opportunities — building a biological knowledge graph, identifying historical patterns, detecting cross-discipline convergence, and generating evidence-based forecasts."
@@ -112,7 +112,7 @@
 - teamname: Origin Zero
   awards: []
   theme_song: "Cold Streets"
-  theme_song_url: "https://drive.google.com/file/d/1UIvt96CITpRCOf6p4sHRbaN_mfKHnHev/view?usp=sharing"
+  theme_song_url: "teams/OriginZero/Cold Streets.mp3"
   theme_song_artist: "BeatKitchen"
   files: "teams/OriginZero"
   goal: "Trace root causes of health disparities in underrepresented communities via Wikipedia — mapping disparities to historical origins, building a live Wikipedia crawler, using PageRank to identify true root causes, and creating an interactive origin chain with plain-English narrative."
@@ -210,7 +210,7 @@
   awards:
     - "🏆 Project Plan Award"
   theme_song: "Pattern Crown"
-  theme_song_url: "https://drive.google.com/file/d/1RSo9XUcA_7guj58Akhidq8lYweRKV9hm/view?usp=sharing"
+  theme_song_url: "teams/WinMaxxers/Pattern Crown.mp3"
   theme_song_artist: "darellbarnes"
   files: "teams/WinMaxxers"
   goal: "Use Wikipedia-only forecasting to predict emerging concepts from Wikipedia's structure — modeling pages as graph nodes, designing simple explainable scoring instead of black-box ML, and analyzing historical growth patterns to detect rising concepts."
@@ -302,7 +302,7 @@
 - teamname: Capsule Corp CoderZ
   awards: []
   theme_song: "Kame Spark"
-  theme_song_url: "https://drive.google.com/file/d/1kQI7C_UtOGds_t3YNHLJpYXlbjNZM3yY/view?usp=sharing"
+  theme_song_url: "teams/CapsuleCorpCoderZ/Kame Spark.mp3"
   theme_song_artist: "tybandz12345"
   files: "teams/CapsuleCorpCoderZ"
   goal: "Build an alternate Dragon Ball timeline text-simulator where Goku remains 'Kakarot' and Earth is conquered — featuring age-up mechanics, combat systems, Great Ape events, branching 'What If' sagas, King Yemma legacy/rebirth, and balanced progression across multiple origins."

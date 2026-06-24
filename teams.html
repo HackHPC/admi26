@@ -215,15 +215,28 @@
                     </div>
                     {% endif %}
                     {% if team.theme_song %}
+                    {% if team.theme_song_url contains "http" %}
+                    {% assign song_href = team.theme_song_url %}
+                    {% else %}
+                    {% assign song_href = site.baseurl | append: "/" | append: team.theme_song_url %}
+                    {% endif %}
+                    {% assign song_ext = team.theme_song_url | split: "." | last | downcase %}
                     <div class="team-theme-song">
-                        <span class="theme-song-label">Team Theme Song:</span>
-                        <a href="{{ team.theme_song_url }}" target="_blank" class="theme-song-link">
-                            <i class="fa-solid fa-music" style="color: #111111;"></i>
-                            <span class="theme-song-title">{{ team.theme_song }}</span>
-                        </a>
-                        {% if team.theme_song_artist %}
-                        <span class="theme-song-artist">by {{ team.theme_song_artist }}</span>
+                        {% if song_ext == "mp3" or song_ext == "wav" or song_ext == "ogg" %}
+                        <audio controls class="theme-song-player">
+                            <source src="{{ song_href }}" type="audio/{% if song_ext == 'mp3' %}mpeg{% elsif song_ext == 'ogg' %}ogg{% else %}wav{% endif %}">
+                        </audio>
                         {% endif %}
+                        <div class="theme-song-meta">
+                            <span class="theme-song-label">Team Theme Song:</span>
+                            <a href="{{ song_href }}" target="_blank" class="theme-song-link">
+                                <i class="fa-solid fa-music" style="color: #111111;"></i>
+                                <span class="theme-song-title">{{ team.theme_song }}</span>
+                            </a>
+                            {% if team.theme_song_artist %}
+                            <span class="theme-song-artist">by {{ team.theme_song_artist }}</span>
+                            {% endif %}
+                        </div>
                     </div>
                     {% endif %}
                     {% if team.milestones %}
