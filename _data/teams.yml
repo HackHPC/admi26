@@ -55,23 +55,23 @@
       description: Cloud-based platform for version control and collaborative software development using Git
   members:
     names:
+      - Jonathan Wembolua
       - Josiah Johnson
       - Madison Conley
       - Nadia Rapheal
       - Usir Jackson
-      - Jonathan Wembolua
     affiliation:
+      - Winston-Salem State University
       - Winston-Salem State University
       - Mississippi Valley State University
       - Winston-Salem State University
       - Claflin University
-      - Winston-Salem State University
     affiliation_url:
+      - https://www.wssu.edu
       - https://www.wssu.edu
       - https://www.mvsu.edu
       - https://www.wssu.edu
       - https://www.claflin.edu
-      - https://www.wssu.edu
     major:
       - Computer Science
       - Computer Science
@@ -79,29 +79,29 @@
       - Computer Science
       - Computer Science
     role:
-      - Visualization Development & Project Manager
-      - AI Research & Insight Lead
       - Graph Analytics & Prediction Lead
-      - Data + Knowledge Graph Lead
-      - Student Participant
+      - Frontend, Visualization & Presentation Lead
+      - AI Research & Insight Lead
+      - Technical Program Manager & Integration Lead
+      - Data & Knowledge Graph Lead
     classification:
+      - Sophomore
       - Senior
       - Junior
       - Junior
       - Freshman
-      - Sophomore
     socials:
+      - https://www.linkedin.com/in/jonathan-wembolua-00b345359/
       - https://www.linkedin.com/in/josiah-johnson-a38474338/
       - https://www.linkedin.com/in/madison-conley-a137293aa
       - https://www.linkedin.com/in/nadiarapheal/
       - https://www.linkedin.com/in/usir-jackson-311366352/
-      - https://www.linkedin.com/in/jonathan-wembolua-00b345359/
     email:
+      - Jonathanwembolua13@gmail.com
       - josiahj5484@gmail.com
       - madisonconley15@gmail.com
       - nrapheal04@gmail.com
       - usirjack@gmail.com
-      - Jonathanwembolua13@gmail.com
   links:
     - name: GitHub Repository
       url: https://github.com/JosiahJ25/HPCSGX3HACKINGTRIBUNAL
