@@ -1,7 +1,6 @@
 # _data/teams.yml
 - teamname: The Hacking Tribunal
-  awards:
-    - "🏆 Team Introductions Award"
+  awards: []
   theme_song: "Midnight Drive"
   theme_song_url: "teams/TheHackingTribunal/Midnight Drive.mp3"
   theme_song_artist: "nrapheal04"
@@ -300,7 +299,8 @@
       iconcolor: "#111111"
 
 - teamname: Capsule Corp CoderZ
-  awards: []
+  awards:
+    - "🏆 Team Introductions Award"
   theme_song: "Kame Spark"
   theme_song_url: "teams/CapsuleCorpCoderZ/Kame Spark.mp3"
   theme_song_artist: "tybandz12345"
