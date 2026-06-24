@@ -187,6 +187,28 @@ general_schedule:
         type: Project Work 
         description: "All files must be pushed to your team directories before the 2:00 PM session."
   
+  - date: "2026-06-26T13:00:00-04:00"
+    session: Afternoon
+    zoomlink: "https://us06web.zoom.us/j/83678288741?pwd=9jf7gzHu4UUU4qxuUtf6ieZorzQlfT.1"
+    theme: "Judges Overview"
+    events:
+      - name: Judges Overview
+        type: Briefing
+        links:
+          - title: Judging Criteria
+            icon: fa-regular fa-file-pdf
+            url: "assets/slide-decks/HackHPCatADMI26_Judging-Criteria.pdf"
+            iconcolor: red
+          - title: Add to Calendar
+            icon: fa-regular fa-calendar-plus
+            url: "assets/hackhpc-admi26-judges-overview.ics"
+            iconcolor: var(--primary-color)
+          - title: Share Session
+            icon: fa-solid fa-share-nodes
+            url: "https://hackhpc.github.io/admi26/schedule#judges-overview"
+            iconcolor: var(--primary-color)
+            copy: true
+
   - date: "2026-06-26T14:00:00-04:00"
     session: Afternoon
     zoomlink: "https://us06web.zoom.us/j/83678288741?pwd=9jf7gzHu4UUU4qxuUtf6ieZorzQlfT.1"

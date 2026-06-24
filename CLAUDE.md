@@ -99,10 +99,11 @@ To add/update schedule events, organizers, staff, resources — **only edit the 
     affiliation_url: [...]
     major: [...]
     role: [...]
+    classification: [...]      # e.g. Freshman, Sophomore, Junior, Senior, Graduate; shown before major in member chip
     socials: [...]             # LinkedIn URLs; empty string for members without one
     email: [...]
   theme_song: "Song Title"     # rendered as gold-background block in plan column, below links, above milestones
-  theme_song_url: "https://..." # links the song title
+  theme_song_url: "https://..." # links the song title; if a local .mp3/.wav/.ogg path (e.g. "teams/Foo/song.mp3"), renders an embedded <audio> player instead of a link
   theme_song_artist: "handle"  # shown as "by handle" in italic
   links:                       # rendered in plan column above theme song and milestones dropdown
     - name: GitHub Repository
@@ -117,7 +118,7 @@ To add/update schedule events, organizers, staff, resources — **only edit the 
 
 Each team has a folder under `/teams/`. Files dropped in are **automatically rendered** on `teams.html`:
 
-Files are rendered in this order: `ZoomVirtualBackground.png` first, then all other images, then audio/video/documents.
+Files are rendered in this order: `ZoomVirtualBackground.png` first, then all other images, then audio/video/documents. `.mp3` files are **excluded** from Pass 3 — they are embedded directly in the theme song block instead.
 
 | Extension | Rendered As |
 |-----------|------------|
@@ -216,6 +217,9 @@ Files are rendered in this order: `ZoomVirtualBackground.png` first, then all ot
 - `.team-theme-song` / `.theme-song-label` / `.theme-song-link` / `.theme-song-artist` — gold-background theme song block in plan column
 - `.milestone-item` / `.milestone-label` / `.milestone-text` — M# chip + text milestone rows
 - `.team-plan-dropdown` / `.team-milestones` / `.team-tech-list` — plan column components
+- `.theme-song-player` — embedded `<audio>` element inside the theme song block (shown when `theme_song_url` is a local `.mp3`/`.wav`/`.ogg`)
+- `.branding-logo-grid` / `.branding-logo-card` / `.branding-logo-preview` / `.branding-logo-preview--dark` / `.branding-logo-info` / `.branding-logo-name` / `.branding-logo-downloads` / `.branding-download-btn` — brand asset grid on `resources.html`
+- `.resources-toolbar` / `.resources-search-wrap` / `.resources-search-input` / `.resources-search-clear` / `.resources-jump-link` — search & jump-nav toolbar on `resources.html`
 
 Mobile breakpoint: `@media (max-width: 768px)`
 
@@ -260,6 +264,24 @@ Teams choose one of three tracks, all centered on Wikipedia as a knowledge graph
 - **Teams — share buttons**: Added per-team share button (share icon) next to the permalink in each team name heading; uses Web Share API (native OS share sheet on mobile) with clipboard-copy fallback; new CSS classes `.team-share-btn`
 - **Schedule — past session collapse**: Sessions whose end time has passed are automatically collapsed to just the header (dimmed, gray header background); a chevron toggle button appears to expand/collapse; implemented via `data-session-date` attribute + JS; new CSS classes `.session-past`, `.schedule-theme-actions`, `.session-toggle-btn`
 - **Schedule — share link fix**: "Share Session" on Final Presentations upgraded from plain link to Web Share API button (`copy: true` field in YAML + `<button class="copy-link-btn">` in template); falls back to clipboard copy with "Link copied!" feedback
+
+## Recent Work (June 24, 2026)
+
+- **Teams — student classification**: Added `classification` field to all 4 teams in `_data/teams.yml` (Freshman/Sophomore/Junior/Senior/Graduate per member); rendered in member chip before major on `teams.html`
+- **Teams — theme song audio players**: `theme_song_url` now accepts a local file path (e.g. `teams/Foo/song.mp3`); renders an embedded `<audio controls>` player inside the theme song block instead of a plain link. MP3 files added for all 4 teams (`Midnight Drive.mp3`, `Cold Streets.mp3`, `Pattern Crown.mp3`, `Kame Spark.mp3`). `.mp3` files are excluded from Pass 3 of the file loop so they don't double-render.
+- **Teams — The Hacking Tribunal files**: Added `TeamIntroductionSlide.png` and `Team_Introduction.pdf` to `teams/TheHackingTribunal/`; `awards` field reset to `[]` and `theme_song_url` updated to local MP3 path
+- **Teams — Capsule Corp CoderZ**: Awarded "🏆 Team Introductions Award"; Biology added as a major; LinkedIn added for Sydney Riddick
+- **Teams — GitHub link / plan column styles**: Revised CSS for GitHub repo links and plan column layout (`c663012`)
+- **Teams — theme song layout**: Revised theme song block layout in `teams.html` (`70e727b`)
+- **Schedule — Day 3 Morning summary**: Added session `summary` to the June 24 morning block with key takeaways (data collection deadline, sample data strategy, mentorship from Dr. Mohamed Elbakary, feature freeze, optional LLM fine-tuning challenge on Google Cloud L4 GPU)
+- **Schedule — Day 3 Afternoon session**: Added "24-Hour Progress Challenge" afternoon block with `Team Progress Presentations` event (5-min per team: updated plan, status, live demo); `award` field set to "🏆 24-Hour Progress Challenge Award"; Judging Criteria PDF linked; Rocky-model GitHub link added for Team Progress event
+- **Schedule — Judging Criteria PDF**: `assets/slide-decks/HackHPCatADMI26_Judging-Criteria.pdf` added; linked from Day 3 afternoon event and from `resources.html`
+- **Resources — Event Branding section**: New section at bottom of `resources.html` with brand asset grid (logo variants as PNG + SVG downloads); new CSS classes `.branding-logo-grid`, `.branding-logo-card`, `.branding-logo-preview`, `.branding-logo-preview--dark`, `.branding-logo-info`, `.branding-logo-name`, `.branding-logo-downloads`, `.branding-download-btn`
+- **Resources — brand assets added**: Logo files added to `assets/images/HackHPCatADMI26-logos/` (PNG + SVG for logo-only-sq, header-hero-text-only, Header-hero-with-text-and-background, Google-Form-Header; favicons at 16/32/96px + `.ico` + `.svg`)
+- **Resources — brand colors section**: Added brand color swatches section to `resources.html`
+- **Resources — poster guide section**: Added poster guide section (with link to `admi26-sgx3-poster-template.pptx`) to `resources.html`
+- **Resources — Judging Criteria section**: Added Judging Criteria section to `resources.html` with PDF download link
+- **Resources — jump nav updated**: Jump links for Event Branding, Judging Criteria, and Poster Guide added to the resources toolbar
 
 ---
 

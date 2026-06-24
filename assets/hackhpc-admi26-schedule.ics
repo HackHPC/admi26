@@ -159,6 +159,20 @@ DESCRIPTION:Final Adjustments & Deliverables Upload\nAll files must be push
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
+UID:hackhpc-admi26-20260626-judges@hackhpc.github.io
+DTSTAMP:20260624T170000Z
+DTSTART;TZID=America/New_York:20260626T130000
+DTEND;TZID=America/New_York:20260626T140000
+SUMMARY:HackHPC@ADMI26 - Judges Overview
+LOCATION:https://us06web.zoom.us/j/83678288741?pwd=9jf7gzHu4UUU4qxuUtf6ieZo
+ rzQlfT.1
+URL:https://hackhpc.github.io/admi26/schedule
+DESCRIPTION:Judges Overview\n\nJoin Zoom: https://us06web.zoom.us/j/8367828
+ 8741?pwd=9jf7gzHu4UUU4qxuUtf6ieZorzQlfT.1\n\nEvent site: https://hackhpc.g
+ ithub.io/admi26\nSchedule: https://hackhpc.github.io/admi26/schedule
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
 UID:hackhpc-admi26-20260626-final@hackhpc.github.io
 DTSTAMP:20260623T170000Z
 DTSTART;TZID=America/New_York:20260626T140000
