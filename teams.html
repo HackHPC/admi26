@@ -132,12 +132,12 @@
                         {% endif %}
                         {% endfor %}
 
-                        <!-- Pass 3: Audio, video, and document files -->
+                        <!-- Pass 3: Audio, video, and document files (mp3 excluded — shown in theme song block) -->
                         {% for file in site.static_files %}
-                        {% if file.path contains team.files and file.name != '.gitkeep' and file.name != 'ZoomVirtualBackground.png' %}
+                        {% if file.path contains team.files and file.name != '.gitkeep' and file.name != 'ZoomVirtualBackground.png' and file.extname != '.mp3' and file.extname != '.MP3' %}
                         {% assign ext = file.extname | downcase %}
 
-                        {% if ext == '.mp3' or ext == '.wav' or ext == '.ogg' %}
+                        {% if ext == '.wav' or ext == '.ogg' %}
                         <div class="audio-player" style="margin-top: 0.5rem; margin-bottom: 0.5rem;">
                             <span style="font-size: 0.8rem; display: block; margin-bottom: 0.2rem;">
                                 <i class="fa-solid fa-music" style="color: var(--primary-color);"></i> {{ file.name }}
@@ -218,7 +218,7 @@
                     {% if team.theme_song_url contains "http" %}
                     {% assign song_href = team.theme_song_url %}
                     {% else %}
-                    {% assign song_href = site.baseurl | append: "/" | append: team.theme_song_url %}
+                    {% assign song_href = site.baseurl | append: "/" | append: team.theme_song_url | replace: " ", "%20" %}
                     {% endif %}
                     {% assign song_ext = team.theme_song_url | split: "." | last | downcase %}
                     <div class="team-theme-song">
