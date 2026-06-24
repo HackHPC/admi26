@@ -324,6 +324,69 @@ body {
     letter-spacing: 0.03em;
 }
 
+/* Poster Guide */
+.poster-guide-section {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(17,17,17,0.07);
+}
+.poster-guide-section:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+.poster-guide-section h4 {
+    margin-bottom: 0.5rem;
+    color: var(--structural-black);
+}
+.poster-guide-section ul {
+    margin: 0.5rem 0 0 1.5rem;
+    padding-left: 0.5rem;
+    list-style: disc;
+    color: var(--muted-text);
+}
+.poster-guide-section ul li {
+    margin-bottom: 0.45rem;
+    line-height: 1.6;
+}
+.poster-guide-section ul ul {
+    margin-top: 0.35rem;
+    list-style: circle;
+}
+.poster-deadline-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 0.75rem;
+}
+.poster-deadline-card {
+    background: var(--light-green);
+    border: 1px solid rgba(24,165,88,0.2);
+    border-left: 4px solid var(--primary-color);
+    border-radius: 6px;
+    padding: 0.85rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+.poster-deadline-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--primary-color);
+}
+.poster-deadline-date {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--structural-black);
+}
+.poster-deadline-detail {
+    font-size: 0.8rem;
+    color: var(--muted-text);
+    line-height: 1.4;
+}
+
 /* Buttons */
 .btn-primary, .btn-secondary {
     padding: 0.75rem 1.5rem;
