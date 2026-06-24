@@ -134,17 +134,33 @@ general_schedule:
     zoomlink: "https://us06web.zoom.us/j/83678288741?pwd=9jf7gzHu4UUU4qxuUtf6ieZorzQlfT.1"
     theme: "Day 3: Check-in"
     events: 
-      - name: Team Progress 
-        type: Presentations 
-        
+      - name: Team Progress
+        type: Presentations
+        links:
+          - title: Rocky-model (GitHub)
+            icon: fa-brands fa-github
+            url: "https://github.com/omnibond/Rocky-model"
+            iconcolor: "#111111"
+    summary: |
+      * **Halfway Point & Data Collection Deadline:** Host Jeaime Powell reminded participants that they are officially halfway through the hackathon and stressed that **all data collection must be completed by the end of the day**. Teams gave brief status updates, revealing that Capsule Corp Coder Z and Origin Zero had gathered their data, while The WinMaxers and The Hacking Tribunal were still finalizing theirs.
+      * **Sample Data Strategy:** Organizer Charlie Dey advised the teams still pulling their full datasets to **generate sample data immediately**. This allows their developers and analysts to start building processing engines and models without being bottlenecked.
+      * **Targeted Mentorship:** Guest mentor Dr. Mohamed Elbakary was made available for a dedicated hour to assist teams. The organizers specifically requested that he **work with The Hacking Tribunal to help them get their data collection on track**.
+      * **Feature Freeze & The Fine-Tuning Challenge:** The organizers reminded teams to stick to their plans and invoke a "pencils down" on adding new features. However, Jeaime offered an optional "surprise" challenge for any team with extra time: they could **fine-tune a small LLM (under 1 billion parameters)** on their specific dataset to act as a custom validation tool or chatbot. He offered to set up a Google Cloud virtual machine with an L4 GPU for any team that takes on this challenge.
+      * **Afternoon Check-in Expectations:** The session wrapped up with instructions for the afternoon's "24-Hour Progress Challenge." Teams were told they will have exactly **five minutes to present an updated project plan, their current project status, and a live demo** if one is available.
 
   - date: "2026-06-24T16:00:00-04:00"
     session: Afternoon
     zoomlink: "https://us06web.zoom.us/j/83678288741?pwd=9jf7gzHu4UUU4qxuUtf6ieZorzQlfT.1"
-    theme: "Afternoon Check-in"
-    events: 
-      - name: Team Progress 
-        type: Presentations 
+    theme: "24-Hour Progress Challenge"
+    events:
+      - name: Team Progress Presentations
+        type: Presentations
+        description: >
+          Each team has 5 minutes to present their one-day progress. Teams are expected to share:<br>
+          &nbsp;• <strong>Updated project plan</strong><br>
+          &nbsp;• <strong>Current project status</strong> — highlight completed pieces and identify major challenges ranked by how easily they can be resolved<br>
+          &nbsp;• <strong>Project demo</strong> — live demonstration of work accomplished so far, if available
+        award: "🏆 24-Hour Progress Challenge Award"
 
   - date: "2026-06-25T10:00:00-04:00"
     session: Morning
