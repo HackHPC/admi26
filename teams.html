@@ -208,9 +208,15 @@
                     {% if team.links and team.links.size > 0 %}
                     <div class="external-links" style="margin-bottom: 0.75rem;">
                         {% for link in team.links %}
+                        {% if link.icon contains "fa-github" %}
+                        <a href="{{ link.url }}" target="_blank" class="btn-secondary resource-link github-link-btn">
+                            <i class="{{ link.icon }}"></i> {{ link.name }}
+                        </a>
+                        {% else %}
                         <a href="{{ link.url }}" target="_blank" class="btn-secondary resource-link">
                             <i class="{{ link.icon }}" style="color: {{ link.iconcolor }};"></i> {{ link.name }}
                         </a>
+                        {% endif %}
                         {% endfor %}
                     </div>
                     {% endif %}

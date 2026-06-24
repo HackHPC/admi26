@@ -715,7 +715,7 @@ a.tech-chip:hover {
 }
 .team-permalink {
     font-size: 0.75rem;
-    color: #ccc;
+    color: #111111;
     margin-left: 0.4rem;
     vertical-align: middle;
     text-decoration: none;
@@ -724,9 +724,25 @@ a.tech-chip:hover {
 .team-permalink:hover {
     color: var(--primary-color);
 }
+.btn-secondary.github-link-btn,
+.resource-link.github-link-btn {
+    background-color: #111111;
+    color: #ffffff;
+    border-color: #111111;
+}
+.btn-secondary.github-link-btn:hover,
+.resource-link.github-link-btn:hover {
+    background-color: #333333;
+    color: #ffffff;
+    border-color: #333333;
+}
+.btn-secondary.github-link-btn i,
+.resource-link.github-link-btn i {
+    color: #ffffff;
+}
 .team-share-btn {
     font-size: 0.75rem;
-    color: #ccc;
+    color: #111111;
     margin-left: 0.4rem;
     vertical-align: middle;
     background: none;
