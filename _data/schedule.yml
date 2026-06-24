@@ -195,6 +195,10 @@ general_schedule:
       - name: Final Presentations
         type: Presentations
         links:
+          - title: Judging Criteria
+            icon: fa-regular fa-file-pdf
+            url: "assets/slide-decks/HackHPCatADMI26_Judging-Criteria.pdf"
+            iconcolor: red
           - title: Add to Calendar
             icon: fa-regular fa-calendar-plus
             url: "assets/hackhpc-admi26-final-presentations.ics"
