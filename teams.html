@@ -84,6 +84,7 @@
                         {% assign affil_url = team.members.affiliation_url[i] %}
                         {% assign social = team.members.socials[i] %}
                         {% assign role = team.members.role[i] %}
+                        {% assign classification = team.members.classification[i] %}
                         <li class="member-chip">
                             <strong>{{ name }}</strong>
                             {% if role %}
@@ -91,7 +92,7 @@
                             {% endif %}
                             {% if major or affil %}
                             <br><span class="member-details">
-                                {% if major %}{{ major }}{% endif %}{% if major and affil %} | {% endif %}{% if affil %}{% if affil_url %}<a href="{{ affil_url }}" target="_blank" class="affil-link">{{ affil }}</a>{% else %}{{ affil }}{% endif %}{% endif %}
+                                {% if classification %}{{ classification }} | {% endif %}{% if major %}{{ major }}{% endif %}{% if major and affil %} | {% endif %}{% if affil %}{% if affil_url %}<a href="{{ affil_url }}" target="_blank" class="affil-link">{{ affil }}</a>{% else %}{{ affil }}{% endif %}{% endif %}
                             </span>
                             {% endif %}
                             {% if social %}
