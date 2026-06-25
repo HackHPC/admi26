@@ -1,6 +1,7 @@
 # _data/teams.yml
 - teamname: The Hacking Tribunal
-  awards: []
+  awards:
+    - "🏆 24-Hour Progress Challenge Award"
   theme_song: "Midnight Drive"
   theme_song_url: "teams/TheHackingTribunal/Midnight Drive.mp3"
   theme_song_artist: "nrapheal04"

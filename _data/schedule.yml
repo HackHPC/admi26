@@ -160,7 +160,16 @@ general_schedule:
           &nbsp;• <strong>Updated project plan</strong><br>
           &nbsp;• <strong>Current project status</strong> — highlight completed pieces and identify major challenges ranked by how easily they can be resolved<br>
           &nbsp;• <strong>Project demo</strong> — live demonstration of work accomplished so far, if available
-        award: "🏆 24-Hour Progress Challenge Award"
+        award: "🏆 24-Hour Progress Challenge Award — The Hacking Tribunal"
+    summary: |
+      The afternoon check-in, also known as the 24-Hour Progress Challenge, required teams to present their progress directly from their own screens rather than using a shared slide deck.
+
+      * **Capsule Corp CoderZ:** The team completed their front-end UI homepage and began integrating NetworkX and the Gemini API. Their primary bottleneck is exhausting their API tokens, leading the organizers to suggest utilizing free tier models or local open-source options.
+      * **WinMaxxers:** The team successfully scraped six years of Wikipedia data and rebuilt their CSV file to include more detailed features. They decided to use XGBoost alongside PageRank to train their predictive model, a choice the organizers highly praised for tabular data analysis.
+      * **Origin Zero:** The team demonstrated a live knowledge graph that traced the historical roots of three health disparities: Type 2 diabetes, maternal mortality, and child obesity. They also successfully resolved an issue with exposed API keys by moving them to a `.env` file.
+      * **The Hacking Tribunal:** The team made massive strides by working in parallel, completing their historical evolution analysis and mapping robotics concepts. They faced severe performance lag using the Rebel Llama 3 model on a CPU, so the organizers offered to help them set up an L4 GPU virtual machine.
+      * **Challenge Winner:** Guest judge Charlie Dey awarded **The Hacking Tribunal** the 24-Hour Progress Challenge win, praising their incredible turnaround since the morning and their clear understanding of the road ahead.
+      * **Closing Advice:** The organizers reminded all teams to pace themselves like a marathon, update their Gantt charts for the following morning's check-in, and begin assembling their final project posters.
 
   - date: "2026-06-25T10:00:00-04:00"
     session: Morning
