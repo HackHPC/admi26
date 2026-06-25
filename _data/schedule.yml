@@ -175,10 +175,11 @@ general_schedule:
     session: Morning
     zoomlink: "https://us06web.zoom.us/j/83678288741?pwd=9jf7gzHu4UUU4qxuUtf6ieZorzQlfT.1"
     theme: "Day 4: Check-in"
-    events: 
-      - name: Team Progress 
-        type: Presentations 
-
+    events:
+      - name: Team Progress
+        type: Presentations
+        description: >
+          Each team has <strong>1 minute</strong> to present a <strong>1-slide Gantt chart update</strong> showing current progress against their project plan.
   - date: "2026-06-25T16:00:00-04:00"
     session: Afternoon
     zoomlink: "https://us06web.zoom.us/j/83678288741?pwd=9jf7gzHu4UUU4qxuUtf6ieZorzQlfT.1"
