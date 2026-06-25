@@ -250,14 +250,24 @@
                         <summary><i class="fa-solid fa-list-check"></i> Milestones</summary>
                         <ul class="team-milestones">
                             {% for milestone in team.milestones %}
-                            {% assign label = milestone | split: ": " | first %}
-                            {% assign text = milestone | remove_first: label | remove_first: ": " %}
+                            {% if milestone.label %}
+                            {% assign m_label = milestone.label %}
+                            {% assign m_text = milestone.text %}
+                            {% assign m_status = milestone.status | default: "pending" %}
+                            {% else %}
+                            {% assign m_label = milestone | split: ": " | first %}
+                            {% assign m_text = milestone | remove_first: m_label | remove_first: ": " %}
+                            {% assign m_status = "" %}
+                            {% endif %}
                             <li class="milestone-item">
-                                <span class="milestone-label">{{ label }}</span>
-                                <span class="milestone-text">{{ text }}</span>
+                                <span class="milestone-label milestone-label--{{ m_status }}">{{ m_label }}</span>
+                                <span class="milestone-text">{{ m_text }}</span>
                             </li>
                             {% endfor %}
                         </ul>
+                        {% if team.milestones_updated %}
+                        <p class="milestone-updated">Last updated: {{ team.milestones_updated }}</p>
+                        {% endif %}
                     </details>
                     {% endif %}
                     {% if team.technologies %}

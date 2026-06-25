@@ -39,6 +39,7 @@
                     <a href="#poster-guide" class="resources-jump-link">Poster Guide</a>
                     <a href="#deliverables" class="resources-jump-link">Deliverables</a>
                     <a href="#team-technologies" class="resources-jump-link">Team Technologies</a>
+                    <a href="#free-student-ai" class="resources-jump-link">Free Student AI</a>
                     <a href="#resources-categories" class="resources-jump-link">Resource Categories</a>
                     <a href="#session-resources" class="resources-jump-link">Session Materials</a>
                     {% if site.show_deliverables %}
@@ -400,6 +401,53 @@
             </div>
             {% endif %}
             {% endfor %}
+        </section>
+
+        <!-- Free Student AI Resources Section -->
+        <section id="free-student-ai" style="margin-top: 2rem; padding-top: 2rem; border-top: 2px solid var(--primary-color);">
+            <h2><i class="fa-solid fa-graduation-cap"></i> Free AI Resources for Students</h2>
+            <p>AI services offering free access, tokens, or API credits — many verified with a <strong>.edu email</strong>. Offers and limits change frequently; always check terms directly with each provider.</p>
+            <div class="free-ai-grid">
+                {% for resource in site.data.resources.free_student_ai %}
+                <div class="free-ai-card">
+                    <div class="free-ai-card-header">
+                        <a href="{{ resource.url }}" target="_blank" rel="noopener" class="free-ai-card-title">
+                            <i class="{{ resource.icon }}"></i> {{ resource.name }}
+                            <i class="fas fa-external-link-alt" style="font-size: 0.65rem; margin-left: 0.2rem; opacity: 0.45;"></i>
+                        </a>
+                        <div class="free-ai-badges">
+                            {% if resource.requires_edu %}
+                            <span class="free-ai-edu-badge">.edu</span>
+                            {% endif %}
+                            {% if resource.api_access == "yes" %}
+                            <span class="free-ai-api-badge free-ai-api-badge--yes" title="Full API access available"><i class="fa-solid fa-plug"></i> API</span>
+                            {% elsif resource.api_access == "partial" %}
+                            <span class="free-ai-api-badge free-ai-api-badge--partial" title="Partial API access"><i class="fa-solid fa-plug"></i> API</span>
+                            {% elsif resource.api_access == "no" %}
+                            <span class="free-ai-api-badge free-ai-api-badge--no" title="No API access"><i class="fa-solid fa-plug"></i> API</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <p class="free-ai-card-desc">{{ resource.description }}</p>
+                    {% if resource.what_you_get or resource.signup %}
+                    <details class="free-ai-more">
+                        <summary class="free-ai-more-summary"><i class="fa-solid fa-circle-info"></i> More information</summary>
+                        {% if resource.what_you_get %}
+                        <div class="free-ai-detail">
+                            <span class="free-ai-label"><i class="fa-solid fa-gift"></i> What you get:</span> {{ resource.what_you_get }}
+                        </div>
+                        {% endif %}
+                        {% if resource.signup %}
+                        <div class="free-ai-detail">
+                            <span class="free-ai-label"><i class="fa-solid fa-circle-right"></i> How to sign up:</span> {{ resource.signup }}
+                        </div>
+                        {% endif %}
+                    </details>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+            <p class="free-ai-footer-note">Last updated: June 2026. Verify current terms directly with each provider before relying on them for critical projects.</p>
         </section>
 
         <div id="resources-categories" class="resources-by-category">

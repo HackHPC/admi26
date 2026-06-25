@@ -55,6 +55,18 @@ resources:
     icon: "fa-solid fa-robot"
     category: "AI Platforms"
 
+  - title: "Groq Cloud"
+    description: "High-speed LLM inference on Groq LPU hardware with generous free daily token quotas across Llama, Qwen, and DeepSeek models."
+    url: "https://console.groq.com"
+    icon: "fa-solid fa-bolt"
+    category: "AI Platforms"
+
+  - title: "Google AI Studio"
+    description: "Google's developer environment for the Gemini API with a free tier and no credit card required."
+    url: "https://aistudio.google.com"
+    icon: "fa-brands fa-google"
+    category: "AI Platforms"
+
   # Computing & Hosting
   - title: "Texas Advanced Computing Center (TACC)"
     description: "High-performance computing center providing powerful compute resources."
@@ -123,6 +135,12 @@ resources:
     icon: "fa-brands fa-r-project"
     category: "Code Platforms"
 
+  - title: "Jupyter Notebook"
+    description: "Web-based interactive computing environment for combining live code, visualizations, and narrative text in shareable documents."
+    url: "https://jupyter.org"
+    icon: "fa-solid fa-book-open"
+    category: "Code Platforms"
+
   # References & Tutorials
   - title: "GitHub Markdown Reference"
     description: "Complete guide to GitHub Flavored Markdown syntax."
@@ -170,6 +188,24 @@ resources:
     description: "Software Carpentry course introducing version control with Git."
     url: "https://swcarpentry.github.io/git-novice/"
     icon: "fa-solid fa-code-branch"
+    category: "References"
+
+  - title: "Wikipedia / MediaWiki API"
+    description: "Web API for accessing Wikipedia content — articles, links, categories, revision history, and metadata programmatically."
+    url: "https://www.mediawiki.org/wiki/API:Main_page"
+    icon: "fa-brands fa-wikipedia-w"
+    category: "References"
+
+  - title: "Wikidata"
+    description: "Free, open structured knowledge base storing semantic relationships for Wikipedia and beyond; queryable via SPARQL."
+    url: "https://www.wikidata.org"
+    icon: "fa-brands fa-wikipedia-w"
+    category: "References"
+
+  - title: "wikipedia-api (Python)"
+    description: "Lightweight Python wrapper for the MediaWiki API simplifying Wikipedia article retrieval, link traversal, and category extraction."
+    url: "https://pypi.org/project/Wikipedia-API/"
+    icon: "fa-brands fa-python"
     category: "References"
 
   # Web Development & Design
@@ -221,6 +257,18 @@ resources:
     icon: "fa-solid fa-palette"
     category: "Web Development"
 
+  - title: "D3.js"
+    description: "JavaScript library for producing dynamic, interactive data visualizations in web browsers using SVG, HTML5, and CSS."
+    url: "https://d3js.org"
+    icon: "fa-brands fa-js"
+    category: "Web Development"
+
+  - title: "Canva"
+    description: "Online drag-and-drop design tool for creating presentations, posters, graphics, and UI mockups."
+    url: "https://www.canva.com"
+    icon: "fa-solid fa-palette"
+    category: "Web Development"
+
   # Data & Visualization
   - title: "HackHPC Datasets"
     description: "Collection of datasets provided for HackHPC projects."
@@ -257,3 +305,187 @@ resources:
     url: "https://www.juiceanalytics.com/chartchooser"
     icon: "fa-solid fa-chart-bar"
     category: "Data"
+
+  - title: "Python"
+    description: "General-purpose, high-level programming language widely used for data science, machine learning, and AI development."
+    url: "https://www.python.org"
+    icon: "fa-brands fa-python"
+    category: "Data"
+
+  - title: "NetworkX"
+    description: "Python library for building and analyzing complex networks and graphs; supports PageRank, centrality metrics, and community detection."
+    url: "https://networkx.org"
+    icon: "fa-solid fa-diagram-project"
+    category: "Data"
+
+  - title: "NumPy"
+    description: "Fundamental Python package for scientific computing with N-dimensional arrays, linear algebra, and random number generation."
+    url: "https://numpy.org"
+    icon: "fa-solid fa-superscript"
+    category: "Data"
+
+  - title: "Pandas"
+    description: "Fast, flexible Python library for data analysis and manipulation using DataFrame structures."
+    url: "https://pandas.pydata.org"
+    icon: "fa-solid fa-table"
+    category: "Data"
+
+  - title: "Matplotlib"
+    description: "Comprehensive Python library for creating static, animated, and interactive 2D plots and charts."
+    url: "https://matplotlib.org"
+    icon: "fa-solid fa-chart-line"
+    category: "Data"
+
+  - title: "PyVis"
+    description: "Python wrapper around vis.js for building interactive, browser-based network graph visualizations."
+    url: "https://pyvis.readthedocs.io"
+    icon: "fa-solid fa-eye"
+    category: "Data"
+
+  - title: "XGBoost"
+    description: "Gradient boosting ML library optimized for speed and performance; highly praised for tabular data analysis and prediction."
+    url: "https://xgboost.ai"
+    icon: "fa-solid fa-chart-bar"
+    category: "Data"
+
+  - title: "Beautiful Soup"
+    description: "Python library for parsing HTML and XML to scrape and extract structured data from web pages."
+    url: "https://www.crummy.com/software/BeautifulSoup/"
+    icon: "fa-solid fa-code"
+    category: "Data"
+
+free_student_ai:
+  - name: "Free.ai Education"
+    url: "https://free.ai/edu"
+    icon: "fa-solid fa-graduation-cap"
+    description: "Unified AI platform giving students Pro-tier access to hundreds of AI tools and models, including GPT-4o, Claude, and Gemini, with no credit card required."
+    what_you_get: "500,000 tokens/month; access to 400+ AI tools; 370+ models (GPT-4o, Claude, Gemini); full API access for research projects; completely free."
+    signup: "Go to free.ai/edu → enter your .edu email → verify via confirmation code → re-verify monthly. No credit card needed."
+    requires_edu: true
+    api_access: "yes"
+
+  - name: "GitHub Student Developer Pack"
+    url: "https://education.github.com/pack"
+    icon: "fa-brands fa-github"
+    description: "Bundle of 100+ professional developer tools, AI coding assistants, and cloud credits including GitHub Copilot Pro with access to Claude and GPT-4.1."
+    what_you_get: "GitHub Copilot Pro (300 premium requests/month, Claude 3.5 Sonnet + GPT-4.1); $100 Azure credits; $200 DigitalOcean credits; free .me domain; JetBrains IDEs; 100+ partner tools."
+    signup: "Go to education.github.com/pack → click 'Get Student Benefits' → sign in with GitHub → verify with .edu email or school ID → approval in 1–3 business days."
+    requires_edu: true
+    api_access: "yes"
+
+  - name: "Perplexity Pro (Education Plan)"
+    url: "https://perplexity.ai"
+    icon: "fa-solid fa-magnifying-glass"
+    description: "AI-powered search and research assistant with deep citations, file uploads, and access to multiple top-tier models including GPT-5, Claude Sonnet, and Gemini Pro."
+    what_you_get: "1 month free Pro on .edu signup; unlimited Pro Search; access to GPT-5, Claude Sonnet, Gemini Pro; file uploads; Deep Research; Learn Mode; Education Pro at $10/month after."
+    signup: "Go to perplexity.ai → click Upgrade → select 'Education' tab → click 'Verify as Student' → complete SheerID verification with .edu email."
+    requires_edu: true
+    api_access: "partial"
+
+  - name: "Perplexity + Comet (1-Year Bundle)"
+    url: "https://perplexity.ai"
+    icon: "fa-solid fa-gem"
+    description: "Perplexity's Comet browser + Pro subscription bundle offered free for one year to students who verify with a .edu email."
+    what_you_get: "1 year of Perplexity Pro free (normally $20/month = $240 value); Comet browser; unlimited Pro Search; multi-model AI; file uploads; Deep Research; and Learn Mode."
+    signup: "Download Comet browser → create an account with your .edu email → verify student status → Pro access activated for 12 months."
+    requires_edu: true
+    api_access: "partial"
+
+  - name: "Google AI Studio (Gemini API)"
+    url: "https://aistudio.google.com"
+    icon: "fa-brands fa-google"
+    description: "Google's developer environment for the Gemini model family with generous free API quotas and no credit card required."
+    what_you_get: "Free API tier: Gemini 2.5 Flash/Pro access, generous daily request limits, no credit card required; persistent free tier for API development and experimentation."
+    signup: "Go to aistudio.google.com → sign in with any Google account → API key issued instantly. No .edu required, no credit card."
+    requires_edu: false
+    api_access: "yes"
+
+  - name: "Cerebras Cloud (Inference API)"
+    url: "https://cloud.cerebras.ai"
+    icon: "fa-solid fa-microchip"
+    description: "Ultra-fast LLM inference on proprietary Wafer-Scale Engine hardware with the most generous daily free token volume of any LLM API provider as of 2026."
+    what_you_get: "1,000,000 tokens/day free permanently; 30 RPM; 14,400 requests/day; 7 free models including Llama 3.3 70B and GPT-OSS 120B; OpenAI SDK-compatible."
+    signup: "Go to cloud.cerebras.ai → sign up with any email → navigate to 'API Keys' → click 'Create API Key'. No credit card, no waitlist, no .edu required."
+    requires_edu: false
+    api_access: "yes"
+
+  - name: "Groq Cloud"
+    url: "https://console.groq.com"
+    icon: "fa-solid fa-bolt"
+    description: "High-speed inference on Groq LPU hardware for open models including Llama, Qwen, and DeepSeek with no credit card required."
+    what_you_get: "~500K–1M tokens/day across models; Llama 4 Scout: 500K tok/day; Llama 3.1 8B Instant: 1M tok/day, 14,400 req/day; 30 RPM; OpenAI-compatible API; instant access."
+    signup: "Go to console.groq.com → sign up with email or GitHub → immediate free tier access; generate an API key from the dashboard. No .edu required."
+    requires_edu: false
+    api_access: "yes"
+
+  - name: "OpenRouter"
+    url: "https://openrouter.ai"
+    icon: "fa-solid fa-shuffle"
+    description: "Unified API gateway routing to 315+ models across providers (OpenAI, Anthropic, Google, Meta, Mistral, etc.) through a single OpenAI-compatible endpoint."
+    what_you_get: "50 free model requests/day; 32+ free models at no cost; 20 RPM; $10 lifetime top-up raises limit to 1,000 req/day; access to DeepSeek R1, Qwen3 Coder 480B, Llama 4, and more."
+    signup: "Go to openrouter.ai → sign up with email or OAuth → generate an API key → use models tagged ':free' at no cost. No .edu required, no credit card."
+    requires_edu: false
+    api_access: "yes"
+
+  - name: "xAI Grok API"
+    url: "https://console.x.ai"
+    icon: "fa-solid fa-robot"
+    description: "API access to xAI's Grok model family. New accounts receive free API credits; students with .edu emails get 60 days of SuperGrok (premium chat) free."
+    what_you_get: "API: $25 free credits on signup (one-time). SuperGrok student offer (.edu required): 60 days free — Grok 3 (100 queries/2 hrs), 100 image generations/2 hrs, Think/DeepSearch modes."
+    signup: "API: Go to console.x.ai → create account → verify phone → receive $25 free credits. SuperGrok: go to grok.com → sign up with .edu email → auto-verified."
+    requires_edu: true
+    api_access: "yes"
+
+  - name: "StudentOffers — Free LLM API Proxy"
+    url: "https://www.studentoffers.co/offer/freellmapi"
+    icon: "fa-solid fa-server"
+    description: "Self-hosted OpenAI-compatible proxy aggregating free-tier API keys from 11+ providers, routing across 60+ LLMs — effectively 1B+ free tokens per month from a single endpoint."
+    what_you_get: "1B+ free LLM tokens/month aggregated across 11 free-tier providers; 60 LLMs via one OpenAI-compatible endpoint; ideal for HPC or research environments."
+    signup: "Visit studentoffers.co/offer/freellmapi → follow setup instructions to self-host → add individual API keys from each free-tier provider using your own accounts."
+    requires_edu: true
+    api_access: "yes"
+
+  - name: "StudentOffers — AI & ML Directory"
+    url: "https://www.studentoffers.co/ai-and-machine-learning"
+    icon: "fa-solid fa-list-check"
+    description: "Curated directory of verified student discounts and free offers across AI and ML tools, covering API credits, unified gateways, and software discounts."
+    what_you_get: "Verified student deals including $100 free credits for Gemini/GPT/DeepSeek, 30M free tokens/month on select APIs, and dozens of other student AI offers."
+    signup: "Browse the AI & Machine Learning section on studentoffers.co → each offer has its own signup flow, most requiring .edu email verification."
+    requires_edu: true
+    api_access: "partial"
+
+  - name: "Exa AI (Neural Search API)"
+    url: "https://exa.ai"
+    icon: "fa-solid fa-globe"
+    description: "Neural search and web crawling API designed for AI agents and research workflows — provides structured search results with full-page content extraction."
+    what_you_get: "$10 free search API credits on student signup; ongoing free tier for basic usage; useful for AI agents, RAG pipelines, and academic research automation."
+    signup: "Go to exa.ai → create an account → additional credits via studentoffers.co/offer/exa-ai with .edu verification."
+    requires_edu: true
+    api_access: "yes"
+
+  - name: "AI Credits Directory"
+    url: "https://aicredits.dev"
+    icon: "fa-solid fa-coins"
+    description: "Community-maintained index of free AI API credits, GPU grants, and cloud programs. Includes instant-signup providers and student-specific offers."
+    what_you_get: "Aggregated access to offers including Voyage AI (200M free embedding tokens), Jina AI (~10M free tokens), Stability AI (25 credits), SuperGrok (60 days .edu), and dozens more."
+    signup: "Browse aicredits.dev → filter by difficulty (1 = instant, 2 = easy/student email) → follow individual provider links. No single login required."
+    requires_edu: false
+    api_access: "yes"
+
+  - name: "AI Perks Free API Credits Guide (2026)"
+    url: "https://www.getaiperks.com/en/ai/free-ai-api-credits-guide-2026"
+    icon: "fa-solid fa-map"
+    description: "Comprehensive guide to aggregating $10,000+ in free AI API credits from OpenAI, Anthropic, Mistral, Cerebras, Groq, and more, with step-by-step instructions per provider."
+    what_you_get: "Roadmap to $10,000+ in total free API credits by combining offers from OpenAI, Anthropic, Mistral, xAI, Cerebras, and others — a master checklist for free credit sources."
+    signup: "Visit the guide → follow step-by-step instructions per provider. Most require only email signup; some require .edu for student-specific tiers."
+    requires_edu: false
+    api_access: "yes"
+
+  - name: "Free AI Tools GitHub List"
+    url: "https://github.com/ShaikhWarsi/free-ai-tools"
+    icon: "fa-brands fa-github"
+    description: "Curated open-source list of free and low-cost AI tools, LLM APIs, IDEs, agent frameworks, and infrastructure options. Community-maintained and regularly updated."
+    what_you_get: "Reference index covering inference APIs, coding assistants, agent frameworks, and infrastructure — useful for discovering free resources not listed elsewhere."
+    signup: "Browse the GitHub repo → each tool has its own signup link. No .edu required for the list; individual tools may have student-specific tiers."
+    requires_edu: false
+    api_access: "yes"

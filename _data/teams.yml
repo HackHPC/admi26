@@ -8,52 +8,61 @@
   files: "teams/TheHackingTribunal"
   goal: "Develop an AI-assisted forecasting platform using encyclopedic biological knowledge to predict emerging concepts and innovation opportunities — building a biological knowledge graph, identifying historical patterns, detecting cross-discipline convergence, and generating evidence-based forecasts."
   research_question: "How can historical data and innovation trends in robotics be analyzed to accurately forecast future technological developments in the field?"
+  milestones_updated: "June 24, 2026 · 4:00 PM EDT"
   milestones:
-    - "M1: Foundation & repo setup (GitHub, Colab, shared config)"
-    - "M2: Biological seed dataset creation"
-    - "M3: Knowledge graph construction"
-    - "M4: Historical evolution analysis"
-    - "M5: Convergence detection system"
-    - "M6: AI forecasting engine (RAG-based)"
-    - "M7: Visualization & UX"
-    - "M8: Final submission package (README, poster, notebooks, demo)"
+    - label: "M1"
+      text: "Foundation & repo setup (GitHub, Colab, shared config)"
+      status: complete
+    - label: "M2"
+      text: "Biological seed dataset creation"
+      status: complete
+    - label: "M3"
+      text: "Knowledge graph construction"
+      status: complete
+    - label: "M4"
+      text: "Historical evolution analysis"
+      status: complete
+    - label: "M5"
+      text: "Convergence detection system"
+      status: working
+    - label: "M6"
+      text: "AI forecasting engine (RAG-based)"
+      status: working
+    - label: "M7"
+      text: "Visualization & UX"
+      status: working
+    - label: "M8"
+      text: "Final submission package (README, poster, notebooks, demo)"
+      status: pending
   technologies:
-    - name: Wikipedia / MediaWiki API
-      url: https://www.mediawiki.org/wiki/API:Main_page
-      icon: fa-brands fa-wikipedia-w
-      description: Web API for accessing Wikipedia content — articles, links, categories, revision history, and metadata programmatically
     - name: Python
       url: https://www.python.org
       icon: fa-brands fa-python
-      description: General-purpose, high-level programming language used for data collection, graph construction, modeling, and AI integration
+      description: Core language used to store the completed graph, structure datasets, and parse concept-relation pairs
     - name: NetworkX
       url: https://networkx.org
       icon: fa-solid fa-diagram-project
-      description: Python library for the creation, manipulation, and analysis of complex graphs and networks; supports PageRank, centrality metrics, and community detection
-    - name: PyVis
-      url: https://pyvis.readthedocs.io
-      icon: fa-solid fa-eye
-      description: Python wrapper around vis.js for building interactive, browser-based network graph visualizations
-    - name: Pandas
-      url: https://pandas.pydata.org
-      icon: fa-solid fa-table
-      description: Fast, flexible open-source Python library for data analysis and manipulation using DataFrame structures
-    - name: HuggingFace
+      description: Python library used to build and analyze the knowledge graph of robotics concepts and their relationships
+    - name: JSON
+      url: https://www.json.org
+      icon: fa-solid fa-code
+      description: Lightweight data-interchange format used to store and transfer the completed graph and concept-relation pairs
+    - name: Claude (Anthropic API)
+      url: https://www.anthropic.com
+      icon: fa-solid fa-robot
+      description: AI language model used to parse JSON data and power the team's AI forecasting engine
+    - name: HuggingFace (REBEL model)
       url: https://huggingface.co
       icon: fa-solid fa-robot
-      description: Open-source ML platform providing thousands of pretrained models for NLP tasks like summarization and text generation
-    - name: Matplotlib
-      url: https://matplotlib.org
-      icon: fa-solid fa-chart-line
-      description: Comprehensive Python library for creating static, animated, and interactive 2D plots
+      description: Open-source ML platform used to run a local Llama 3 (REBEL) model for relation extraction
+    - name: VS Code
+      url: https://code.visualstudio.com
+      icon: fa-solid fa-code
+      description: Lightweight, powerful source code editor with built-in debugging; used to build the team's visualizer
     - name: Google Colab
       url: https://colab.research.google.com
       icon: fa-brands fa-google
-      description: Hosted Jupyter Notebook service by Google with free GPU/TPU access and cloud-based collaboration
-    - name: GitHub
-      url: https://github.com
-      icon: fa-brands fa-github
-      description: Cloud-based platform for version control and collaborative software development using Git
+      description: Free Jupyter notebook environment on Google's infrastructure with GPU/TPU access for model training
   members:
     names:
       - Jonathan Wembolua
@@ -117,48 +126,69 @@
   files: "teams/OriginZero"
   goal: "Trace root causes of health disparities in underrepresented communities via Wikipedia — mapping disparities to historical origins, building a live Wikipedia crawler, using PageRank to identify true root causes, and creating an interactive origin chain with plain-English narrative."
   research_question: "What are the historical origins and fundamental root causes of diabetes, specifically regarding health disparities in underrepresented communities?"
+  milestones_updated: "June 24, 2026 · 4:00 PM EDT"
   milestones:
-    - "M1: Setup & research"
-    - "M2: Wikipedia crawler"
-    - "M3: Knowledge graph construction"
-    - "M4: PageRank & causal logic"
-    - "M5: Narrative generator"
-    - "M6: Frontend & visualization"
-    - "M7: Demo & pitch readiness"
-    - "M8: Present & reflect"
+    - label: "M1"
+      text: "Setup & research"
+      status: complete
+    - label: "M2"
+      text: "Wikipedia crawler"
+      status: complete
+    - label: "M3"
+      text: "Knowledge graph construction"
+      status: complete
+    - label: "M4"
+      text: "PageRank & causal logic"
+      status: complete
+    - label: "M5"
+      text: "Narrative generator"
+      status: complete
+    - label: "M6"
+      text: "Frontend & visualization"
+      status: complete
+    - label: "M7"
+      text: "Demo & pitch readiness"
+      status: working
+    - label: "M8"
+      text: "Present & reflect"
+      status: pending
   technologies:
     - name: Python
       url: https://www.python.org
       icon: fa-brands fa-python
-      description: General-purpose, high-level programming language used for data collection, graph construction, modeling, and AI integration
+      description: Core data pipeline language used for Wikipedia crawling, knowledge graph construction, and AI integration
     - name: NetworkX
       url: https://networkx.org
       icon: fa-solid fa-diagram-project
-      description: Python library for the creation, manipulation, and analysis of complex graphs and networks; supports PageRank, centrality metrics, and community detection
-    - name: wikipedia-api
-      url: https://pypi.org/project/Wikipedia-API/
-      icon: fa-brands fa-python
-      description: Lightweight Python wrapper for the MediaWiki API, simplifying Wikipedia article retrieval, link traversal, and category extraction
+      description: Python library for building the knowledge graph and running PageRank to identify root causes of health disparities
     - name: NumPy
       url: https://numpy.org
       icon: fa-solid fa-superscript
-      description: Fundamental Python package for scientific computing; provides N-dimensional arrays, linear algebra, and random number generation
-    - name: D3.js
-      url: https://d3js.org
-      icon: fa-brands fa-js
-      description: JavaScript library for producing dynamic, interactive data visualizations in web browsers using SVG, HTML5, and CSS
+      description: Fundamental Python package for scientific computing used for numerical operations across the data pipeline
+    - name: wikipedia-api
+      url: https://pypi.org/project/Wikipedia-API/
+      icon: fa-brands fa-python
+      description: Lightweight Python wrapper for the MediaWiki API used to crawl and retrieve Wikipedia article content
+    - name: Groq API
+      url: https://console.groq.com
+      icon: fa-solid fa-bolt
+      description: High-speed Llama/Qwen inference platform with free daily tokens; used to generate the team's AI narrative summaries
     - name: HuggingFace
       url: https://huggingface.co
       icon: fa-solid fa-robot
-      description: Open-source ML platform providing thousands of pretrained models for NLP tasks like summarization and text generation
+      description: Open-source ML platform for machine learning models and datasets used in the team's pipeline
+    - name: D3.js
+      url: https://d3js.org
+      icon: fa-brands fa-js
+      description: JavaScript library for producing dynamic, interactive data visualizations of the knowledge graph in the browser
     - name: HTML / CSS
       url: https://developer.mozilla.org
       icon: fa-brands fa-html5
-      description: Core front-end web technologies for structuring (HTML) and styling (CSS) interactive dashboards and visualizations
+      description: Core front-end web technologies used to structure and style the interactive knowledge graph dashboard
     - name: GitHub Pages
       url: https://pages.github.com
       icon: fa-brands fa-github
-      description: Free static website hosting directly from a GitHub repository; used to publish the project demo frontend
+      description: Static website hosting from GitHub repositories; used to deploy and share the team's live frontend demo
   members:
     names:
       - Amelia Hunter
@@ -215,43 +245,70 @@
   files: "teams/WinMaxxers"
   goal: "Use Wikipedia-only forecasting to predict emerging concepts from Wikipedia's structure — modeling pages as graph nodes, designing simple explainable scoring instead of black-box ML, and analyzing historical growth patterns to detect rising concepts."
   research_question: "Based on historical knowledge growth patterns, what is projected to be the next significant emerging concept or technology within the field of nanotechnology?"
+  milestones_updated: "June 24, 2026 · 4:00 PM EDT"
   milestones:
-    - "M1: Project definition & repo setup"
-    - "M2: Data acquisition (snapshots, API/web-scraping, parsing)"
-    - "M3: Knowledge graph construction"
-    - "M4: Feature engineering (graph metrics, model selection, normalization)"
-    - "M5: Scoring model (labels, splits, training)"
-    - "M6: Validation (identify emerging concepts, narrative, community evolution)"
-    - "M7: Polish (explorer, timeline controls, dashboard, search, presentation)"
+    - label: "M1"
+      text: "Project definition & repo setup"
+      status: complete
+    - label: "M2"
+      text: "Data acquisition (snapshots, API/web-scraping, parsing)"
+      status: complete
+    - label: "M3"
+      text: "Knowledge graph construction"
+      status: complete
+    - label: "M4"
+      text: "Feature engineering (graph metrics, model selection, normalization)"
+      status: complete
+    - label: "M5"
+      text: "Scoring model (labels, splits, training)"
+      status: working
+    - label: "M6"
+      text: "Validation (identify emerging concepts, narrative, community evolution)"
+      status: pending
+    - label: "M7"
+      text: "Polish (explorer, timeline controls, dashboard, search, presentation)"
+      status: pending
   technologies:
     - name: Python
       url: https://www.python.org
       icon: fa-brands fa-python
-      description: General-purpose, high-level programming language used for data collection, graph construction, modeling, and AI integration
-    - name: Jupyter Notebook
-      url: https://jupyter.org
-      icon: fa-solid fa-book-open
-      description: Web-based interactive computing environment combining live code, narrative text, and visualizations in shareable documents
-    - name: NetworkX
-      url: https://networkx.org
-      icon: fa-solid fa-diagram-project
-      description: Python library for the creation, manipulation, and analysis of complex graphs and networks; supports PageRank, centrality metrics, and community detection
+      description: Core analytics and data processing language used across the entire pipeline
     - name: Pandas
       url: https://pandas.pydata.org
       icon: fa-solid fa-table
-      description: Fast, flexible open-source Python library for data analysis and manipulation using DataFrame structures
+      description: Fast, flexible Python library for data analysis used to clean data and build the feature CSV
+    - name: NetworkX
+      url: https://networkx.org
+      icon: fa-solid fa-diagram-project
+      description: Python library for building and analyzing the Wikipedia link graph with PageRank scoring
+    - name: PyVis
+      url: https://pyvis.readthedocs.io
+      icon: fa-solid fa-eye
+      description: Python wrapper around vis.js for generating interactive, browser-based network graph visualizations
+    - name: Matplotlib
+      url: https://matplotlib.org
+      icon: fa-solid fa-chart-line
+      description: Python library for creating static and interactive 2D plots of trend and growth data
+    - name: XGBoost
+      url: https://xgboost.ai
+      icon: fa-solid fa-chart-bar
+      description: Gradient regression ML algorithm used to evaluate data features and predict future PageRank scores
     - name: Wikipedia / MediaWiki API
       url: https://www.mediawiki.org/wiki/API:Main_page
       icon: fa-brands fa-wikipedia-w
-      description: Web API for accessing Wikipedia content — articles, links, categories, revision history, and metadata programmatically
+      description: Primary data source used to retrieve historical page revisions and link structures across six years of snapshots
     - name: Wikidata
       url: https://www.wikidata.org
       icon: fa-brands fa-wikipedia-w
-      description: Free, open, structured knowledge base maintained by Wikimedia storing semantic relationships usable by humans and machines
-    - name: JSON
-      url: https://www.json.org/json-en.html
-      icon: fa-solid fa-code
-      description: Lightweight data-interchange format based on key-value pairs; used as the primary data exchange format across the pipeline
+      description: Structured knowledge base used alongside MediaWiki API to enrich the dataset with semantic relationships
+    - name: Google Colab
+      url: https://colab.research.google.com
+      icon: fa-brands fa-google
+      description: Free Jupyter notebook environment on Google's infrastructure used for model training and team collaboration
+    - name: GitHub
+      url: https://github.com
+      icon: fa-brands fa-github
+      description: Platform for version control, collaboration, and code hosting across the team
   members:
     names:
       - Cole Scott
@@ -308,48 +365,65 @@
   files: "teams/CapsuleCorpCoderZ"
   goal: "Build an alternate Dragon Ball timeline text-simulator where Goku remains 'Kakarot' and Earth is conquered — featuring age-up mechanics, combat systems, Great Ape events, branching 'What If' sagas, King Yemma legacy/rebirth, and balanced progression across multiple origins."
   research_question: "In an alternative timeline analysis of the Dragon Ball Z universe, how would the narrative trajectory and planetary events have been altered if the protagonist, Goku, had not sustained his childhood head injury?"
+  milestones_updated: "June 24, 2026 · 4:00 PM EDT"
   milestones:
-    - "M1: Project planning (concept, main paths, roles)"
-    - "M2: Story & timeline design (opening story, branches, endings)"
-    - "M3: Data collection (Wikipedia/Dragon Ball Wiki, lore JSON)"
-    - "M4: Game logic design (decision trees, scoring)"
-    - "M5: Front-end development (UI, choice buttons, cards, timelines)"
-    - "M6: Back-end/AI integration (stored branches, AI responses, RAG for lore Q&A)"
-    - "M7: Testing & debugging"
-    - "M8: Final presentation (demo, theme, technologies, milestones, roles)"
+    - label: "M1"
+      text: "Project planning (concept, main paths, roles)"
+      status: complete
+    - label: "M2"
+      text: "Story & timeline design (opening story, branches, endings)"
+      status: complete
+    - label: "M3"
+      text: "Data collection (Wikipedia/Dragon Ball Wiki, lore JSON)"
+      status: complete
+    - label: "M4"
+      text: "Game logic design (decision trees, scoring)"
+      status: working
+    - label: "M5"
+      text: "Front-end development (UI, choice buttons, cards, timelines)"
+      status: complete
+    - label: "M6"
+      text: "Back-end/AI integration (stored branches, AI responses, RAG for lore Q&A)"
+      status: working
+    - label: "M7"
+      text: "Testing & debugging"
+      status: pending
+    - label: "M8"
+      text: "Final presentation (demo, theme, technologies, milestones, roles)"
+      status: pending
   technologies:
-    - name: Python
-      url: https://www.python.org
-      icon: fa-brands fa-python
-      description: General-purpose, high-level programming language used for game logic, data handling, and AI integration
-    - name: Jupyter Notebook
-      url: https://jupyter.org
-      icon: fa-solid fa-book-open
-      description: Web-based interactive computing environment combining live code, narrative text, and visualizations in shareable documents
     - name: Google Gemini
-      url: https://ai.google.dev
+      url: https://gemini.google.com
       icon: fa-brands fa-google
-      description: Google's family of multimodal generative AI models; used for LLM prompt engineering and RAG pipeline integration
+      description: Google's advanced AI assistant used for scenario generation and creative writing assistance
     - name: Claude (Anthropic)
-      url: https://www.anthropic.com/claude
+      url: https://www.anthropic.com
       icon: fa-solid fa-robot
-      description: Next-generation AI assistant by Anthropic capable of summarization, coding, Q&A, and complex reasoning
+      description: AI language model created by Anthropic; used for coding assistance and complex reasoning tasks
     - name: ChatGPT (OpenAI)
-      url: https://chatgpt.com
+      url: https://openai.com
       icon: fa-solid fa-robot
-      description: Conversational AI assistant by OpenAI trained on the GPT series; used for development assistance and content generation
-    - name: JSON
-      url: https://www.json.org/json-en.html
-      icon: fa-solid fa-code
-      description: Lightweight data-interchange format used to store Dragon Ball lore data and branching story trees
-    - name: Canva
-      url: https://www.canva.com
-      icon: fa-solid fa-palette
-      description: Online drag-and-drop design tool for creating presentations, posters, graphics, and UI mockups
+      description: AI model and research lab platform used for prompt generation and code assistance
     - name: GitHub
       url: https://github.com
       icon: fa-brands fa-github
-      description: Cloud-based platform for version control and collaborative software development using Git
+      description: Platform for version control, collaboration, and code hosting
+    - name: Jupyter / Google Colab
+      url: https://colab.research.google.com
+      icon: fa-brands fa-google
+      description: Free Jupyter notebook environment running on Google's infrastructure used for collaborative development
+    - name: NetworkX
+      url: https://networkx.org
+      icon: fa-solid fa-diagram-project
+      description: Python library used to create and study the dynamics of complex networks within the Dragon Ball lore graph
+    - name: Beautiful Soup
+      url: https://www.crummy.com/software/BeautifulSoup/
+      icon: fa-solid fa-code
+      description: Python web scraping library used to extract data from the MediaWiki and Dragon Ball Wiki pages
+    - name: Canva
+      url: https://www.canva.com
+      icon: fa-solid fa-palette
+      description: Online design tool used for graphic design, creating presentation slides, and UI mockups
   members:
     names:
       - Chance Walker

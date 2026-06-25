@@ -905,8 +905,29 @@ body {
     min-width: 2.2rem;
     text-align: center;
 }
+.milestone-label--complete {
+    color: var(--primary-color);
+    background: var(--light-green);
+    border-color: var(--primary-color);
+}
+.milestone-label--working {
+    color: #7a5c00;
+    background: var(--light-gold);
+    border-color: var(--accent-gold-dark);
+}
+.milestone-label--pending {
+    color: #1a56b0;
+    background: #e8f0fe;
+    border-color: #4285f4;
+}
 .milestone-text {
     flex: 1;
+}
+.milestone-updated {
+    font-size: 0.7rem;
+    color: #888;
+    margin: 0.4rem 0.75rem 0.2rem;
+    font-style: italic;
 }
 .team-tech-list {
     margin: 0;
@@ -2018,4 +2039,106 @@ footer {
     font-size: 0.78rem;
     color: var(--primary-color);
     margin-top: 0.5rem;
+}
+
+/* Free Student AI Resources */
+.free-ai-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+.free-ai-card {
+    background: var(--card-bg);
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1rem 1.1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.free-ai-card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+.free-ai-card-title {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--structural-black);
+    text-decoration: none;
+}
+.free-ai-card-title:hover {
+    color: var(--primary-color);
+}
+.free-ai-badges {
+    display: flex;
+    gap: 0.3rem;
+    flex-shrink: 0;
+    align-items: center;
+}
+.free-ai-edu-badge,
+.free-ai-api-badge {
+    font-size: 0.65rem;
+    font-weight: 700;
+    border-radius: 3px;
+    padding: 0.1rem 0.4rem;
+    white-space: nowrap;
+}
+.free-ai-edu-badge {
+    color: #fff;
+    background: var(--primary-color);
+}
+.free-ai-api-badge--yes {
+    color: #fff;
+    background: #18A558;
+}
+.free-ai-api-badge--partial {
+    color: #7a5c00;
+    background: var(--light-gold);
+    border: 1px solid var(--accent-gold-dark);
+}
+.free-ai-api-badge--no {
+    color: #fff;
+    background: var(--danger-color);
+}
+.free-ai-card-desc {
+    font-size: 0.82rem;
+    color: var(--muted-text);
+    margin: 0;
+    line-height: 1.5;
+}
+.free-ai-detail {
+    font-size: 0.78rem;
+    color: var(--muted-text);
+    background: var(--bg-color);
+    border-radius: 4px;
+    padding: 0.4rem 0.6rem;
+    line-height: 1.5;
+}
+.free-ai-label {
+    font-weight: 700;
+    color: var(--primary-color);
+}
+.free-ai-more {
+    margin-top: 0.1rem;
+}
+.free-ai-more-summary {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    cursor: pointer;
+    list-style: none;
+    padding: 0.2rem 0;
+}
+.free-ai-more-summary::-webkit-details-marker { display: none; }
+.free-ai-more[open] .free-ai-more-summary {
+    margin-bottom: 0.4rem;
+}
+.free-ai-footer-note {
+    font-size: 0.75rem;
+    color: #999;
+    font-style: italic;
+    margin-top: 1rem;
 }
