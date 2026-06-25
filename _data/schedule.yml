@@ -180,6 +180,20 @@ general_schedule:
         type: Presentations
         description: >
           Each team has <strong>1 minute</strong> to present a <strong>1-slide Gantt chart update</strong> showing current progress against their project plan.
+    summary: |
+      **Website Updates & Free AI Resources:** Host Jeaime Powell demonstrated updates to the hackathon website using AI coding agents — including color-coded milestone tracking and a new directory of free AI resources to help teams find platforms offering free daily tokens.
+
+      **Gantt Chart Progress Updates:** Each team presented their updated Gantt charts:
+      - **Origin Zero** — Main project tasks are essentially complete; now focusing on final deliverables (poster and presentation slides).
+      - **The WinMaxers** — Ahead of schedule, having reached Milestone 6 and currently validating their predictive data.
+      - **The Hacking Tribunal** — Clarified completed tasks; actively finishing their AI forecasting engine and visualizations.
+      - **Capsule Corp CoderZ** — Finalizing backend and Gemini AI integrations; guest mentor Dr. Mohamed Elbakary joined at 11:00 AM to provide dedicated coding assistance.
+
+      **Presentation Practice & "Pencils Down":** Organizers advised teams to complete a full run-through of their final presentations by 2:00 PM to identify any gaps. A strict **feature freeze** was invoked — all code must be in a completed MVP state by **4:00 PM**.
+
+      **NotebookLM Poster Demo:** Jeaime demonstrated how to use NotebookLM to quickly draft the required 500-word abstract for Science Gateways 2026 conference posters by feeding the AI each team's project history and GitHub repositories.
+
+      **Afternoon Expectations:** The 4:00 PM check-in will be a brief "go or no-go" session — one representative per team reports if they are on track or facing a critical issue requiring organizer intervention.
   - date: "2026-06-25T16:00:00-04:00"
     session: Afternoon
     zoomlink: "https://us06web.zoom.us/j/83678288741?pwd=9jf7gzHu4UUU4qxuUtf6ieZorzQlfT.1"
