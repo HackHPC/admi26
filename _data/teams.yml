@@ -117,6 +117,10 @@
       url: https://github.com/JosiahJ25/HPCSGX3HACKINGTRIBUNAL
       icon: fa-brands fa-github
       iconcolor: "#111111"
+    - name: Team Website
+      url: https://josiahj25.github.io/hacking-tribunal-sgx3-2026/
+      icon: fa-solid fa-globe
+      iconcolor: "#18A558"
 
 - teamname: Origin Zero
   awards: []
@@ -235,6 +239,10 @@
       url: https://github.com/PrinceOseiBonsu/OriginZero/
       icon: fa-brands fa-github
       iconcolor: "#111111"
+    - name: Team Website
+      url: https://princeoseibonsu.github.io/OriginZero/
+      icon: fa-solid fa-globe
+      iconcolor: "#18A558"
 
 - teamname: WinMaxxers
   awards:
@@ -355,6 +363,10 @@
       url: https://github.com/Damone-Washington19/Winmaxxers
       icon: fa-brands fa-github
       iconcolor: "#111111"
+    - name: Team Website
+      url: https://damone-washington19.github.io/Winmaxxers/
+      icon: fa-solid fa-globe
+      iconcolor: "#18A558"
 
 - teamname: Capsule Corp CoderZ
   awards:
@@ -470,3 +482,7 @@
       url: https://github.com/OvCXLLC/CapsuleCorpCoderZ
       icon: fa-brands fa-github
       iconcolor: "#111111"
+    - name: Team Website
+      url: https://ovcxllc.github.io/CapsuleCorpCoderZ/index.html
+      icon: fa-solid fa-globe
+      iconcolor: "#18A558"
