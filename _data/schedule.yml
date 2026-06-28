@@ -241,10 +241,30 @@ general_schedule:
       - name: Final Presentations
         type: Presentations
         links:
+          - title: Session Slide Deck
+            icon: fa-regular fa-file-pdf
+            url: "assets/slide-decks/FinalPresentations-HackHPCatADMI26.pdf"
+            iconcolor: red
           - title: Judging Criteria
             icon: fa-regular fa-file-pdf
             url: "assets/slide-decks/HackHPCatADMI26_Judging-Criteria.pdf"
             iconcolor: red
+          - title: Hackathon Team Page
+            icon: fa-solid fa-users
+            url: "https://hackhpc.github.io/admi26/teams.html"
+            iconcolor: var(--primary-color)
+          - title: The Hacking Tribunal's GitHub
+            icon: fa-brands fa-github
+            url: "https://github.com/JosiahJ25/hacking-tribunal-sgx3-2026"
+            iconcolor: "#111111"
+          - title: Capsule Corp CoderZ's Live Game
+            icon: fa-solid fa-gamepad
+            url: "https://joshj620.github.io/DBLR/"
+            iconcolor: var(--primary-color)
+          - title: WinMaxxers' Live Site
+            icon: fa-solid fa-globe
+            url: "https://damone-washington19.github.io/Winmaxxers/"
+            iconcolor: var(--primary-color)
           - title: Add to Calendar
             icon: fa-regular fa-calendar-plus
             url: "assets/hackhpc-admi26-final-presentations.ics"
@@ -256,3 +276,49 @@ general_schedule:
             copy: true
       - name: Closing Remarks & Awards
         type: Ceremony
+        award: "🏆 Knowledge Graph Analytics Award — WinMaxxers<br>🏆 Knowledge Portal Award — The Hacking Tribunal<br>🏆 Gateways Impact Award — Origin Zero<br>🏆 Organizers Originality Award — Capsule Corp CoderZ"
+        links:
+          - title: Science Gateways Blog Posts
+            icon: fa-solid fa-blog
+            url: "https://sciencegateways.org/networking-community/blogs"
+            iconcolor: var(--primary-color)
+          - title: Science Gateways Education & Training
+            icon: fa-solid fa-chalkboard-user
+            url: "https://sciencegateways.org/education-training"
+            iconcolor: var(--primary-color)
+          - title: Next Steps Slide Deck (PDF)
+            icon: fa-regular fa-file-pdf
+            url: "assets/slide-decks/Next Steps.pdf"
+            iconcolor: red
+          - title: Emily Easton's LinkedIn
+            icon: fa-brands fa-linkedin
+            url: "https://www.linkedin.com/in/emilyeaston/"
+            iconcolor: "#0A66C2"
+          - title: Quantum Education Landscape
+            icon: fa-solid fa-atom
+            url: "https://www.rit.edu/quantumeducationandworkforce/education-landscape"
+            iconcolor: var(--primary-color)
+          - title: Chicago Quantum Exchange Jobs
+            icon: fa-solid fa-briefcase
+            url: "https://jobs.chicagoquantum.org/jobs"
+            iconcolor: var(--primary-color)
+          - title: Quantum Learning Resources
+            icon: fa-solid fa-graduation-cap
+            url: "https://chicagoquantum.org/quantum_learning"
+            iconcolor: var(--primary-color)
+          - title: SULI Program
+            icon: fa-solid fa-flask
+            url: "https://science.osti.gov/wdts/suli"
+            iconcolor: var(--primary-color)
+          - title: OQI Undergraduate Fellowship
+            icon: fa-solid fa-star
+            url: "https://chicagoquantum.org/oqi-undergraduate-fellowship"
+            iconcolor: var(--accent-gold)
+          - title: Q-Ready Program
+            icon: fa-solid fa-rocket
+            url: "https://chicagoquantum.org/q-ready"
+            iconcolor: var(--primary-color)
+          - title: BBC News Article
+            icon: fa-solid fa-newspaper
+            url: "https://www.bbc.com/news/articles/cdrg6e2xgj6o"
+            iconcolor: "#bb1919"

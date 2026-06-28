@@ -2,6 +2,7 @@
 - teamname: The Hacking Tribunal
   awards:
     - "🏆 24-Hour Progress Challenge Award"
+    - "🏆 Knowledge Portal Award"
   theme_song: "Midnight Drive"
   theme_song_url: "teams/TheHackingTribunal/Midnight Drive.mp3"
   theme_song_artist: "nrapheal04"
@@ -123,7 +124,8 @@
       iconcolor: "#18A558"
 
 - teamname: Origin Zero
-  awards: []
+  awards:
+    - "🏆 Gateways Impact Award"
   theme_song: "Cold Streets"
   theme_song_url: "teams/OriginZero/Cold Streets.mp3"
   theme_song_artist: "BeatKitchen"
@@ -247,6 +249,7 @@
 - teamname: WinMaxxers
   awards:
     - "🏆 Project Plan Award"
+    - "🏆 Knowledge Graph Analytics Award"
   theme_song: "Pattern Crown"
   theme_song_url: "teams/WinMaxxers/Pattern Crown.mp3"
   theme_song_artist: "darellbarnes"
@@ -371,6 +374,7 @@
 - teamname: Capsule Corp CoderZ
   awards:
     - "🏆 Team Introductions Award"
+    - "🏆 Organizers Originality Award"
   theme_song: "Kame Spark"
   theme_song_url: "teams/CapsuleCorpCoderZ/Kame Spark.mp3"
   theme_song_artist: "tybandz12345"
@@ -486,3 +490,7 @@
       url: https://ovcxllc.github.io/CapsuleCorpCoderZ/index.html
       icon: fa-solid fa-globe
       iconcolor: "#18A558"
+    - name: Live App
+      url: https://joshj620.github.io/DBLR/
+      icon: fa-solid fa-gamepad
+      iconcolor: var(--primary-color)
